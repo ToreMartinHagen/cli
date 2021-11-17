@@ -1,14 +1,14 @@
 {
   "name": "Merkely developer documentation",
   "short_name": "Merkely developer documentation",
-  "start_url": "/reporter/",
-  "scope": "/reporter/",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/reporter/favicon.svg",
+      "src": "/favicon.svg",
       "sizes": "512x512"
     }
   ]
