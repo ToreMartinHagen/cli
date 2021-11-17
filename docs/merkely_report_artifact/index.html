@@ -1,0 +1,195 @@
+<!doctype html><html lang=en dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="merkely report artifact #  Report/Log an artifact to Merkely.
+Synopsis #  Report an artifact to a pipeline in Merkely. The artifact SHA256 fingerprint is calculated and reported or,alternatively, can be provided directly. The following flags are defaulted as follows in the CI list below:
+| Bitbucket |--------------------------------------------------------------------------- | git-commit : ${BITBUCKET_COMMIT} | build-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/addon/pipelines/home#!/results/${BITBUCKET_BUILD_NUMBER} | commit-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/commits/${BITBUCKET_COMMIT} |--------------------------------------------------------------------------- | Github |--------------------------------------------------------------------------- | git-commit : ${GITHUB_SHA} | build-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID} | commit-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA} |---------------------------------------------------------------------------  merkely report artifact ARTIFACT-NAME-OR-PATH [flags] Options #   -b, --build-url string the url of CI pipeline that built the artifact (default &#34;https://github.">
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="Merkely Report Artifact">
+<meta property="og:description" content="merkely report artifact #  Report/Log an artifact to Merkely.
+Synopsis #  Report an artifact to a pipeline in Merkely. The artifact SHA256 fingerprint is calculated and reported or,alternatively, can be provided directly. The following flags are defaulted as follows in the CI list below:
+| Bitbucket |--------------------------------------------------------------------------- | git-commit : ${BITBUCKET_COMMIT} | build-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/addon/pipelines/home#!/results/${BITBUCKET_BUILD_NUMBER} | commit-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/commits/${BITBUCKET_COMMIT} |--------------------------------------------------------------------------- | Github |--------------------------------------------------------------------------- | git-commit : ${GITHUB_SHA} | build-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID} | commit-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA} |---------------------------------------------------------------------------  merkely report artifact ARTIFACT-NAME-OR-PATH [flags] Options #   -b, --build-url string the url of CI pipeline that built the artifact (default &#34;https://github.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://example.org/docs/merkely_report_artifact/"><meta property="article:section" content="docs">
+<title>Merkely Report Artifact | My New Hugo Site</title>
+<link rel=manifest href=/manifest.json>
+<link rel=icon href=/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css integrity="sha256-RhgbyTN1upMgJudTs3xA5v+LsWqe93DHi8xmPkV3sbo=" crossorigin=anonymous>
+<script defer src=/flexsearch.min.js></script>
+<script defer src=/en.search.min.14262cfcbc1339fba210cc081a228e937fef2d70005cb925971434dfa37b9a57.js integrity="sha256-FCYs/LwTOfuiEMwIGiKOk3/vLXAAXLkllxQ036N7mlc=" crossorigin=anonymous></script>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a class="flex align-center" href=/><span>My New Hugo Site</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul>
+<li>
+<a href=http://example.org/docs/merkely/>Merkely</a>
+</li>
+<li>
+<a href=http://example.org/docs/merkely_create/>Merkely Create</a>
+</li>
+<li>
+<a href=http://example.org/docs/merkely_create_pipeline/>Merkely Create Pipeline</a>
+</li>
+<li>
+<a href=http://example.org/docs/merkely_fingerprint/>Merkely Fingerprint</a>
+</li>
+<li>
+<a href=http://example.org/docs/merkely_report/>Merkely Report</a>
+</li>
+<li>
+<a href=http://example.org/docs/merkely_report_artifact/ class=active>Merkely Report Artifact</a>
+</li>
+<li>
+<a href=http://example.org/docs/merkely_report_deployment/>Merkely Report Deployment</a>
+</li>
+<li>
+<a href=http://example.org/docs/merkely_report_env/>Merkely Report Env</a>
+</li>
+<li>
+<a href=http://example.org/docs/merkely_report_env_ecs/>Merkely Report Env Ecs</a>
+</li>
+<li>
+<a href=http://example.org/docs/merkely_report_env_k8s/>Merkely Report Env K8s</a>
+</li>
+<li>
+<a href=http://example.org/docs/merkely_report_env_server/>Merkely Report Env Server</a>
+</li>
+<li>
+<a href=http://example.org/docs/merkely_version/>Merkely Version</a>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/svg/menu.svg class=book-icon alt=Menu>
+</label>
+<strong>Merkely Report Artifact</strong>
+<label for=toc-control>
+<img src=/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#merkely-report-artifact>merkely report artifact</a>
+<ul>
+<li><a href=#synopsis>Synopsis</a></li>
+<li><a href=#options>Options</a></li>
+<li><a href=#options-inherited-from-parent-commands>Options inherited from parent commands</a></li>
+<li><a href=#see-also>SEE ALSO</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown><h2 id=merkely-report-artifact>
+merkely report artifact
+<a class=anchor href=#merkely-report-artifact>#</a>
+</h2>
+<p>Report/Log an artifact to Merkely.</p>
+<h3 id=synopsis>
+Synopsis
+<a class=anchor href=#synopsis>#</a>
+</h3>
+<p>Report an artifact to a pipeline in Merkely.
+The artifact SHA256 fingerprint is calculated and reported
+or,alternatively, can be provided directly.
+The following flags are defaulted as follows in the CI list below:</p>
+<pre><code>| Bitbucket 
+|---------------------------------------------------------------------------
+| git-commit : ${BITBUCKET_COMMIT}
+| build-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/addon/pipelines/home#!/results/${BITBUCKET_BUILD_NUMBER}
+| commit-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/commits/${BITBUCKET_COMMIT}
+|---------------------------------------------------------------------------
+| Github 
+|---------------------------------------------------------------------------
+| git-commit : ${GITHUB_SHA}
+| build-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
+| commit-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA}
+|---------------------------------------------------------------------------
+</code></pre>
+<pre tabindex=0><code>merkely report artifact ARTIFACT-NAME-OR-PATH [flags]
+</code></pre><h3 id=options>
+Options
+<a class=anchor href=#options>#</a>
+</h3>
+<pre tabindex=0><code>  -b, --build-url string     the url of CI pipeline that built the artifact (default &quot;https://github.com/merkely-development/reporter/actions/runs/1423091525&quot;)
+  -u, --commit-url string    the url for the git commit that created the artifact (default &quot;https://github.com/merkely-development/reporter/commit/3263bf4ac33f6dbb985960852a1f30690b4bd154&quot;)
+  -C, --compliant            whether the artifact is compliant or not (default true)
+  -d, --description string   [optional] the artifact description
+  -g, --git-commit string    the git commit from which the artifact was created (default &quot;3263bf4ac33f6dbb985960852a1f30690b4bd154&quot;)
+  -h, --help                 help for artifact
+  -p, --pipeline string      the Merkely pipeline name
+  -s, --sha256 string        the SHA256 fingerprint for the artifact. Only required if you don't specify --type
+  -t, --type string          the type of the artifact to calculate its SHA256 fingerprint
+</code></pre><h3 id=options-inherited-from-parent-commands>
+Options inherited from parent commands
+<a class=anchor href=#options-inherited-from-parent-commands>#</a>
+</h3>
+<pre tabindex=0><code>  -a, --api-token string      the merkely API token.
+  -c, --config-file string    [optional] the merkely config file path. (default &quot;merkely&quot;)
+  -D, --dry-run               whether to send the request to the endpoint or just log it in stdout.
+  -H, --host string           the merkely endpoint. (default &quot;https://app.merkely.com&quot;)
+  -r, --max-api-retries int   how many times should API calls be retried when the API host is not reachable. (default 3)
+  -o, --owner string          the merkely organization.
+</code></pre><h3 id=see-also>
+SEE ALSO
+<a class=anchor href=#see-also>#</a>
+</h3>
+<ul>
+<li><a href=merkely_report.md>merkely report</a> - Report compliance events to Merkely.</li>
+</ul>
+<h6 id=auto-generated-by-spf13cobra-on-4-nov-2021>
+Auto generated by spf13/cobra on 4-Nov-2021
+<a class=anchor href=#auto-generated-by-spf13cobra-on-4-nov-2021>#</a>
+</h6>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+</div>
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#merkely-report-artifact>merkely report artifact</a>
+<ul>
+<li><a href=#synopsis>Synopsis</a></li>
+<li><a href=#options>Options</a></li>
+<li><a href=#options-inherited-from-parent-commands>Options inherited from parent commands</a></li>
+<li><a href=#see-also>SEE ALSO</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
+</body>
+</html>
