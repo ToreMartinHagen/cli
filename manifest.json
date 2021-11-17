@@ -1,14 +1,14 @@
 {
-  "name": "My New Hugo Site",
-  "short_name": "My New Hugo Site",
-  "start_url": "/",
-  "scope": "/",
+  "name": "Merkely developer documentation",
+  "short_name": "Merkely developer documentation",
+  "start_url": "/reporter/",
+  "scope": "/reporter/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "/reporter/favicon.svg",
       "sizes": "512x512"
     }
   ]
