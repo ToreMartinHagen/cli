@@ -2,17 +2,17 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="merkely report env ecs #  Report images data from AWS ECS cluster to Merkely.
-Synopsis #  List the artifacts deployed in an AWS ECS cluster and their digests and report them to Merkely.
-merkely report env ecs env-name [flags] Examples #   * report what's running in an entire AWS ECS cluster: merkely report env ecs prod --api-token 1234 --owner exampleOrg Options #   -C, --cluster string The name of the ECS cluster.">
+<meta name=description content="merkely report approval #  Approve deploying an artifact in Merkely.
+Synopsis #  Approve a deployment of an artifact in Merkely. The artifact SHA256 fingerprint is calculated or alternatively it can be provided directly.
+merkely report approval ARTIFACT-NAME-OR-PATH [flags] Options #   -t, --artifact-type string The type of the artifact to be approved. Options are [dir, file, docker]. Only required if you don't specify --sha256. -d, --description string [optional] The approval description.">
 <meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content="merkely report env ecs">
-<meta property="og:description" content="merkely report env ecs #  Report images data from AWS ECS cluster to Merkely.
-Synopsis #  List the artifacts deployed in an AWS ECS cluster and their digests and report them to Merkely.
-merkely report env ecs env-name [flags] Examples #   * report what's running in an entire AWS ECS cluster: merkely report env ecs prod --api-token 1234 --owner exampleOrg Options #   -C, --cluster string The name of the ECS cluster.">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="merkely report approval">
+<meta property="og:description" content="merkely report approval #  Approve deploying an artifact in Merkely.
+Synopsis #  Approve a deployment of an artifact in Merkely. The artifact SHA256 fingerprint is calculated or alternatively it can be provided directly.
+merkely report approval ARTIFACT-NAME-OR-PATH [flags] Options #   -t, --artifact-type string The type of the artifact to be approved. Options are [dir, file, docker]. Only required if you don't specify --sha256. -d, --description string [optional] The approval description.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="/reporter/docs/merkely_report_env_ecs/"><meta property="article:section" content="docs">
-<title>merkely report env ecs | Merkely developer documentation</title>
+<meta property="og:url" content="/reporter/docs/merkely_report_approval/"><meta property="article:section" content="docs">
+<title>merkely report approval | Merkely developer documentation</title>
 <link rel=manifest href=/reporter/manifest.json>
 <link rel=icon href=/reporter/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/reporter/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css>
@@ -58,7 +58,7 @@ merkely report env ecs env-name [flags] Examples #   * report what's running in 
 <a href=/reporter/docs/merkely_report/>merkely report</a>
 </li>
 <li>
-<a href=/reporter/docs/merkely_report_approval/>merkely report approval</a>
+<a href=/reporter/docs/merkely_report_approval/ class=active>merkely report approval</a>
 </li>
 <li>
 <a href=/reporter/docs/merkely_report_artifact/>merkely report artifact</a>
@@ -70,7 +70,7 @@ merkely report env ecs env-name [flags] Examples #   * report what's running in 
 <a href=/reporter/docs/merkely_report_env/>merkely report env</a>
 </li>
 <li>
-<a href=/reporter/docs/merkely_report_env_ecs/ class=active>merkely report env ecs</a>
+<a href=/reporter/docs/merkely_report_env_ecs/>merkely report env ecs</a>
 </li>
 <li>
 <a href=/reporter/docs/merkely_report_env_k8s/>merkely report env k8s</a>
@@ -101,7 +101,7 @@ merkely report env ecs env-name [flags] Examples #   * report what's running in 
 <label for=menu-control>
 <img src=/reporter/svg/menu.svg class=book-icon alt=Menu>
 </label>
-<strong>merkely report env ecs</strong>
+<strong>merkely report approval</strong>
 <label for=toc-control>
 <img src=/reporter/svg/toc.svg class=book-icon alt="Table of Contents">
 </label>
@@ -109,10 +109,9 @@ merkely report env ecs env-name [flags] Examples #   * report what's running in 
 <aside class="hidden clearfix">
 <nav id=TableOfContents>
 <ul>
-<li><a href=#merkely-report-env-ecs>merkely report env ecs</a>
+<li><a href=#merkely-report-approval>merkely report approval</a>
 <ul>
 <li><a href=#synopsis>Synopsis</a></li>
-<li><a href=#examples>Examples</a></li>
 <li><a href=#options>Options</a></li>
 <li><a href=#options-inherited-from-parent-commands>Options inherited from parent commands</a></li>
 <li><a href=#see-also>SEE ALSO</a></li>
@@ -122,34 +121,31 @@ merkely report env ecs env-name [flags] Examples #   * report what's running in 
 </nav>
 </aside>
 </header>
-<article class=markdown><h2 id=merkely-report-env-ecs>
-merkely report env ecs
-<a class=anchor href=#merkely-report-env-ecs>#</a>
+<article class=markdown><h2 id=merkely-report-approval>
+merkely report approval
+<a class=anchor href=#merkely-report-approval>#</a>
 </h2>
-<p>Report images data from AWS ECS cluster to Merkely.</p>
+<p>Approve deploying an artifact in Merkely.</p>
 <h3 id=synopsis>
 Synopsis
 <a class=anchor href=#synopsis>#</a>
 </h3>
-<p>List the artifacts deployed in an AWS ECS cluster and their digests
-and report them to Merkely.</p>
-<pre tabindex=0><code>merkely report env ecs env-name [flags]
-</code></pre><h3 id=examples>
-Examples
-<a class=anchor href=#examples>#</a>
-</h3>
-<pre tabindex=0><code>
-* report what's running in an entire AWS ECS cluster:
-merkely report env ecs prod --api-token 1234 --owner exampleOrg
-
+<p>Approve a deployment of an artifact in Merkely.
+The artifact SHA256 fingerprint is calculated or alternatively it can be provided directly.</p>
+<pre tabindex=0><code>merkely report approval ARTIFACT-NAME-OR-PATH [flags]
 </code></pre><h3 id=options>
 Options
 <a class=anchor href=#options>#</a>
 </h3>
-<pre tabindex=0><code>  -C, --cluster string        The name of the ECS cluster.
-  -h, --help                  help for ecs
-  -i, --id string             The unique identifier of the source infrastructure of the report (e.g. the ECS cluster/service name).If not set, it is defaulted based on the following order: --service-name, --cluster, environment name.
-  -s, --service-name string   The name of the ECS service.
+<pre tabindex=0><code>  -t, --artifact-type string   The type of the artifact to be approved. Options are [dir, file, docker]. Only required if you don't specify --sha256.
+  -d, --description string     [optional] The approval description.
+  -h, --help                   help for approval
+      --newest-commit string   The source commit sha for the newest change in the deployment approval. (default &quot;HEAD&quot;)
+      --oldest-commit string   The source commit sha for the oldest change in the deployment approval.
+  -p, --pipeline string        The Merkely pipeline name.
+      --repo-root string       The directory where the source git repository is volume-mounted. (default &quot;/src&quot;)
+  -s, --sha256 string          The SHA256 fingerprint for the artifact to be approved. Only required if you don't specify --type.
+  -u, --user-data string       [optional] The path to a JSON file containing additional data you would like to attach to this approval.
 </code></pre><h3 id=options-inherited-from-parent-commands>
 Options inherited from parent commands
 <a class=anchor href=#options-inherited-from-parent-commands>#</a>
@@ -166,7 +162,7 @@ SEE ALSO
 <a class=anchor href=#see-also>#</a>
 </h3>
 <ul>
-<li><a href=merkely_report_env.md>merkely report env</a> - Report running artifacts in an environment to Merkely.</li>
+<li><a href=merkely_report.md>merkely report</a> - Report compliance events to Merkely.</li>
 </ul>
 <h6 id=auto-generated-by-spf13cobra-on-17-nov-2021>
 Auto generated by spf13/cobra on 17-Nov-2021
@@ -186,10 +182,9 @@ Auto generated by spf13/cobra on 17-Nov-2021
 <div class=book-toc-content>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#merkely-report-env-ecs>merkely report env ecs</a>
+<li><a href=#merkely-report-approval>merkely report approval</a>
 <ul>
 <li><a href=#synopsis>Synopsis</a></li>
-<li><a href=#examples>Examples</a></li>
 <li><a href=#options>Options</a></li>
 <li><a href=#options-inherited-from-parent-commands>Options inherited from parent commands</a></li>
 <li><a href=#see-also>SEE ALSO</a></li>

@@ -6,18 +6,18 @@
 Synopsis #  List the artifacts deployed in the k8s environment and their digests and report them to Merkely.
 merkely report env k8s [-n namespace | -x namespace]... [-k /path/to/kube/config] [-i infrastructure-identifier] env-name [flags] Examples #   * report what's running in an entire cluster using kubeconfig at $HOME/.kube/config: merkely report env k8s prod --api-token 1234 --owner exampleOrg --id prod-cluster * report what's running in an entire cluster using kubeconfig at $HOME/.">
 <meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content="Merkely Report Env K8s">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="merkely report env k8s">
 <meta property="og:description" content="merkely report env k8s #  Report images data from specific namespace(s) or entire cluster to Merkely.
 Synopsis #  List the artifacts deployed in the k8s environment and their digests and report them to Merkely.
 merkely report env k8s [-n namespace | -x namespace]... [-k /path/to/kube/config] [-i infrastructure-identifier] env-name [flags] Examples #   * report what's running in an entire cluster using kubeconfig at $HOME/.kube/config: merkely report env k8s prod --api-token 1234 --owner exampleOrg --id prod-cluster * report what's running in an entire cluster using kubeconfig at $HOME/.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="/reporter/docs/merkely_report_env_k8s/"><meta property="article:section" content="docs">
-<title>Merkely Report Env K8s | Merkely developer documentation</title>
+<title>merkely report env k8s | Merkely developer documentation</title>
 <link rel=manifest href=/reporter/manifest.json>
 <link rel=icon href=/reporter/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/reporter/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css>
 <script defer src=/reporter/flexsearch.min.js></script>
-<script defer src=/reporter/en.search.min.5e23e9fd0b6fe2b14c088685fa83b036fe7c9b252663afb7450d0b8baa5e3850.js></script>
+<script defer src=/reporter/en.search.min.8fa20a1679b7ef3afdf1a5f281b5bf2c281f8a3d60e25ca1acd59b71567ca0a0.js></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -37,40 +37,58 @@ merkely report env k8s [-n namespace | -x namespace]... [-k /path/to/kube/config
 </div>
 <ul>
 <li>
-<a href=/reporter/docs/merkely/>Merkely</a>
+<a href=/reporter/docs/merkely/>merkely</a>
 </li>
 <li>
-<a href=/reporter/docs/merkely_create/>Merkely Create</a>
+<a href=/reporter/docs/merkely_control/>merkely control</a>
 </li>
 <li>
-<a href=/reporter/docs/merkely_create_pipeline/>Merkely Create Pipeline</a>
+<a href=/reporter/docs/merkely_create/>merkely create</a>
 </li>
 <li>
-<a href=/reporter/docs/merkely_fingerprint/>Merkely Fingerprint</a>
+<a href=/reporter/docs/merkely_create_environment/>merkely create environment</a>
 </li>
 <li>
-<a href=/reporter/docs/merkely_report/>Merkely Report</a>
+<a href=/reporter/docs/merkely_create_pipeline/>merkely create pipeline</a>
 </li>
 <li>
-<a href=/reporter/docs/merkely_report_artifact/>Merkely Report Artifact</a>
+<a href=/reporter/docs/merkely_fingerprint/>merkely fingerprint</a>
 </li>
 <li>
-<a href=/reporter/docs/merkely_report_deployment/>Merkely Report Deployment</a>
+<a href=/reporter/docs/merkely_report/>merkely report</a>
 </li>
 <li>
-<a href=/reporter/docs/merkely_report_env/>Merkely Report Env</a>
+<a href=/reporter/docs/merkely_report_approval/>merkely report approval</a>
 </li>
 <li>
-<a href=/reporter/docs/merkely_report_env_ecs/>Merkely Report Env Ecs</a>
+<a href=/reporter/docs/merkely_report_artifact/>merkely report artifact</a>
 </li>
 <li>
-<a href=/reporter/docs/merkely_report_env_k8s/ class=active>Merkely Report Env K8s</a>
+<a href=/reporter/docs/merkely_report_deployment/>merkely report deployment</a>
 </li>
 <li>
-<a href=/reporter/docs/merkely_report_env_server/>Merkely Report Env Server</a>
+<a href=/reporter/docs/merkely_report_env/>merkely report env</a>
 </li>
 <li>
-<a href=/reporter/docs/merkely_version/>Merkely Version</a>
+<a href=/reporter/docs/merkely_report_env_ecs/>merkely report env ecs</a>
+</li>
+<li>
+<a href=/reporter/docs/merkely_report_env_k8s/ class=active>merkely report env k8s</a>
+</li>
+<li>
+<a href=/reporter/docs/merkely_report_env_server/>merkely report env server</a>
+</li>
+<li>
+<a href=/reporter/docs/merkely_report_evidence/>merkely report evidence</a>
+</li>
+<li>
+<a href=/reporter/docs/merkely_report_request/>merkely report request</a>
+</li>
+<li>
+<a href=/reporter/docs/merkely_report_test/>merkely report test</a>
+</li>
+<li>
+<a href=/reporter/docs/merkely_version/>merkely version</a>
 </li>
 </ul>
 </nav>
@@ -83,7 +101,7 @@ merkely report env k8s [-n namespace | -x namespace]... [-k /path/to/kube/config
 <label for=menu-control>
 <img src=/reporter/svg/menu.svg class=book-icon alt=Menu>
 </label>
-<strong>Merkely Report Env K8s</strong>
+<strong>merkely report env k8s</strong>
 <label for=toc-control>
 <img src=/reporter/svg/toc.svg class=book-icon alt="Table of Contents">
 </label>
@@ -141,21 +159,22 @@ merkely report env k8s prod -k /path/to/kube/config
 Options
 <a class=anchor href=#options>#</a>
 </h3>
-<pre tabindex=0><code>  -x, --exclude-namespace strings   the comma separated list of namespaces regex patterns NOT to report artifacts info from. Can't be used together with --namespace.
+<pre tabindex=0><code>  -x, --exclude-namespace strings   The comma separated list of namespaces regex patterns NOT to report artifacts info from. Can't be used together with --namespace.
   -h, --help                        help for k8s
-  -i, --id string                   the unique identifier of the source infrastructure of the report (e.g. the K8S cluster/namespace name). If not set, it is defaulted to environment name.
-  -k, --kubeconfig string           kubeconfig path for the target cluster
-  -n, --namespace strings           the comma separated list of namespaces regex patterns to report artifacts info from. Can't be used together with --exclude-namespace.
+  -i, --id string                   The unique identifier of the source infrastructure of the report (e.g. the K8S cluster/namespace name). If not set, it is defaulted to environment name.
+  -k, --kubeconfig string           The kubeconfig path for the target cluster. (default &quot;/Users/simonmerkely/.kube/config&quot;)
+  -n, --namespace strings           The comma separated list of namespaces regex patterns to report artifacts info from. Can't be used together with --exclude-namespace.
 </code></pre><h3 id=options-inherited-from-parent-commands>
 Options inherited from parent commands
 <a class=anchor href=#options-inherited-from-parent-commands>#</a>
 </h3>
-<pre tabindex=0><code>  -a, --api-token string      the merkely API token.
-  -c, --config-file string    [optional] the merkely config file path. (default &quot;merkely&quot;)
-  -D, --dry-run               whether to send the request to the endpoint or just log it in stdout.
-  -H, --host string           the merkely endpoint. (default &quot;https://app.merkely.com&quot;)
-  -r, --max-api-retries int   how many times should API calls be retried when the API host is not reachable. (default 3)
-  -o, --owner string          the merkely organization.
+<pre tabindex=0><code>  -a, --api-token string      The merkely API token.
+  -c, --config-file string    [optional] The merkely config file path. (default &quot;merkely&quot;)
+  -D, --dry-run               Whether to send the request to the endpoint or just log it in stdout.
+  -H, --host string           The merkely endpoint. (default &quot;https://app.merkely.com&quot;)
+  -r, --max-api-retries int   How many times should API calls be retried when the API host is not reachable. (default 3)
+  -o, --owner string          The merkely organization.
+  -v, --verbose               Print verbose logs to stdout.
 </code></pre><h3 id=see-also>
 SEE ALSO
 <a class=anchor href=#see-also>#</a>
@@ -163,9 +182,9 @@ SEE ALSO
 <ul>
 <li><a href=merkely_report_env.md>merkely report env</a> - Report running artifacts in an environment to Merkely.</li>
 </ul>
-<h6 id=auto-generated-by-spf13cobra-on-4-nov-2021>
-Auto generated by spf13/cobra on 4-Nov-2021
-<a class=anchor href=#auto-generated-by-spf13cobra-on-4-nov-2021>#</a>
+<h6 id=auto-generated-by-spf13cobra-on-17-nov-2021>
+Auto generated by spf13/cobra on 17-Nov-2021
+<a class=anchor href=#auto-generated-by-spf13cobra-on-17-nov-2021>#</a>
 </h6>
 </article>
 <footer class=book-footer>
