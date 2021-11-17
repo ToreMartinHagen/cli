@@ -1,407 +1,171 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html><html lang=en dir=ltr>
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="merkely create #  Create objects in Merkely.
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="merkely create #  Create objects in Merkely.
 Synopsis #  Create objects in Merkely.
-Options #   -h, --help help for create Options inherited from parent commands #   -a, --api-token string the merkely API token. -c, --config-file string [optional] the merkely config file path. (default &quot;merkely&quot;) -D, --dry-run whether to send the request to the endpoint or just log it in stdout. -H, --host string the merkely endpoint.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Merkely Create" />
+Options #   -h, --help help for create Options inherited from parent commands #   -a, --api-token string the merkely API token. -c, --config-file string [optional] the merkely config file path. (default &#34;merkely&#34;) -D, --dry-run whether to send the request to the endpoint or just log it in stdout. -H, --host string the merkely endpoint.">
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="Merkely Create">
 <meta property="og:description" content="merkely create #  Create objects in Merkely.
 Synopsis #  Create objects in Merkely.
-Options #   -h, --help help for create Options inherited from parent commands #   -a, --api-token string the merkely API token. -c, --config-file string [optional] the merkely config file path. (default &quot;merkely&quot;) -D, --dry-run whether to send the request to the endpoint or just log it in stdout. -H, --host string the merkely endpoint." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/reporter/docs/merkely_create/" /><meta property="article:section" content="docs" />
-
-
-
+Options #   -h, --help help for create Options inherited from parent commands #   -a, --api-token string the merkely API token. -c, --config-file string [optional] the merkely config file path. (default &#34;merkely&#34;) -D, --dry-run whether to send the request to the endpoint or just log it in stdout. -H, --host string the merkely endpoint.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/reporter/docs/merkely_create/"><meta property="article:section" content="docs">
 <title>Merkely Create | Merkely developer documentation</title>
-<link rel="manifest" href="/reporter/manifest.json">
-<link rel="icon" href="/reporter/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/reporter/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css" >
-  <script defer src="/reporter/flexsearch.min.js"></script>
-  <script defer src="/reporter/en.search.min.5e23e9fd0b6fe2b14c088685fa83b036fe7c9b252663afb7450d0b8baa5e3850.js" ></script>
-<!--
-Made with Book Theme
-https://github.com/alex-shpak/hugo-book
--->
-  
+<link rel=manifest href=/reporter/manifest.json>
+<link rel=icon href=/reporter/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/reporter/book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css>
+<script defer src=/reporter/flexsearch.min.js></script>
+<script defer src=/reporter/en.search.min.5e23e9fd0b6fe2b14c088685fa83b036fe7c9b252663afb7450d0b8baa5e3850.js></script>
 </head>
-<body dir="ltr">
-  <input type="checkbox" class="hidden toggle" id="menu-control" />
-  <input type="checkbox" class="hidden toggle" id="toc-control" />
-  <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
-  <nav>
-<h2 class="book-brand">
-  <a class="flex align-center" href="/reporter/"><span>Merkely developer documentation</span>
-  </a>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a class="flex align-center" href=/reporter/><span>Merkely developer documentation</span>
+</a>
 </h2>
-
-
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
-  <div class="book-search-spinner hidden"></div>
-  <ul id="book-search-results"></ul>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/reporter/docs/merkely/" class="">Merkely</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/reporter/docs/merkely_create/" class=" active">Merkely Create</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/reporter/docs/merkely_create_pipeline/" class="">Merkely Create Pipeline</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/reporter/docs/merkely_fingerprint/" class="">Merkely Fingerprint</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/reporter/docs/merkely_report/" class="">Merkely Report</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/reporter/docs/merkely_report_artifact/" class="">Merkely Report Artifact</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/reporter/docs/merkely_report_deployment/" class="">Merkely Report Deployment</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/reporter/docs/merkely_report_env/" class="">Merkely Report Env</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/reporter/docs/merkely_report_env_ecs/" class="">Merkely Report Env Ecs</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/reporter/docs/merkely_report_env_k8s/" class="">Merkely Report Env K8s</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/reporter/docs/merkely_report_env_server/" class="">Merkely Report Env Server</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/reporter/docs/merkely_version/" class="">Merkely Version</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<ul>
+<li>
+<a href=/reporter/docs/merkely/>Merkely</a>
+</li>
+<li>
+<a href=/reporter/docs/merkely_create/ class=active>Merkely Create</a>
+</li>
+<li>
+<a href=/reporter/docs/merkely_create_pipeline/>Merkely Create Pipeline</a>
+</li>
+<li>
+<a href=/reporter/docs/merkely_fingerprint/>Merkely Fingerprint</a>
+</li>
+<li>
+<a href=/reporter/docs/merkely_report/>Merkely Report</a>
+</li>
+<li>
+<a href=/reporter/docs/merkely_report_artifact/>Merkely Report Artifact</a>
+</li>
+<li>
+<a href=/reporter/docs/merkely_report_deployment/>Merkely Report Deployment</a>
+</li>
+<li>
+<a href=/reporter/docs/merkely_report_env/>Merkely Report Env</a>
+</li>
+<li>
+<a href=/reporter/docs/merkely_report_env_ecs/>Merkely Report Env Ecs</a>
+</li>
+<li>
+<a href=/reporter/docs/merkely_report_env_k8s/>Merkely Report Env K8s</a>
+</li>
+<li>
+<a href=/reporter/docs/merkely_report_env_server/>Merkely Report Env Server</a>
+</li>
+<li>
+<a href=/reporter/docs/merkely_version/>Merkely Version</a>
+</li>
+</ul>
 </nav>
-
-
-
-
-  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-
-
- 
-      </div>
-    </aside>
-
-    <div class="book-page">
-      <header class="book-header">
-        
-  <div class="flex align-center justify-between">
-  <label for="menu-control">
-    <img src="/reporter/svg/menu.svg" class="book-icon" alt="Menu" />
-  </label>
-
-  <strong>Merkely Create</strong>
-
-  <label for="toc-control">
-    
-    <img src="/reporter/svg/toc.svg" class="book-icon" alt="Table of Contents" />
-    
-  </label>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 </div>
-
-
-  
-  <aside class="hidden clearfix">
-    
-  
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#merkely-create">merkely create</a>
-      <ul>
-        <li><a href="#synopsis">Synopsis</a></li>
-        <li><a href="#options">Options</a></li>
-        <li><a href="#options-inherited-from-parent-commands">Options inherited from parent commands</a></li>
-        <li><a href="#see-also">SEE ALSO</a></li>
-      </ul>
-    </li>
-  </ul>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/reporter/svg/menu.svg class=book-icon alt=Menu>
+</label>
+<strong>Merkely Create</strong>
+<label for=toc-control>
+<img src=/reporter/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#merkely-create>merkely create</a>
+<ul>
+<li><a href=#synopsis>Synopsis</a></li>
+<li><a href=#options>Options</a></li>
+<li><a href=#options-inherited-from-parent-commands>Options inherited from parent commands</a></li>
+<li><a href=#see-also>SEE ALSO</a></li>
+</ul>
+</li>
+</ul>
 </nav>
-
-
-
-  </aside>
-  
- 
-      </header>
-
-      
-      
-  <article class="markdown"><h2 id="merkely-create">
-  merkely create
-  <a class="anchor" href="#merkely-create">#</a>
+</aside>
+</header>
+<article class=markdown><h2 id=merkely-create>
+merkely create
+<a class=anchor href=#merkely-create>#</a>
 </h2>
 <p>Create objects in Merkely.</p>
-<h3 id="synopsis">
-  Synopsis
-  <a class="anchor" href="#synopsis">#</a>
+<h3 id=synopsis>
+Synopsis
+<a class=anchor href=#synopsis>#</a>
 </h3>
 <p>Create objects in Merkely.</p>
-<h3 id="options">
-  Options
-  <a class="anchor" href="#options">#</a>
+<h3 id=options>
+Options
+<a class=anchor href=#options>#</a>
 </h3>
-<pre tabindex="0"><code>  -h, --help   help for create
-</code></pre><h3 id="options-inherited-from-parent-commands">
-  Options inherited from parent commands
-  <a class="anchor" href="#options-inherited-from-parent-commands">#</a>
+<pre tabindex=0><code>  -h, --help   help for create
+</code></pre><h3 id=options-inherited-from-parent-commands>
+Options inherited from parent commands
+<a class=anchor href=#options-inherited-from-parent-commands>#</a>
 </h3>
-<pre tabindex="0"><code>  -a, --api-token string      the merkely API token.
+<pre tabindex=0><code>  -a, --api-token string      the merkely API token.
   -c, --config-file string    [optional] the merkely config file path. (default &quot;merkely&quot;)
   -D, --dry-run               whether to send the request to the endpoint or just log it in stdout.
   -H, --host string           the merkely endpoint. (default &quot;https://app.merkely.com&quot;)
   -r, --max-api-retries int   how many times should API calls be retried when the API host is not reachable. (default 3)
   -o, --owner string          the merkely organization.
-</code></pre><h3 id="see-also">
-  SEE ALSO
-  <a class="anchor" href="#see-also">#</a>
+</code></pre><h3 id=see-also>
+SEE ALSO
+<a class=anchor href=#see-also>#</a>
 </h3>
 <ul>
-<li><a href="merkely.md">merkely</a>	 - The Merkely evidence reporting CLI.</li>
-<li><a href="merkely_create_pipeline.md">merkely create pipeline</a>	 - Create a Merkely pipeline</li>
+<li><a href=merkely.md>merkely</a> - The Merkely evidence reporting CLI.</li>
+<li><a href=merkely_create_pipeline.md>merkely create pipeline</a> - Create a Merkely pipeline</li>
 </ul>
-<h6 id="auto-generated-by-spf13cobra-on-4-nov-2021">
-  Auto generated by spf13/cobra on 4-Nov-2021
-  <a class="anchor" href="#auto-generated-by-spf13cobra-on-4-nov-2021">#</a>
+<h6 id=auto-generated-by-spf13cobra-on-4-nov-2021>
+Auto generated by spf13/cobra on 4-Nov-2021
+<a class=anchor href=#auto-generated-by-spf13cobra-on-4-nov-2021>#</a>
 </h6>
 </article>
- 
-      
-
-      <footer class="book-footer">
-        
-  <div class="flex flex-wrap justify-between">
-
-
-
-
-
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
 </div>
-
-
-
-  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
-
-
- 
-        
-      </footer>
-
-      
-  
-  <div class="book-comments">
-
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+</footer>
+<div class=book-comments>
 </div>
-  
- 
-
-      <label for="menu-control" class="hidden book-menu-overlay"></label>
-    </div>
-
-    
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
-  
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#merkely-create">merkely create</a>
-      <ul>
-        <li><a href="#synopsis">Synopsis</a></li>
-        <li><a href="#options">Options</a></li>
-        <li><a href="#options-inherited-from-parent-commands">Options inherited from parent commands</a></li>
-        <li><a href="#see-also">SEE ALSO</a></li>
-      </ul>
-    </li>
-  </ul>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#merkely-create>merkely create</a>
+<ul>
+<li><a href=#synopsis>Synopsis</a></li>
+<li><a href=#options>Options</a></li>
+<li><a href=#options-inherited-from-parent-commands>Options inherited from parent commands</a></li>
+<li><a href=#see-also>SEE ALSO</a></li>
+</ul>
+</li>
+</ul>
 </nav>
-
-
- 
-      </div>
-    </aside>
-    
-  </main>
-
-  
+</div>
+</aside>
+</main>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
