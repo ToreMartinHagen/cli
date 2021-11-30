@@ -2,17 +2,15 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="merkely fingerprint #  Print the SHA256 fingerprint of an artifact.
-Synopsis #  Print the SHA256 fingerprint of an artifact. Requires artifact type flag to be set. Artifact type can be one of: &ldquo;file&rdquo; for files, &ldquo;dir&rdquo; for directories, &ldquo;docker&rdquo; for docker images.
-merkely fingerprint [flags] Options #   -h, --help help for fingerprint -t, --type string The type of the artifact to calculate its SHA256 fingerprint. Options inherited from parent commands #   -a, --api-token string The merkely API token.">
+<meta name=description content="DevOps: Change is the New Normal #  The software industry is moving away from large, monolithic, centrally managed IT systems, towards a future with small, loosely coupled and rapidly updated micro-systems.
+And the rate of change is growing exponentially. Whereas in the past we would have quarterly releases orchestrated by IT departments, we now have a continuous stream of changes to production, delivered by cross functional teams operating in a you-build-it-you-run-it ownership structure.">
 <meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content="merkely fingerprint">
-<meta property="og:description" content="merkely fingerprint #  Print the SHA256 fingerprint of an artifact.
-Synopsis #  Print the SHA256 fingerprint of an artifact. Requires artifact type flag to be set. Artifact type can be one of: &ldquo;file&rdquo; for files, &ldquo;dir&rdquo; for directories, &ldquo;docker&rdquo; for docker images.
-merkely fingerprint [flags] Options #   -h, --help help for fingerprint -t, --type string The type of the artifact to calculate its SHA256 fingerprint. Options inherited from parent commands #   -a, --api-token string The merkely API token.">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="DevOps: Change is the New Normal">
+<meta property="og:description" content="DevOps: Change is the New Normal #  The software industry is moving away from large, monolithic, centrally managed IT systems, towards a future with small, loosely coupled and rapidly updated micro-systems.
+And the rate of change is growing exponentially. Whereas in the past we would have quarterly releases orchestrated by IT departments, we now have a continuous stream of changes to production, delivered by cross functional teams operating in a you-build-it-you-run-it ownership structure.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://docs.merkely.com/client_reference/merkely_fingerprint/"><meta property="article:section" content="client_reference">
-<title>merkely fingerprint | Merkely developer documentation</title>
+<meta property="og:url" content="https://docs.merkely.com/concepts/devops_change_is_the_new_normal/"><meta property="article:section" content="concepts">
+<title>DevOps: Change is the New Normal | Merkely developer documentation</title>
 <link rel=manifest href=/manifest.json>
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.aa37f51503d74287d68ab36af7de93330b1a9e7716a8ba92eca21d705bb08018.css integrity="sha256-qjf1FQPXQofWirNq996TMwsanncWqLqS7KIdcFuwgBg=" crossorigin=anonymous>
@@ -37,13 +35,13 @@ merkely fingerprint [flags] Options #   -h, --help help for fingerprint -t, --ty
 </div>
 <ul>
 <li>
-<input type=checkbox id=section-dc8a1c63e6da60163016ce21cae1faa0 class=toggle>
+<input type=checkbox id=section-dc8a1c63e6da60163016ce21cae1faa0 class=toggle checked>
 <label for=section-dc8a1c63e6da60163016ce21cae1faa0 class="flex justify-between">
 <a href=https://docs.merkely.com/concepts/>Concepts</a>
 </label>
 <ul>
 <li>
-<a href=https://docs.merkely.com/concepts/devops_change_is_the_new_normal/>DevOps: Change is the New Normal</a>
+<a href=https://docs.merkely.com/concepts/devops_change_is_the_new_normal/ class=active>DevOps: Change is the New Normal</a>
 </li>
 <li>
 <a href=https://docs.merkely.com/concepts/devops_and_change_management/>DevOps and Change Management</a>
@@ -68,7 +66,7 @@ merkely fingerprint [flags] Options #   -h, --help help for fingerprint -t, --ty
 </ul>
 </li>
 <li>
-<input type=checkbox id=section-3993beb65ef7e76a7dbe6e66c07255ac class=toggle checked>
+<input type=checkbox id=section-3993beb65ef7e76a7dbe6e66c07255ac class=toggle>
 <label for=section-3993beb65ef7e76a7dbe6e66c07255ac class="flex justify-between">
 <a href=https://docs.merkely.com/client_reference/>Merkely Commands</a>
 </label>
@@ -92,7 +90,7 @@ merkely fingerprint [flags] Options #   -h, --help help for fingerprint -t, --ty
 <a href=https://docs.merkely.com/client_reference/merkely_create_pipeline/>merkely create pipeline</a>
 </li>
 <li>
-<a href=https://docs.merkely.com/client_reference/merkely_fingerprint/ class=active>merkely fingerprint</a>
+<a href=https://docs.merkely.com/client_reference/merkely_fingerprint/>merkely fingerprint</a>
 </li>
 <li>
 <a href=https://docs.merkely.com/client_reference/merkely_report/>merkely report</a>
@@ -154,66 +152,38 @@ merkely fingerprint [flags] Options #   -h, --help help for fingerprint -t, --ty
 <label for=menu-control>
 <img src=/svg/menu.svg class=book-icon alt=Menu>
 </label>
-<strong>merkely fingerprint</strong>
+<strong>DevOps: Change is the New Normal</strong>
 <label for=toc-control>
 <img src=/svg/toc.svg class=book-icon alt="Table of Contents">
 </label>
 </div>
 <aside class="hidden clearfix">
-<nav id=TableOfContents>
-<ul>
-<li><a href=#merkely-fingerprint>merkely fingerprint</a>
-<ul>
-<li><a href=#synopsis>Synopsis</a></li>
-<li><a href=#options>Options</a></li>
-<li><a href=#options-inherited-from-parent-commands>Options inherited from parent commands</a></li>
-<li><a href=#see-also>SEE ALSO</a></li>
-</ul>
-</li>
-</ul>
-</nav>
+<nav id=TableOfContents></nav>
 </aside>
 </header>
-<article class=markdown><h2 id=merkely-fingerprint>
-merkely fingerprint
-<a class=anchor href=#merkely-fingerprint>#</a>
-</h2>
-<p>Print the SHA256 fingerprint of an artifact.</p>
-<h3 id=synopsis>
-Synopsis
-<a class=anchor href=#synopsis>#</a>
-</h3>
-<p>Print the SHA256 fingerprint of an artifact. Requires artifact type flag to be set.
-Artifact type can be one of: &ldquo;file&rdquo; for files, &ldquo;dir&rdquo; for directories, &ldquo;docker&rdquo; for docker images.</p>
-<pre tabindex=0><code>merkely fingerprint [flags]
-</code></pre><h3 id=options>
-Options
-<a class=anchor href=#options>#</a>
-</h3>
-<pre tabindex=0><code>  -h, --help          help for fingerprint
-  -t, --type string   The type of the artifact to calculate its SHA256 fingerprint.
-</code></pre><h3 id=options-inherited-from-parent-commands>
-Options inherited from parent commands
-<a class=anchor href=#options-inherited-from-parent-commands>#</a>
-</h3>
-<pre tabindex=0><code>  -a, --api-token string      The merkely API token.
-  -c, --config-file string    [optional] The merkely config file path. (default &quot;merkely&quot;)
-  -D, --dry-run               Whether to send the request to the endpoint or just log it in stdout.
-  -H, --host string           The merkely endpoint. (default &quot;https://app.merkely.com&quot;)
-  -r, --max-api-retries int   How many times should API calls be retried when the API host is not reachable. (default 3)
-  -o, --owner string          The merkely organization.
-  -v, --verbose               Print verbose logs to stdout.
-</code></pre><h3 id=see-also>
-SEE ALSO
-<a class=anchor href=#see-also>#</a>
-</h3>
+<article class=markdown><h1 id=devops-change-is-the-new-normal>
+DevOps: Change is the New Normal
+<a class=anchor href=#devops-change-is-the-new-normal>#</a>
+</h1>
+<p>The software industry is moving away from large, monolithic, centrally managed IT systems, towards a future with small, loosely coupled and rapidly updated micro-systems.</p>
+<p><img src=/images/software_is_changing.png alt="Timeline of software development"></p>
+<p>And the rate of change is growing exponentially. Whereas in the past we would have quarterly releases orchestrated by IT departments, we now have a continuous stream of changes to production, delivered by cross functional teams operating in a you-build-it-you-run-it ownership structure.</p>
+<p>All this is made possible by DevOps culture, practices and tooling.</p>
+<blockquote>
+<p><strong>Is all this change a good thing?</strong></p>
+<p>From the position of traditional IT departments, all this change can be a scary proposition. With so much happening all the time, how is anyone supposed to understand and manage the risks?</p>
+<p>The good news is that not only is devops proven to drive better business outcomes, it also improves risk management. To find out more about the research on this topic, we recommend looking into the <em>DORA State of DevOps Report</em> and the book <em>Accelerate</em> by Nicole Forsgren et al.</p>
+</blockquote>
+<p>One of the main shifts that enables devops is value stream thinking. In essence, the philosophy is that change itself is the value that goes through the value stream. By applying the lean principles of minimizing waste and continuous improvement we can improve the flow of change in our organization.</p>
+<p>DevOps practitioners often categorize the value stream into two distinct areas:</p>
 <ul>
-<li><a href=/client_reference/merkely/>merkely</a> - The Merkely evidence reporting CLI.</li>
+<li>Product Design and Development:** often called the fuzzy front end, the host of activities taking place such as product management, prioritization, coding and testing, documentation.</li>
+<li>Product Delivery:** the repeatable process for delivering software changes to production.</li>
 </ul>
-<h6 id=auto-generated-by-spf13cobra-on-30-nov-2021>
-Auto generated by spf13/cobra on 30-Nov-2021
-<a class=anchor href=#auto-generated-by-spf13cobra-on-30-nov-2021>#</a>
-</h6>
+<p>While Product Design and Delivery steps are novel, hard to estimate, and highly variable, Product Delivery steps should be repeatable and predictable.</p>
+<p>A DevOps pipeline can form part of the value stream of a software change delivery process.</p>
+<p><img src=/images/software_delivery.png alt="Diagram of software delivery"></p>
+<p>Automating the Product Delivery process is a key step in any DevOps journey.</p>
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
@@ -226,18 +196,7 @@ Auto generated by spf13/cobra on 30-Nov-2021
 </div>
 <aside class=book-toc>
 <div class=book-toc-content>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#merkely-fingerprint>merkely fingerprint</a>
-<ul>
-<li><a href=#synopsis>Synopsis</a></li>
-<li><a href=#options>Options</a></li>
-<li><a href=#options-inherited-from-parent-commands>Options inherited from parent commands</a></li>
-<li><a href=#see-also>SEE ALSO</a></li>
-</ul>
-</li>
-</ul>
-</nav>
+<nav id=TableOfContents></nav>
 </div>
 </aside>
 </main>

@@ -2,17 +2,15 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="merkely fingerprint #  Print the SHA256 fingerprint of an artifact.
-Synopsis #  Print the SHA256 fingerprint of an artifact. Requires artifact type flag to be set. Artifact type can be one of: &ldquo;file&rdquo; for files, &ldquo;dir&rdquo; for directories, &ldquo;docker&rdquo; for docker images.
-merkely fingerprint [flags] Options #   -h, --help help for fingerprint -t, --type string The type of the artifact to calculate its SHA256 fingerprint. Options inherited from parent commands #   -a, --api-token string The merkely API token.">
+<meta name=description content="Mapping your value stream #  When implementing DevOps Change Management, the first step is to uncover your process as a team. The way we most often do this is to run a value stream mapping exercise with the team. This can be as simple as spending 30 minutes around a whiteboard, or as involved as you like.
+Many aspects of the process will be implemented in your devops automation and tooling such as:">
 <meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content="merkely fingerprint">
-<meta property="og:description" content="merkely fingerprint #  Print the SHA256 fingerprint of an artifact.
-Synopsis #  Print the SHA256 fingerprint of an artifact. Requires artifact type flag to be set. Artifact type can be one of: &ldquo;file&rdquo; for files, &ldquo;dir&rdquo; for directories, &ldquo;docker&rdquo; for docker images.
-merkely fingerprint [flags] Options #   -h, --help help for fingerprint -t, --type string The type of the artifact to calculate its SHA256 fingerprint. Options inherited from parent commands #   -a, --api-token string The merkely API token.">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="Mapping your value stream">
+<meta property="og:description" content="Mapping your value stream #  When implementing DevOps Change Management, the first step is to uncover your process as a team. The way we most often do this is to run a value stream mapping exercise with the team. This can be as simple as spending 30 minutes around a whiteboard, or as involved as you like.
+Many aspects of the process will be implemented in your devops automation and tooling such as:">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://docs.merkely.com/client_reference/merkely_fingerprint/"><meta property="article:section" content="client_reference">
-<title>merkely fingerprint | Merkely developer documentation</title>
+<meta property="og:url" content="https://docs.merkely.com/concepts/mapping_your_value_stream/"><meta property="article:section" content="concepts">
+<title>Mapping your value stream | Merkely developer documentation</title>
 <link rel=manifest href=/manifest.json>
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.aa37f51503d74287d68ab36af7de93330b1a9e7716a8ba92eca21d705bb08018.css integrity="sha256-qjf1FQPXQofWirNq996TMwsanncWqLqS7KIdcFuwgBg=" crossorigin=anonymous>
@@ -37,7 +35,7 @@ merkely fingerprint [flags] Options #   -h, --help help for fingerprint -t, --ty
 </div>
 <ul>
 <li>
-<input type=checkbox id=section-dc8a1c63e6da60163016ce21cae1faa0 class=toggle>
+<input type=checkbox id=section-dc8a1c63e6da60163016ce21cae1faa0 class=toggle checked>
 <label for=section-dc8a1c63e6da60163016ce21cae1faa0 class="flex justify-between">
 <a href=https://docs.merkely.com/concepts/>Concepts</a>
 </label>
@@ -49,7 +47,7 @@ merkely fingerprint [flags] Options #   -h, --help help for fingerprint -t, --ty
 <a href=https://docs.merkely.com/concepts/devops_and_change_management/>DevOps and Change Management</a>
 </li>
 <li>
-<a href=https://docs.merkely.com/concepts/mapping_your_value_stream/>Mapping your value stream</a>
+<a href=https://docs.merkely.com/concepts/mapping_your_value_stream/ class=active>Mapping your value stream</a>
 </li>
 <li>
 <a href=https://docs.merkely.com/concepts/understanding_binary_provenance/>Understanding Binary Provenance</a>
@@ -68,7 +66,7 @@ merkely fingerprint [flags] Options #   -h, --help help for fingerprint -t, --ty
 </ul>
 </li>
 <li>
-<input type=checkbox id=section-3993beb65ef7e76a7dbe6e66c07255ac class=toggle checked>
+<input type=checkbox id=section-3993beb65ef7e76a7dbe6e66c07255ac class=toggle>
 <label for=section-3993beb65ef7e76a7dbe6e66c07255ac class="flex justify-between">
 <a href=https://docs.merkely.com/client_reference/>Merkely Commands</a>
 </label>
@@ -92,7 +90,7 @@ merkely fingerprint [flags] Options #   -h, --help help for fingerprint -t, --ty
 <a href=https://docs.merkely.com/client_reference/merkely_create_pipeline/>merkely create pipeline</a>
 </li>
 <li>
-<a href=https://docs.merkely.com/client_reference/merkely_fingerprint/ class=active>merkely fingerprint</a>
+<a href=https://docs.merkely.com/client_reference/merkely_fingerprint/>merkely fingerprint</a>
 </li>
 <li>
 <a href=https://docs.merkely.com/client_reference/merkely_report/>merkely report</a>
@@ -154,66 +152,45 @@ merkely fingerprint [flags] Options #   -h, --help help for fingerprint -t, --ty
 <label for=menu-control>
 <img src=/svg/menu.svg class=book-icon alt=Menu>
 </label>
-<strong>merkely fingerprint</strong>
+<strong>Mapping your value stream</strong>
 <label for=toc-control>
 <img src=/svg/toc.svg class=book-icon alt="Table of Contents">
 </label>
 </div>
 <aside class="hidden clearfix">
-<nav id=TableOfContents>
-<ul>
-<li><a href=#merkely-fingerprint>merkely fingerprint</a>
-<ul>
-<li><a href=#synopsis>Synopsis</a></li>
-<li><a href=#options>Options</a></li>
-<li><a href=#options-inherited-from-parent-commands>Options inherited from parent commands</a></li>
-<li><a href=#see-also>SEE ALSO</a></li>
-</ul>
-</li>
-</ul>
-</nav>
+<nav id=TableOfContents></nav>
 </aside>
 </header>
-<article class=markdown><h2 id=merkely-fingerprint>
-merkely fingerprint
-<a class=anchor href=#merkely-fingerprint>#</a>
-</h2>
-<p>Print the SHA256 fingerprint of an artifact.</p>
-<h3 id=synopsis>
-Synopsis
-<a class=anchor href=#synopsis>#</a>
-</h3>
-<p>Print the SHA256 fingerprint of an artifact. Requires artifact type flag to be set.
-Artifact type can be one of: &ldquo;file&rdquo; for files, &ldquo;dir&rdquo; for directories, &ldquo;docker&rdquo; for docker images.</p>
-<pre tabindex=0><code>merkely fingerprint [flags]
-</code></pre><h3 id=options>
-Options
-<a class=anchor href=#options>#</a>
-</h3>
-<pre tabindex=0><code>  -h, --help          help for fingerprint
-  -t, --type string   The type of the artifact to calculate its SHA256 fingerprint.
-</code></pre><h3 id=options-inherited-from-parent-commands>
-Options inherited from parent commands
-<a class=anchor href=#options-inherited-from-parent-commands>#</a>
-</h3>
-<pre tabindex=0><code>  -a, --api-token string      The merkely API token.
-  -c, --config-file string    [optional] The merkely config file path. (default &quot;merkely&quot;)
-  -D, --dry-run               Whether to send the request to the endpoint or just log it in stdout.
-  -H, --host string           The merkely endpoint. (default &quot;https://app.merkely.com&quot;)
-  -r, --max-api-retries int   How many times should API calls be retried when the API host is not reachable. (default 3)
-  -o, --owner string          The merkely organization.
-  -v, --verbose               Print verbose logs to stdout.
-</code></pre><h3 id=see-also>
-SEE ALSO
-<a class=anchor href=#see-also>#</a>
-</h3>
+<article class=markdown><h1 id=mapping-your-value-stream>
+Mapping your value stream
+<a class=anchor href=#mapping-your-value-stream>#</a>
+</h1>
+<p>When implementing DevOps Change Management, the first step is to uncover your process as a team. The way we most often do this is to run a value stream mapping exercise with the team. This can be as simple as spending 30 minutes around a whiteboard, or as involved as you like.</p>
+<p>Many aspects of the process will be implemented in your devops automation and tooling such as:</p>
 <ul>
-<li><a href=/client_reference/merkely/>merkely</a> - The Merkely evidence reporting CLI.</li>
+<li>How you use version control</li>
+<li>How you build</li>
+<li>How you test & qualify</li>
+<li>How you deploy</li>
 </ul>
-<h6 id=auto-generated-by-spf13cobra-on-30-nov-2021>
-Auto generated by spf13/cobra on 30-Nov-2021
-<a class=anchor href=#auto-generated-by-spf13cobra-on-30-nov-2021>#</a>
-</h6>
+<p>You may also want to define the role people play in the process (what we call human-in-the loop needs)</p>
+<ul>
+<li>Code review/pull request expectations</li>
+<li>Deployment sign-off</li>
+<li>Validation</li>
+</ul>
+<p><img src=/images/whiteboard.jpg alt="Team looking at a whiteboard with excitement!"></p>
+<blockquote>
+<p><strong>What are human-in-the-loop controls?</strong></p>
+<p>While we would like to believe that everything in your process can be automated, the reality is that many controls can only be performed by real people. A common example is in the financial sector, where the need for code review is mandated to reduce insider threat risks. We call these human-in-the-loop controls.</p>
+<p>How does this fit into Devops Change Management? Even though these essential risk controls must be performed by humans, we can still improve the processes by taking a devops approach:</p>
+<ul>
+<li><strong>Automate the control</strong>: check that the control has been performed programmatically in the devops pipeline</li>
+<li><strong>Automate the audit trail</strong>: document the control has been performed programatically in the devops pipeline</li>
+<li><strong>Automate the audit trail</strong>: document the control has been performed programatically in the devops pipeline</li>
+</ul>
+</blockquote>
+<p>Once you have mapped out your value steam, the next stage is to model this in your devops tooling.</p>
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
@@ -226,18 +203,7 @@ Auto generated by spf13/cobra on 30-Nov-2021
 </div>
 <aside class=book-toc>
 <div class=book-toc-content>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#merkely-fingerprint>merkely fingerprint</a>
-<ul>
-<li><a href=#synopsis>Synopsis</a></li>
-<li><a href=#options>Options</a></li>
-<li><a href=#options-inherited-from-parent-commands>Options inherited from parent commands</a></li>
-<li><a href=#see-also>SEE ALSO</a></li>
-</ul>
-</li>
-</ul>
-</nav>
+<nav id=TableOfContents></nav>
 </div>
 </aside>
 </main>
