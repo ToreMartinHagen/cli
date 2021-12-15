@@ -2,17 +2,15 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="merkely version #  Print the client version information
-Synopsis #  Show the version for Merkely CLI. This will print a representation the version of Merkely CLI. The output will look something like this: version.BuildInfo{Version:&ldquo;v0.0.1&rdquo;, GitCommit:&ldquo;fe51cd1e31e6a202cba7dead9552a6d418ded79a&rdquo;, GitTreeState:&ldquo;clean&rdquo;, GoVersion:&ldquo;go1.16.3&rdquo;}
- Version is the semantic version of the release. GitCommit is the SHA for the commit that this version was built from. GitTreeState is &ldquo;clean&rdquo; if there are no local code changes when this binary was built, and &ldquo;dirty&rdquo; if the binary was built from locally modified code.">
+<meta name=description content="merkely control pullrequest #  Check if a pull request exists for an artifact and report the pull-request evidence to the artifact in Merkely.
+Synopsis #  Check if a pull request exists for an artifact and report the pull-request evidence to the artifact in Merkely. The artifact SHA256 fingerprint is calculated or alternatively it can be provided directly. The following flags are defaulted as follows in the CI list below:">
 <meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content="merkely version">
-<meta property="og:description" content="merkely version #  Print the client version information
-Synopsis #  Show the version for Merkely CLI. This will print a representation the version of Merkely CLI. The output will look something like this: version.BuildInfo{Version:&ldquo;v0.0.1&rdquo;, GitCommit:&ldquo;fe51cd1e31e6a202cba7dead9552a6d418ded79a&rdquo;, GitTreeState:&ldquo;clean&rdquo;, GoVersion:&ldquo;go1.16.3&rdquo;}
- Version is the semantic version of the release. GitCommit is the SHA for the commit that this version was built from. GitTreeState is &ldquo;clean&rdquo; if there are no local code changes when this binary was built, and &ldquo;dirty&rdquo; if the binary was built from locally modified code.">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="merkely control pullrequest">
+<meta property="og:description" content="merkely control pullrequest #  Check if a pull request exists for an artifact and report the pull-request evidence to the artifact in Merkely.
+Synopsis #  Check if a pull request exists for an artifact and report the pull-request evidence to the artifact in Merkely. The artifact SHA256 fingerprint is calculated or alternatively it can be provided directly. The following flags are defaulted as follows in the CI list below:">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://docs.merkely.com/client_reference/merkely_version/"><meta property="article:section" content="client_reference">
-<title>merkely version | Merkely developer documentation</title>
+<meta property="og:url" content="https://docs.merkely.com/client_reference/merkely_control_pullrequest/"><meta property="article:section" content="client_reference">
+<title>merkely control pullrequest | Merkely developer documentation</title>
 <link rel=manifest href=/manifest.json>
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.92fc911b5878e3595bcf082ea98ffeecfc9cbfd1d5237f0dff82171afa4d4b37.css integrity="sha256-kvyRG1h441lbzwguqY/+7Pycv9HVI38N/4IXGvpNSzc=" crossorigin=anonymous>
@@ -72,7 +70,7 @@ Synopsis #  Show the version for Merkely CLI. This will print a representation t
 <a href=https://docs.merkely.com/client_reference/merkely_control_deployment/>merkely control deployment</a>
 </li>
 <li>
-<a href=https://docs.merkely.com/client_reference/merkely_control_pullrequest/>merkely control pullrequest</a>
+<a href=https://docs.merkely.com/client_reference/merkely_control_pullrequest/ class=active>merkely control pullrequest</a>
 </li>
 <li>
 <a href=https://docs.merkely.com/client_reference/merkely_create/>merkely create</a>
@@ -120,7 +118,7 @@ Synopsis #  Show the version for Merkely CLI. This will print a representation t
 <a href=https://docs.merkely.com/client_reference/merkely_report_test/>merkely report test</a>
 </li>
 <li>
-<a href=https://docs.merkely.com/client_reference/merkely_version/ class=active>merkely version</a>
+<a href=https://docs.merkely.com/client_reference/merkely_version/>merkely version</a>
 </li>
 </ul>
 </li>
@@ -146,38 +144,49 @@ Synopsis #  Show the version for Merkely CLI. This will print a representation t
 <label for=menu-control>
 <img src=/svg/menu.svg class=book-icon alt=Menu>
 </label>
-<strong>merkely version</strong>
+<strong>merkely control pullrequest</strong>
 <label for=toc-control>
 </label>
 </div>
 </header>
 <article class=markdown>
-<h2 id=merkely-version>
-merkely version
-<a class=anchor href=#merkely-version>#</a>
+<h2 id=merkely-control-pullrequest>
+merkely control pullrequest
+<a class=anchor href=#merkely-control-pullrequest>#</a>
 </h2>
-<p>Print the client version information</p>
+<p>Check if a pull request exists for an artifact and report the pull-request evidence to the artifact in Merkely.</p>
 <h3 id=synopsis>
 Synopsis
 <a class=anchor href=#synopsis>#</a>
 </h3>
-<p>Show the version for Merkely CLI.
-This will print a representation the version of Merkely CLI.
-The output will look something like this:
-version.BuildInfo{Version:&ldquo;v0.0.1&rdquo;, GitCommit:&ldquo;fe51cd1e31e6a202cba7dead9552a6d418ded79a&rdquo;, GitTreeState:&ldquo;clean&rdquo;, GoVersion:&ldquo;go1.16.3&rdquo;}</p>
-<ul>
-<li>Version is the semantic version of the release.</li>
-<li>GitCommit is the SHA for the commit that this version was built from.</li>
-<li>GitTreeState is &ldquo;clean&rdquo; if there are no local code changes when this binary was
-built, and &ldquo;dirty&rdquo; if the binary was built from locally modified code.</li>
-<li>GoVersion is the version of Go that was used to compile Merkely CLI.</li>
-</ul>
-<pre tabindex=0><code>merkely version [flags]
+<p>Check if a pull request exists for an artifact and report the pull-request evidence to the artifact in Merkely.
+The artifact SHA256 fingerprint is calculated or alternatively it can be provided directly.
+The following flags are defaulted as follows in the CI list below:</p>
+<pre><code>| Bitbucket 
+|---------------------------------------------------------------------------
+| build-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/addon/pipelines/home#!/results/${BITBUCKET_BUILD_NUMBER}
+|---------------------------------------------------------------------------
+| Github 
+|---------------------------------------------------------------------------
+| build-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
+|---------------------------------------------------------------------------
+| Teamcity 
+|---------------------------------------------------------------------------
+|---------------------------------------------------------------------------
+</code></pre>
+<pre tabindex=0><code>merkely control pullrequest ARTIFACT-NAME-OR-PATH [flags]
 </code></pre><h3 id=options>
 Options
 <a class=anchor href=#options>#</a>
 </h3>
-<pre tabindex=0><code>  -h, --help   help for version
+<pre tabindex=0><code>  -t, --artifact-type string   The type of the artifact related to the evidence. Options are [dir, file, docker].
+  -b, --build-url string       The url of CI pipeline that generated the evidence. (default &quot;https://github.com/merkely-development/cli/actions/runs/1583166461&quot;)
+  -d, --description string     [optional] The evidence description.
+  -e, --evidence-type string   The type of evidence being reported.
+  -h, --help                   help for pullrequest
+  -p, --pipeline string        The Merkely pipeline name.
+      --provider string        The source code repository provider name. Options are [bitbucket]. (default &quot;bitbucket&quot;)
+  -s, --sha256 string          The SHA256 fingerprint for the artifact. Only required if you don't specify --artifact-type.
 </code></pre><h3 id=options-inherited-from-parent-commands>
 Options inherited from parent commands
 <a class=anchor href=#options-inherited-from-parent-commands>#</a>
@@ -194,7 +203,7 @@ SEE ALSO
 <a class=anchor href=#see-also>#</a>
 </h3>
 <ul>
-<li><a href=/client_reference/merkely/>merkely</a> - The Merkely evidence reporting CLI.</li>
+<li><a href=/client_reference/merkely_control/>merkely control</a> - Check if artifact is allowed to be deployed.</li>
 </ul>
 <h6 id=auto-generated-by-spf13cobra-on-15-dec-2021>
 Auto generated by spf13/cobra on 15-Dec-2021
