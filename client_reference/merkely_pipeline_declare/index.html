@@ -2,14 +2,14 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="merkely pipeline declare #  Declare a Merkely pipeline
+<meta name=description content="merkely pipeline declare #  Declare or update a Merkely pipeline
 Synopsis #  Declare or update a Merkely pipeline by providing a JSON pipefile or by providing pipeline parameters in flags. The pipefile contains the pipeline metadata and compliance policy.
-merkely pipeline declare PIPELINE-NAME [flags] Examples #   * create a Merkely pipeline with a pipefile: merkely pipeline declare myPipe --owner owner-name --api-token topSecret --pipefile /path/to/pipefile.json * The pipefile format is: { &#34;description&#34;: &#34;pipeline short description&#34;, &#34;visibility&#34;: &#34;public or private&#34;, &#34;template&#34;: [ &#34;artifact&#34;, &#34;evidence-type1&#34;, &#34;evidence-type2&#34; ] } * create a Merkely pipeline without a pipefile: merkely pipeline declare myPipe --description desc \ --visibility private --template artifact,evidence-type1,evidence-type2 \ --owner owner-name --api-token topSecret Options #   --description string [optional] The Merkely pipeline description.">
+merkely pipeline declare [flags] Examples #   * create/update a Merkely pipeline without a pipefile: merkely pipeline declare --pipeline myPipe --description desc \ --visibility private --template artifact,evidence-type1,evidence-type2 \ --owner owner-name --api-token topSecret * create/update a Merkely pipeline with a pipefile (this is a legacy way which will be removed in the future): merkely pipeline declare --owner owner-name --api-token topSecret --pipefile /path/to/pipefile.">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content="merkely pipeline declare">
-<meta property="og:description" content="merkely pipeline declare #  Declare a Merkely pipeline
+<meta property="og:description" content="merkely pipeline declare #  Declare or update a Merkely pipeline
 Synopsis #  Declare or update a Merkely pipeline by providing a JSON pipefile or by providing pipeline parameters in flags. The pipefile contains the pipeline metadata and compliance policy.
-merkely pipeline declare PIPELINE-NAME [flags] Examples #   * create a Merkely pipeline with a pipefile: merkely pipeline declare myPipe --owner owner-name --api-token topSecret --pipefile /path/to/pipefile.json * The pipefile format is: { &#34;description&#34;: &#34;pipeline short description&#34;, &#34;visibility&#34;: &#34;public or private&#34;, &#34;template&#34;: [ &#34;artifact&#34;, &#34;evidence-type1&#34;, &#34;evidence-type2&#34; ] } * create a Merkely pipeline without a pipefile: merkely pipeline declare myPipe --description desc \ --visibility private --template artifact,evidence-type1,evidence-type2 \ --owner owner-name --api-token topSecret Options #   --description string [optional] The Merkely pipeline description.">
+merkely pipeline declare [flags] Examples #   * create/update a Merkely pipeline without a pipefile: merkely pipeline declare --pipeline myPipe --description desc \ --visibility private --template artifact,evidence-type1,evidence-type2 \ --owner owner-name --api-token topSecret * create/update a Merkely pipeline with a pipefile (this is a legacy way which will be removed in the future): merkely pipeline declare --owner owner-name --api-token topSecret --pipefile /path/to/pipefile.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://docs.merkely.com/client_reference/merkely_pipeline_declare/"><meta property="article:section" content="client_reference">
 <title>merkely pipeline declare | Merkely developer documentation</title>
@@ -17,7 +17,7 @@ merkely pipeline declare PIPELINE-NAME [flags] Examples #   * create a Merkely p
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.92fc911b5878e3595bcf082ea98ffeecfc9cbfd1d5237f0dff82171afa4d4b37.css integrity="sha256-kvyRG1h441lbzwguqY/+7Pycv9HVI38N/4IXGvpNSzc=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.c9a258619e957a73134057fd5ac509833796a7a15bebb8eba952a0daa8119d64.js integrity="sha256-yaJYYZ6VenMTQFf9WsUJgzeWp6Fb67jrqVKg2qgRnWQ=" crossorigin=anonymous></script>
+<script defer src=/en.search.min.7cd0565d006dc3b6dcecacbbaa88cd5adee47bef3b090fb108ddf25de36b43fe.js integrity="sha256-fNBWXQBtw7bc7Ky7qojNWt7ke+87CQ+xCN3yXeNrQ/4=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -168,37 +168,38 @@ merkely pipeline declare PIPELINE-NAME [flags] Examples #   * create a Merkely p
 merkely pipeline declare
 <a class=anchor href=#merkely-pipeline-declare>#</a>
 </h2>
-<p>Declare a Merkely pipeline</p>
+<p>Declare or update a Merkely pipeline</p>
 <h3 id=synopsis>
 Synopsis
 <a class=anchor href=#synopsis>#</a>
 </h3>
 <p>Declare or update a Merkely pipeline by providing a JSON pipefile or by providing pipeline parameters in flags.
 The pipefile contains the pipeline metadata and compliance policy.</p>
-<pre tabindex=0><code>merkely pipeline declare PIPELINE-NAME [flags]
+<pre tabindex=0><code>merkely pipeline declare [flags]
 </code></pre><h3 id=examples>
 Examples
 <a class=anchor href=#examples>#</a>
 </h3>
 <pre tabindex=0><code>
-* create a Merkely pipeline with a pipefile:
-merkely pipeline declare myPipe --owner owner-name --api-token topSecret --pipefile /path/to/pipefile.json
+* create/update a Merkely pipeline without a pipefile:
+merkely pipeline declare --pipeline myPipe --description desc \
+   --visibility private --template artifact,evidence-type1,evidence-type2 \
+   --owner owner-name --api-token topSecret
+
+* create/update a Merkely pipeline with a pipefile (this is a legacy way which will be removed in the future):
+merkely pipeline declare --owner owner-name --api-token topSecret --pipefile /path/to/pipefile.json
 
 * The pipefile format is:
 {
+    &quot;name&quot;: &quot;myPipe&quot;,
     &quot;description&quot;: &quot;pipeline short description&quot;,
     &quot;visibility&quot;: &quot;public or private&quot;,
     &quot;template&quot;: [
         &quot;artifact&quot;,
         &quot;evidence-type1&quot;,
-		&quot;evidence-type2&quot;
+        &quot;evidence-type2&quot;
     ]
 }
-
-* create a Merkely pipeline without a pipefile:
-merkely pipeline declare myPipe --description desc \
-   --visibility private --template artifact,evidence-type1,evidence-type2 \
-   --owner owner-name --api-token topSecret
 
 </code></pre><h3 id=options>
 Options
@@ -206,7 +207,8 @@ Options
 </h3>
 <pre tabindex=0><code>      --description string   [optional] The Merkely pipeline description.
   -h, --help                 help for declare
-      --pipefile string      The path to the JSON pipefile.
+      --pipefile string      [deprecated] The path to the JSON pipefile.
+      --pipeline string      The name of the pipeline to be created or updated.
   -t, --template strings     The comma-separated list of required compliance controls names. (default [artifact])
       --visibility string    The visibility of the Merkely pipeline. Options are [public, private]. (default &quot;private&quot;)
 </code></pre><h3 id=options-inherited-from-parent-commands>
@@ -227,9 +229,9 @@ SEE ALSO
 <ul>
 <li><a href=/client_reference/merkely_pipeline/>merkely pipeline</a> - All Merkely pipelines operations.</li>
 </ul>
-<h6 id=auto-generated-by-spf13cobra-on-21-dec-2021>
-Auto generated by spf13/cobra on 21-Dec-2021
-<a class=anchor href=#auto-generated-by-spf13cobra-on-21-dec-2021>#</a>
+<h6 id=auto-generated-by-spf13cobra-on-29-dec-2021>
+Auto generated by spf13/cobra on 29-Dec-2021
+<a class=anchor href=#auto-generated-by-spf13cobra-on-29-dec-2021>#</a>
 </h6>
 </article>
 <script>function changeHtmlTag(b,a){let c=document.querySelectorAll(`.markdown ${b}`);c.forEach(function(b){b.outerHTML=`<${a} id="${b.id}">${b.innerHTML}</${a}>`})}changeHtmlTag("h2","h1"),changeHtmlTag("h3","h2")</script>
