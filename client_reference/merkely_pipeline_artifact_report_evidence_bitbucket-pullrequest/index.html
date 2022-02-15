@@ -2,17 +2,17 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="merkely pipeline artifact report creation #  Report an artifact creation to a Merkely pipeline.
-Synopsis #  Report an artifact creation to a pipeline in Merkely. The artifact SHA256 fingerprint is calculated and reported or, alternatively, can be provided directly. The following flags are defaulted as follows in the CI list below:
-| Bitbucket |--------------------------------------------------------------------------- | git-commit : ${BITBUCKET_COMMIT} | build-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/addon/pipelines/home#!/results/${BITBUCKET_BUILD_NUMBER} | commit-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/commits/${BITBUCKET_COMMIT} |--------------------------------------------------------------------------- | Github |--------------------------------------------------------------------------- | git-commit : ${GITHUB_SHA} | build-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID} | commit-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA} |--------------------------------------------------------------------------- | Teamcity |--------------------------------------------------------------------------- | git-commit : ${BUILD_VCS_NUMBER} |---------------------------------------------------------------------------  merkely pipeline artifact report creation ARTIFACT-NAME-OR-PATH [flags] Options #   -t, --artifact-type string The type of the artifact to calculate its SHA256 fingerprint.">
+<meta name=description content="merkely pipeline artifact report evidence bitbucket-pullrequest #  Report a Bitbucket pull request evidence for an artifact in a Merkely pipeline.
+Synopsis #  Check if a pull request exists for an artifact and report the pull-request evidence to the artifact in Merkely. The artifact SHA256 fingerprint is calculated or alternatively it can be provided directly. The following flags are defaulted as follows in the CI list below:
+| Bitbucket |--------------------------------------------------------------------------- | build-url : https://bitbucket.">
 <meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content="merkely pipeline artifact report creation">
-<meta property="og:description" content="merkely pipeline artifact report creation #  Report an artifact creation to a Merkely pipeline.
-Synopsis #  Report an artifact creation to a pipeline in Merkely. The artifact SHA256 fingerprint is calculated and reported or, alternatively, can be provided directly. The following flags are defaulted as follows in the CI list below:
-| Bitbucket |--------------------------------------------------------------------------- | git-commit : ${BITBUCKET_COMMIT} | build-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/addon/pipelines/home#!/results/${BITBUCKET_BUILD_NUMBER} | commit-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/commits/${BITBUCKET_COMMIT} |--------------------------------------------------------------------------- | Github |--------------------------------------------------------------------------- | git-commit : ${GITHUB_SHA} | build-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID} | commit-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA} |--------------------------------------------------------------------------- | Teamcity |--------------------------------------------------------------------------- | git-commit : ${BUILD_VCS_NUMBER} |---------------------------------------------------------------------------  merkely pipeline artifact report creation ARTIFACT-NAME-OR-PATH [flags] Options #   -t, --artifact-type string The type of the artifact to calculate its SHA256 fingerprint.">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="merkely pipeline artifact report evidence bitbucket-pullrequest">
+<meta property="og:description" content="merkely pipeline artifact report evidence bitbucket-pullrequest #  Report a Bitbucket pull request evidence for an artifact in a Merkely pipeline.
+Synopsis #  Check if a pull request exists for an artifact and report the pull-request evidence to the artifact in Merkely. The artifact SHA256 fingerprint is calculated or alternatively it can be provided directly. The following flags are defaulted as follows in the CI list below:
+| Bitbucket |--------------------------------------------------------------------------- | build-url : https://bitbucket.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://docs.merkely.com/client_reference/merkely_pipeline_artifact_report_creation/"><meta property="article:section" content="client_reference">
-<title>merkely pipeline artifact report creation | Merkely developer documentation</title>
+<meta property="og:url" content="https://docs.merkely.com/client_reference/merkely_pipeline_artifact_report_evidence_bitbucket-pullrequest/"><meta property="article:section" content="client_reference">
+<title>merkely pipeline artifact report evidence bitbucket-pullrequest | Merkely developer documentation</title>
 <link rel=manifest href=/manifest.json>
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.92fc911b5878e3595bcf082ea98ffeecfc9cbfd1d5237f0dff82171afa4d4b37.css integrity="sha256-kvyRG1h441lbzwguqY/+7Pycv9HVI38N/4IXGvpNSzc=" crossorigin=anonymous>
@@ -93,10 +93,10 @@ Synopsis #  Report an artifact creation to a pipeline in Merkely. The artifact S
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_approval_request/>merkely pipeline approval request</a>
 </li>
 <li>
-<a href=https://docs.merkely.com/client_reference/merkely_pipeline_artifact_report_creation/ class=active>merkely pipeline artifact report creation</a>
+<a href=https://docs.merkely.com/client_reference/merkely_pipeline_artifact_report_creation/>merkely pipeline artifact report creation</a>
 </li>
 <li>
-<a href=https://docs.merkely.com/client_reference/merkely_pipeline_artifact_report_evidence_bitbucket-pullrequest/>merkely pipeline artifact report evidence bitbucket-pullrequest</a>
+<a href=https://docs.merkely.com/client_reference/merkely_pipeline_artifact_report_evidence_bitbucket-pullrequest/ class=active>merkely pipeline artifact report evidence bitbucket-pullrequest</a>
 </li>
 <li>
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_artifact_report_evidence_generic/>merkely pipeline artifact report evidence generic</a>
@@ -146,59 +146,56 @@ Synopsis #  Report an artifact creation to a pipeline in Merkely. The artifact S
 <label for=menu-control>
 <img src=/svg/menu.svg class=book-icon alt=Menu>
 </label>
-<strong>merkely pipeline artifact report creation</strong>
+<strong>merkely pipeline artifact report evidence bitbucket-pullrequest</strong>
 <label for=toc-control>
 </label>
 </div>
 </header>
 <article class=markdown>
-<h2 id=merkely-pipeline-artifact-report-creation>
-merkely pipeline artifact report creation
-<a class=anchor href=#merkely-pipeline-artifact-report-creation>#</a>
+<h2 id=merkely-pipeline-artifact-report-evidence-bitbucket-pullrequest>
+merkely pipeline artifact report evidence bitbucket-pullrequest
+<a class=anchor href=#merkely-pipeline-artifact-report-evidence-bitbucket-pullrequest>#</a>
 </h2>
-<p>Report an artifact creation to a Merkely pipeline.</p>
+<p>Report a Bitbucket pull request evidence for an artifact in a Merkely pipeline.</p>
 <h3 id=synopsis>
 Synopsis
 <a class=anchor href=#synopsis>#</a>
 </h3>
-<p>Report an artifact creation to a pipeline in Merkely.
-The artifact SHA256 fingerprint is calculated and reported
-or, alternatively, can be provided directly.
+<p>Check if a pull request exists for an artifact and report the pull-request evidence to the artifact in Merkely.
+The artifact SHA256 fingerprint is calculated or alternatively it can be provided directly.
 The following flags are defaulted as follows in the CI list below:</p>
 <pre><code>| Bitbucket 
 |---------------------------------------------------------------------------
-| git-commit : ${BITBUCKET_COMMIT}
 | build-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/addon/pipelines/home#!/results/${BITBUCKET_BUILD_NUMBER}
-| commit-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/commits/${BITBUCKET_COMMIT}
 |---------------------------------------------------------------------------
 | Github 
 |---------------------------------------------------------------------------
-| git-commit : ${GITHUB_SHA}
 | build-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
-| commit-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA}
 |---------------------------------------------------------------------------
 | Teamcity 
 |---------------------------------------------------------------------------
-| git-commit : ${BUILD_VCS_NUMBER}
 |---------------------------------------------------------------------------
 </code></pre>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>merkely pipeline artifact report creation ARTIFACT-NAME-OR-PATH <span style=color:#f92672>[</span>flags<span style=color:#f92672>]</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>merkely pipeline artifact report evidence bitbucket-pullrequest ARTIFACT-NAME-OR-PATH <span style=color:#f92672>[</span>flags<span style=color:#f92672>]</span>
 </code></pre></div><h3 id=options>
 Options
 <a class=anchor href=#options>#</a>
 </h3>
-<pre tabindex=0><code>  -t, --artifact-type string       The type of the artifact to calculate its SHA256 fingerprint.
-  -b, --build-url string           The url of CI pipeline that built the artifact. (default &quot;https://github.com/merkely-development/cli/actions/runs/1847906195&quot;)
-  -u, --commit-url string          The url for the git commit that created the artifact. (default &quot;https://github.com/merkely-development/cli/commit/3d93a4050af3020238c2811c8cfa163bc15efe5e&quot;)
-  -C, --compliant                  Whether the artifact is compliant or not. (default true)
-  -d, --description string         [optional] The artifact description.
-  -g, --git-commit string          The git commit from which the artifact was created. (default &quot;3d93a4050af3020238c2811c8cfa163bc15efe5e&quot;)
-  -h, --help                       help for creation
-  -p, --pipeline string            The Merkely pipeline name.
-      --registry-password string   The docker registry password or access token.
-      --registry-provider string   The docker registry provider or url.
-      --registry-username string   The docker registry username.
-  -s, --sha256 string              The SHA256 fingerprint for the artifact. Only required if you don't specify --artifact-type.
+<pre tabindex=0><code>  -t, --artifact-type string         The type of the artifact to calculate its SHA256 fingerprint.
+      --bitbucket-password string    Bitbucket password.
+      --bitbucket-username string    Bitbucket user name.
+      --bitbucket-workspace string   Bitbucket workspace.
+  -b, --build-url string             The url of CI pipeline that generated the evidence. (default &quot;https://github.com/merkely-development/cli/actions/runs/1847906195&quot;)
+      --commit string                Git commit for which to find pull request evidence. (default &quot;3d93a4050af3020238c2811c8cfa163bc15efe5e&quot;)
+  -d, --description string           [optional] The evidence description.
+  -e, --evidence-type string         The type of evidence being reported.
+  -h, --help                         help for bitbucket-pullrequest
+  -p, --pipeline string              The Merkely pipeline name.
+      --registry-password string     The docker registry password or access token.
+      --registry-provider string     The docker registry provider or url.
+      --registry-username string     The docker registry username.
+      --repository string            Git repository. (default &quot;merkely-development/cli&quot;)
+  -s, --sha256 string                The SHA256 fingerprint for the artifact. Only required if you don't specify --artifact-type.
 </code></pre><h3 id=options-inherited-from-parent-commands>
 Options inherited from parent commands
 <a class=anchor href=#options-inherited-from-parent-commands>#</a>
