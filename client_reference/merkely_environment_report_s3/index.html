@@ -2,17 +2,17 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="merkely fingerprint #  Print the SHA256 fingerprint of an artifact.
-Synopsis #  Print the SHA256 fingerprint of an artifact. Requires artifact type flag to be set. Artifact type can be one of: &ldquo;file&rdquo; for files, &ldquo;dir&rdquo; for directories, &ldquo;docker&rdquo; for docker images.
-merkely fingerprint [flags] Options #   -t, --artifact-type string The type of the artifact to calculate its SHA256 fingerprint. -h, --help help for fingerprint --registry-password string The docker registry password or access token.">
+<meta name=description content="merkely environment report s3 #  Report artifact from AWS S3 bucket to Merkely.
+Synopsis #  Report the artifact deployed in an AWS S3 bucket and their digests and reports it to Merkely.
+merkely environment report s3 env-name [flags] Examples #  * report what's running in an AWS S3 bucket: merkely environment report s3 prod --api-token 1234 --owner exampleOrg Options #   --access-key string The AWS access key -C, --bucket string The name of the S3 bucket.">
 <meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content="merkely fingerprint">
-<meta property="og:description" content="merkely fingerprint #  Print the SHA256 fingerprint of an artifact.
-Synopsis #  Print the SHA256 fingerprint of an artifact. Requires artifact type flag to be set. Artifact type can be one of: &ldquo;file&rdquo; for files, &ldquo;dir&rdquo; for directories, &ldquo;docker&rdquo; for docker images.
-merkely fingerprint [flags] Options #   -t, --artifact-type string The type of the artifact to calculate its SHA256 fingerprint. -h, --help help for fingerprint --registry-password string The docker registry password or access token.">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="merkely environment report s3">
+<meta property="og:description" content="merkely environment report s3 #  Report artifact from AWS S3 bucket to Merkely.
+Synopsis #  Report the artifact deployed in an AWS S3 bucket and their digests and reports it to Merkely.
+merkely environment report s3 env-name [flags] Examples #  * report what's running in an AWS S3 bucket: merkely environment report s3 prod --api-token 1234 --owner exampleOrg Options #   --access-key string The AWS access key -C, --bucket string The name of the S3 bucket.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://docs.merkely.com/client_reference/merkely_fingerprint/"><meta property="article:section" content="client_reference">
-<title>merkely fingerprint | Merkely developer documentation</title>
+<meta property="og:url" content="https://docs.merkely.com/client_reference/merkely_environment_report_s3/"><meta property="article:section" content="client_reference">
+<title>merkely environment report s3 | Merkely developer documentation</title>
 <link rel=manifest href=/manifest.json>
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.92fc911b5878e3595bcf082ea98ffeecfc9cbfd1d5237f0dff82171afa4d4b37.css integrity="sha256-kvyRG1h441lbzwguqY/+7Pycv9HVI38N/4IXGvpNSzc=" crossorigin=anonymous>
@@ -78,13 +78,13 @@ merkely fingerprint [flags] Options #   -t, --artifact-type string The type of t
 <a href=https://docs.merkely.com/client_reference/merkely_environment_report_k8s/>merkely environment report k8s</a>
 </li>
 <li>
-<a href=https://docs.merkely.com/client_reference/merkely_environment_report_s3/>merkely environment report s3</a>
+<a href=https://docs.merkely.com/client_reference/merkely_environment_report_s3/ class=active>merkely environment report s3</a>
 </li>
 <li>
 <a href=https://docs.merkely.com/client_reference/merkely_environment_report_server/>merkely environment report server</a>
 </li>
 <li>
-<a href=https://docs.merkely.com/client_reference/merkely_fingerprint/ class=active>merkely fingerprint</a>
+<a href=https://docs.merkely.com/client_reference/merkely_fingerprint/>merkely fingerprint</a>
 </li>
 <li>
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_approval_assert/>merkely pipeline approval assert</a>
@@ -149,33 +149,41 @@ merkely fingerprint [flags] Options #   -t, --artifact-type string The type of t
 <label for=menu-control>
 <img src=/svg/menu.svg class=book-icon alt=Menu>
 </label>
-<strong>merkely fingerprint</strong>
+<strong>merkely environment report s3</strong>
 <label for=toc-control>
 </label>
 </div>
 </header>
 <article class=markdown>
-<h2 id=merkely-fingerprint>
-merkely fingerprint
-<a class=anchor href=#merkely-fingerprint>#</a>
+<h2 id=merkely-environment-report-s3>
+merkely environment report s3
+<a class=anchor href=#merkely-environment-report-s3>#</a>
 </h2>
-<p>Print the SHA256 fingerprint of an artifact.</p>
+<p>Report artifact from AWS S3 bucket to Merkely.</p>
 <h3 id=synopsis>
 Synopsis
 <a class=anchor href=#synopsis>#</a>
 </h3>
-<p>Print the SHA256 fingerprint of an artifact. Requires artifact type flag to be set.
-Artifact type can be one of: &ldquo;file&rdquo; for files, &ldquo;dir&rdquo; for directories, &ldquo;docker&rdquo; for docker images.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>merkely fingerprint <span style=color:#f92672>[</span>flags<span style=color:#f92672>]</span>
+<p>Report the artifact deployed in an AWS S3 bucket and their digests
+and reports it to Merkely.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>merkely environment report s3 env-name <span style=color:#f92672>[</span>flags<span style=color:#f92672>]</span>
+</code></pre></div><h3 id=examples>
+Examples
+<a class=anchor href=#examples>#</a>
+</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>
+* report what<span style=color:#960050;background-color:#1e0010>&#39;</span>s running in an AWS S3 bucket:
+merkely environment report s3 prod --api-token <span style=color:#ae81ff>1234</span> --owner exampleOrg
+
 </code></pre></div><h3 id=options>
 Options
 <a class=anchor href=#options>#</a>
 </h3>
-<pre tabindex=0><code>  -t, --artifact-type string       The type of the artifact to calculate its SHA256 fingerprint.
-  -h, --help                       help for fingerprint
-      --registry-password string   The docker registry password or access token.
-      --registry-provider string   The docker registry provider or url.
-      --registry-username string   The docker registry username.
+<pre tabindex=0><code>      --access-key string   The AWS access key
+  -C, --bucket string       The name of the S3 bucket.
+  -h, --help                help for s3
+      --region string       The AWS region
+      --secret-key string   The AWS secret key
 </code></pre><h3 id=options-inherited-from-parent-commands>
 Options inherited from parent commands
 <a class=anchor href=#options-inherited-from-parent-commands>#</a>

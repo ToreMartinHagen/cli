@@ -17,7 +17,7 @@ Synopsis #  Report an artifact creation to a pipeline in Merkely. The artifact S
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.92fc911b5878e3595bcf082ea98ffeecfc9cbfd1d5237f0dff82171afa4d4b37.css integrity="sha256-kvyRG1h441lbzwguqY/+7Pycv9HVI38N/4IXGvpNSzc=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.0339e6dd464b3b599fe4baf82debaeffad460b778f2c796145d7ce7a7ed88f0a.js integrity="sha256-Aznm3UZLO1mf5Lr4Leuu/61GC3ePLHlhRdfOen7Yjwo=" crossorigin=anonymous></script>
+<script defer src=/en.search.min.bbb1044b1fee96e12437bade17e2d031cc9cb0f8b3eb242d726ea228cbcd861c.js integrity="sha256-u7EESx/uluEkN7reF+LQMcycsPiz6yQtcm6iKMvNhhw=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -76,6 +76,9 @@ Synopsis #  Report an artifact creation to a pipeline in Merkely. The artifact S
 </li>
 <li>
 <a href=https://docs.merkely.com/client_reference/merkely_environment_report_k8s/>merkely environment report k8s</a>
+</li>
+<li>
+<a href=https://docs.merkely.com/client_reference/merkely_environment_report_s3/>merkely environment report s3</a>
 </li>
 <li>
 <a href=https://docs.merkely.com/client_reference/merkely_environment_report_server/>merkely environment report server</a>
@@ -188,11 +191,11 @@ Options
 <a class=anchor href=#options>#</a>
 </h3>
 <pre tabindex=0><code>  -t, --artifact-type string       The type of the artifact to calculate its SHA256 fingerprint.
-  -b, --build-url string           The url of CI pipeline that built the artifact. (default &quot;https://github.com/merkely-development/cli/actions/runs/1858697748&quot;)
-  -u, --commit-url string          The url for the git commit that created the artifact. (default &quot;https://github.com/merkely-development/cli/commit/81e68bf9da24970c6a6e8e51ed4dc1afc62d9c09&quot;)
+  -b, --build-url string           The url of CI pipeline that built the artifact. (default &quot;https://github.com/merkely-development/cli/actions/runs/1859276331&quot;)
+  -u, --commit-url string          The url for the git commit that created the artifact. (default &quot;https://github.com/merkely-development/cli/commit/c9fe3e38941ddbd0c4177efd0c7d1a8b0af926d1&quot;)
   -C, --compliant                  Whether the artifact is compliant or not. (default true)
   -d, --description string         [optional] The artifact description.
-  -g, --git-commit string          The git commit from which the artifact was created. (default &quot;81e68bf9da24970c6a6e8e51ed4dc1afc62d9c09&quot;)
+  -g, --git-commit string          The git commit from which the artifact was created. (default &quot;c9fe3e38941ddbd0c4177efd0c7d1a8b0af926d1&quot;)
   -h, --help                       help for creation
   -p, --pipeline string            The Merkely pipeline name.
       --registry-password string   The docker registry password or access token.

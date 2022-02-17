@@ -4,12 +4,12 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="merkely environment declare #  Declare or update a Merkely environment
 Synopsis #  Declare or update a Merkely environment.
-merkely environment declare [flags] Examples #  * declare (or update) a Merkely environment: merkely environment declare --api-token 1234 --owner test --name newEnv --environment-type K8S --description &#34;my new env&#34; Options #   -d, --description string [optional] The environment description. -t, --environment-type string The type of environment. Valid options are: [K8S, ECS, server] -h, --help help for declare -n, --name string The name of environment.">
+merkely environment declare [flags] Examples #  * declare (or update) a Merkely environment: merkely environment declare --api-token 1234 --owner test --name newEnv --environment-type K8S --description &#34;my new env&#34; Options #   -d, --description string [optional] The environment description. -t, --environment-type string The type of environment. Valid options are: [K8S, ECS, server, S3] -h, --help help for declare -n, --name string The name of environment.">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content="merkely environment declare">
 <meta property="og:description" content="merkely environment declare #  Declare or update a Merkely environment
 Synopsis #  Declare or update a Merkely environment.
-merkely environment declare [flags] Examples #  * declare (or update) a Merkely environment: merkely environment declare --api-token 1234 --owner test --name newEnv --environment-type K8S --description &#34;my new env&#34; Options #   -d, --description string [optional] The environment description. -t, --environment-type string The type of environment. Valid options are: [K8S, ECS, server] -h, --help help for declare -n, --name string The name of environment.">
+merkely environment declare [flags] Examples #  * declare (or update) a Merkely environment: merkely environment declare --api-token 1234 --owner test --name newEnv --environment-type K8S --description &#34;my new env&#34; Options #   -d, --description string [optional] The environment description. -t, --environment-type string The type of environment. Valid options are: [K8S, ECS, server, S3] -h, --help help for declare -n, --name string The name of environment.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://docs.merkely.com/client_reference/merkely_environment_declare/"><meta property="article:section" content="client_reference">
 <title>merkely environment declare | Merkely developer documentation</title>
@@ -17,7 +17,7 @@ merkely environment declare [flags] Examples #  * declare (or update) a Merkely 
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.92fc911b5878e3595bcf082ea98ffeecfc9cbfd1d5237f0dff82171afa4d4b37.css integrity="sha256-kvyRG1h441lbzwguqY/+7Pycv9HVI38N/4IXGvpNSzc=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.0339e6dd464b3b599fe4baf82debaeffad460b778f2c796145d7ce7a7ed88f0a.js integrity="sha256-Aznm3UZLO1mf5Lr4Leuu/61GC3ePLHlhRdfOen7Yjwo=" crossorigin=anonymous></script>
+<script defer src=/en.search.min.bbb1044b1fee96e12437bade17e2d031cc9cb0f8b3eb242d726ea228cbcd861c.js integrity="sha256-u7EESx/uluEkN7reF+LQMcycsPiz6yQtcm6iKMvNhhw=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -76,6 +76,9 @@ merkely environment declare [flags] Examples #  * declare (or update) a Merkely 
 </li>
 <li>
 <a href=https://docs.merkely.com/client_reference/merkely_environment_report_k8s/>merkely environment report k8s</a>
+</li>
+<li>
+<a href=https://docs.merkely.com/client_reference/merkely_environment_report_s3/>merkely environment report s3</a>
 </li>
 <li>
 <a href=https://docs.merkely.com/client_reference/merkely_environment_report_server/>merkely environment report server</a>
@@ -176,7 +179,7 @@ Options
 <a class=anchor href=#options>#</a>
 </h3>
 <pre tabindex=0><code>  -d, --description string        [optional] The environment description.
-  -t, --environment-type string   The type of environment. Valid options are: [K8S, ECS, server]
+  -t, --environment-type string   The type of environment. Valid options are: [K8S, ECS, server, S3]
   -h, --help                      help for declare
   -n, --name string               The name of environment.
 </code></pre><h3 id=options-inherited-from-parent-commands>
