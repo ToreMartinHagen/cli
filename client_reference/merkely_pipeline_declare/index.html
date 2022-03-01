@@ -4,19 +4,19 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="merkely pipeline declare #  Declare or update a Merkely pipeline
 Synopsis #  Declare or update a Merkely pipeline by providing a JSON pipefile or by providing pipeline parameters in flags. The pipefile contains the pipeline metadata and compliance policy.
-merkely pipeline declare [flags] Examples #   * create/update a Merkely pipeline without a pipefile: merkely pipeline declare --pipeline myPipe --description desc \  --visibility private --template artifact,evidence-type1,evidence-type2 \  --owner owner-name --api-token topSecret  * create/update a Merkely pipeline with a pipefile (this is a legacy way which will be removed in the future): merkely pipeline declare --owner owner-name --api-token topSecret --pipefile /path/to/pipefile.">
+merkely pipeline declare [flags] Examples #   # create/update a Merkely pipeline without a pipefile: merkely pipeline declare \ 	--pipeline yourPipelineName \ 	--description yourPipelineDescription \  --visibility private OR public \ 	--template artifact,evidence-type1,evidence-type2 \ 	--api-token yourAPIToken \ 	--owner yourOrgName  # create/update a Merkely pipeline with a pipefile (this is a legacy way which will be removed in the future): merkely pipeline declare \ 	--pipefile /path/to/pipefile.">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content="merkely pipeline declare">
 <meta property="og:description" content="merkely pipeline declare #  Declare or update a Merkely pipeline
 Synopsis #  Declare or update a Merkely pipeline by providing a JSON pipefile or by providing pipeline parameters in flags. The pipefile contains the pipeline metadata and compliance policy.
-merkely pipeline declare [flags] Examples #   * create/update a Merkely pipeline without a pipefile: merkely pipeline declare --pipeline myPipe --description desc \  --visibility private --template artifact,evidence-type1,evidence-type2 \  --owner owner-name --api-token topSecret  * create/update a Merkely pipeline with a pipefile (this is a legacy way which will be removed in the future): merkely pipeline declare --owner owner-name --api-token topSecret --pipefile /path/to/pipefile.">
+merkely pipeline declare [flags] Examples #   # create/update a Merkely pipeline without a pipefile: merkely pipeline declare \ 	--pipeline yourPipelineName \ 	--description yourPipelineDescription \  --visibility private OR public \ 	--template artifact,evidence-type1,evidence-type2 \ 	--api-token yourAPIToken \ 	--owner yourOrgName  # create/update a Merkely pipeline with a pipefile (this is a legacy way which will be removed in the future): merkely pipeline declare \ 	--pipefile /path/to/pipefile.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://docs.merkely.com/client_reference/merkely_pipeline_declare/"><meta property="article:section" content="client_reference">
 <title>merkely pipeline declare | Merkely developer documentation</title><link rel=manifest href=/manifest.json>
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.92fc911b5878e3595bcf082ea98ffeecfc9cbfd1d5237f0dff82171afa4d4b37.css integrity="sha256-kvyRG1h441lbzwguqY/+7Pycv9HVI38N/4IXGvpNSzc=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.e4241f9e0c5aa77bd32a60763e3caae2ed5907cfc938121c987061da0d616c38.js integrity="sha256-5CQfngxap3vTKmB2Pjyq4u1ZB8/JOBIcmHBh2g1hbDg=" crossorigin=anonymous></script>
+<script defer src=/en.search.min.a49e71e1cb300da8d0286793ec456810b00b540afdc3326a76a7a7a401e8669e.js integrity="sha256-pJ5x4cswDajQKGeT7EVoELALVAr9wzJqdqenpAHoZp4=" crossorigin=anonymous></script>
 </head><body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control>
@@ -60,6 +60,8 @@ merkely pipeline declare [flags] Examples #   * create/update a Merkely pipeline
 <a href=https://docs.merkely.com/client_reference/merkely_environment_report_ecs/>merkely environment report ecs</a>
 </li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_environment_report_k8s/>merkely environment report k8s</a>
+</li><li>
+<a href=https://docs.merkely.com/client_reference/merkely_environment_report_lambda/>merkely environment report lambda</a>
 </li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_environment_report_s3/>merkely environment report s3</a>
 </li><li>
@@ -123,18 +125,25 @@ The pipefile contains the pipeline metadata and compliance policy.</p><div class
 Examples
 <a class=anchor href=#examples>#</a>
 </h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>
-</span></span><span style=display:flex><span>* create/update a Merkely pipeline without a pipefile:
-</span></span><span style=display:flex><span>merkely pipeline declare --pipeline myPipe --description desc <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>   --visibility private --template artifact,evidence-type1,evidence-type2 <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>   --owner owner-name --api-token topSecret
+</span></span><span style=display:flex><span><span style=color:#75715e># create/update a Merkely pipeline without a pipefile:</span>
+</span></span><span style=display:flex><span>merkely pipeline declare <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	--pipeline yourPipelineName <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	--description yourPipelineDescription <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --visibility private OR public <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	--template artifact,evidence-type1,evidence-type2 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	--api-token yourAPIToken <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	--owner yourOrgName
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>* create/update a Merkely pipeline with a pipefile <span style=color:#f92672>(</span>this is a legacy way which will be removed in the future<span style=color:#f92672>)</span>:
-</span></span><span style=display:flex><span>merkely pipeline declare --owner owner-name --api-token topSecret --pipefile /path/to/pipefile.json
+</span></span><span style=display:flex><span><span style=color:#75715e># create/update a Merkely pipeline with a pipefile (this is a legacy way which will be removed in the future):</span>
+</span></span><span style=display:flex><span>merkely pipeline declare <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	--pipefile /path/to/pipefile.json <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	--api-token yourAPIToken <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	--owner yourOrgName
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>* The pipefile format is:
+</span></span><span style=display:flex><span>The pipefile format is:
 </span></span><span style=display:flex><span><span style=color:#f92672>{</span>
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;myPipe&#34;</span>,
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;pipeline short description&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;yourPipelineName&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;yourPipelinedescription&#34;</span>,
 </span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;visibility&#34;</span>: <span style=color:#e6db74>&#34;public or private&#34;</span>,
 </span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;template&#34;</span>: <span style=color:#f92672>[</span>
 </span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;artifact&#34;</span>,
@@ -156,7 +165,7 @@ Options inherited from parent commands
 <a class=anchor href=#options-inherited-from-parent-commands>#</a>
 </h3><pre tabindex=0><code>  -a, --api-token string      The merkely API token.
   -c, --config-file string    [optional] The merkely config file path. (default &#34;merkely&#34;)
-  -D, --dry-run               Whether to send the request to the endpoint or just log it in stdout.
+  -D, --dry-run               Whether to run in dry-run mode. When enabled, data is not sent to Merkely and the CLI exits with 0 exit code regardless of errors.
   -H, --host string           The merkely endpoint. (default &#34;https://app.merkely.com&#34;)
   -r, --max-api-retries int   How many times should API calls be retried when the API host is not reachable. (default 3)
   -o, --owner string          The merkely user or organization.

@@ -16,7 +16,7 @@ Synopsis #  Check if a pull request exists for an artifact and report the pull-r
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.92fc911b5878e3595bcf082ea98ffeecfc9cbfd1d5237f0dff82171afa4d4b37.css integrity="sha256-kvyRG1h441lbzwguqY/+7Pycv9HVI38N/4IXGvpNSzc=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.e4241f9e0c5aa77bd32a60763e3caae2ed5907cfc938121c987061da0d616c38.js integrity="sha256-5CQfngxap3vTKmB2Pjyq4u1ZB8/JOBIcmHBh2g1hbDg=" crossorigin=anonymous></script>
+<script defer src=/en.search.min.a49e71e1cb300da8d0286793ec456810b00b540afdc3326a76a7a7a401e8669e.js integrity="sha256-pJ5x4cswDajQKGeT7EVoELALVAr9wzJqdqenpAHoZp4=" crossorigin=anonymous></script>
 </head><body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control>
@@ -60,6 +60,8 @@ Synopsis #  Check if a pull request exists for an artifact and report the pull-r
 <a href=https://docs.merkely.com/client_reference/merkely_environment_report_ecs/>merkely environment report ecs</a>
 </li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_environment_report_k8s/>merkely environment report k8s</a>
+</li><li>
+<a href=https://docs.merkely.com/client_reference/merkely_environment_report_lambda/>merkely environment report lambda</a>
 </li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_environment_report_s3/>merkely environment report s3</a>
 </li><li>
@@ -130,13 +132,14 @@ The following flags are defaulted as follows in the CI list below:</p><pre><code
 | Teamcity 
 |---------------------------------------------------------------------------
 |---------------------------------------------------------------------------
-</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>merkely pipeline artifact report evidence github-pullrequest ARTIFACT-NAME-OR-PATH <span style=color:#f92672>[</span>flags<span style=color:#f92672>]</span>
+</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>merkely pipeline artifact report evidence github-pullrequest <span style=color:#f92672>[</span>ARTIFACT-NAME-OR-PATH<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>flags<span style=color:#f92672>]</span>
 </span></span></code></pre></div><h3 id=options>
 Options
 <a class=anchor href=#options>#</a>
-</h3><pre tabindex=0><code>  -t, --artifact-type string       The type of the artifact to calculate its SHA256 fingerprint.
-  -b, --build-url string           The url of CI pipeline that generated the evidence. (default &#34;https://github.com/merkely-development/cli/actions/runs/1859276331&#34;)
-      --commit string              Git commit for which to find pull request evidence. (default &#34;c9fe3e38941ddbd0c4177efd0c7d1a8b0af926d1&#34;)
+</h3><pre tabindex=0><code>  -t, --artifact-type string       The type of the artifact to calculate its SHA256 fingerprint. One of: [docker, file, dir]
+      --assert                     Fail if no pull requests found for the given commit.
+  -b, --build-url string           The url of CI pipeline that generated the evidence. (default &#34;https://github.com/merkely-development/cli/actions/runs/1915357107&#34;)
+      --commit string              Git commit for which to find pull request evidence. (default &#34;db7e69d466d9958ec7ce9574f3c5b042ef903f63&#34;)
   -d, --description string         [optional] The evidence description.
   -e, --evidence-type string       The type of evidence being reported.
       --github-org string          Github organization. (default &#34;merkely-development&#34;)
@@ -153,7 +156,7 @@ Options inherited from parent commands
 <a class=anchor href=#options-inherited-from-parent-commands>#</a>
 </h3><pre tabindex=0><code>  -a, --api-token string      The merkely API token.
   -c, --config-file string    [optional] The merkely config file path. (default &#34;merkely&#34;)
-  -D, --dry-run               Whether to send the request to the endpoint or just log it in stdout.
+  -D, --dry-run               Whether to run in dry-run mode. When enabled, data is not sent to Merkely and the CLI exits with 0 exit code regardless of errors.
   -H, --host string           The merkely endpoint. (default &#34;https://app.merkely.com&#34;)
   -r, --max-api-retries int   How many times should API calls be retried when the API host is not reachable. (default 3)
   -o, --owner string          The merkely user or organization.

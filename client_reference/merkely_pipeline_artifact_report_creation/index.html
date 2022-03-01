@@ -4,19 +4,19 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="merkely pipeline artifact report creation #  Report an artifact creation to a Merkely pipeline.
 Synopsis #  Report an artifact creation to a pipeline in Merkely. The artifact SHA256 fingerprint is calculated and reported or, alternatively, can be provided directly. The following flags are defaulted as follows in the CI list below:
-| Bitbucket |--------------------------------------------------------------------------- | git-commit : ${BITBUCKET_COMMIT} | build-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/addon/pipelines/home#!/results/${BITBUCKET_BUILD_NUMBER} | commit-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/commits/${BITBUCKET_COMMIT} |--------------------------------------------------------------------------- | Github |--------------------------------------------------------------------------- | git-commit : ${GITHUB_SHA} | build-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID} | commit-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA} |--------------------------------------------------------------------------- | Teamcity |--------------------------------------------------------------------------- | git-commit : ${BUILD_VCS_NUMBER} |---------------------------------------------------------------------------  merkely pipeline artifact report creation ARTIFACT-NAME-OR-PATH [flags] Options #   -t, --artifact-type string The type of the artifact to calculate its SHA256 fingerprint.">
+| Bitbucket |--------------------------------------------------------------------------- | git-commit : ${BITBUCKET_COMMIT} | build-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/addon/pipelines/home#!/results/${BITBUCKET_BUILD_NUMBER} | commit-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/commits/${BITBUCKET_COMMIT} |--------------------------------------------------------------------------- | Github |--------------------------------------------------------------------------- | git-commit : ${GITHUB_SHA} | build-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID} | commit-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA} |--------------------------------------------------------------------------- | Teamcity |--------------------------------------------------------------------------- | git-commit : ${BUILD_VCS_NUMBER} |---------------------------------------------------------------------------  merkely pipeline artifact report creation ARTIFACT-NAME-OR-PATH [flags] Examples #   # Report that a file artifact has been created for a pipeline merkely pipeline artifact report creation FILE.">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content="merkely pipeline artifact report creation">
 <meta property="og:description" content="merkely pipeline artifact report creation #  Report an artifact creation to a Merkely pipeline.
 Synopsis #  Report an artifact creation to a pipeline in Merkely. The artifact SHA256 fingerprint is calculated and reported or, alternatively, can be provided directly. The following flags are defaulted as follows in the CI list below:
-| Bitbucket |--------------------------------------------------------------------------- | git-commit : ${BITBUCKET_COMMIT} | build-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/addon/pipelines/home#!/results/${BITBUCKET_BUILD_NUMBER} | commit-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/commits/${BITBUCKET_COMMIT} |--------------------------------------------------------------------------- | Github |--------------------------------------------------------------------------- | git-commit : ${GITHUB_SHA} | build-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID} | commit-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA} |--------------------------------------------------------------------------- | Teamcity |--------------------------------------------------------------------------- | git-commit : ${BUILD_VCS_NUMBER} |---------------------------------------------------------------------------  merkely pipeline artifact report creation ARTIFACT-NAME-OR-PATH [flags] Options #   -t, --artifact-type string The type of the artifact to calculate its SHA256 fingerprint.">
+| Bitbucket |--------------------------------------------------------------------------- | git-commit : ${BITBUCKET_COMMIT} | build-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/addon/pipelines/home#!/results/${BITBUCKET_BUILD_NUMBER} | commit-url : https://bitbucket.org/${BITBUCKET_WORKSPACE}/${BITBUCKET_REPO_SLUG}/commits/${BITBUCKET_COMMIT} |--------------------------------------------------------------------------- | Github |--------------------------------------------------------------------------- | git-commit : ${GITHUB_SHA} | build-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID} | commit-url : ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA} |--------------------------------------------------------------------------- | Teamcity |--------------------------------------------------------------------------- | git-commit : ${BUILD_VCS_NUMBER} |---------------------------------------------------------------------------  merkely pipeline artifact report creation ARTIFACT-NAME-OR-PATH [flags] Examples #   # Report that a file artifact has been created for a pipeline merkely pipeline artifact report creation FILE.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://docs.merkely.com/client_reference/merkely_pipeline_artifact_report_creation/"><meta property="article:section" content="client_reference">
 <title>merkely pipeline artifact report creation | Merkely developer documentation</title><link rel=manifest href=/manifest.json>
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.92fc911b5878e3595bcf082ea98ffeecfc9cbfd1d5237f0dff82171afa4d4b37.css integrity="sha256-kvyRG1h441lbzwguqY/+7Pycv9HVI38N/4IXGvpNSzc=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.e4241f9e0c5aa77bd32a60763e3caae2ed5907cfc938121c987061da0d616c38.js integrity="sha256-5CQfngxap3vTKmB2Pjyq4u1ZB8/JOBIcmHBh2g1hbDg=" crossorigin=anonymous></script>
+<script defer src=/en.search.min.a49e71e1cb300da8d0286793ec456810b00b540afdc3326a76a7a7a401e8669e.js integrity="sha256-pJ5x4cswDajQKGeT7EVoELALVAr9wzJqdqenpAHoZp4=" crossorigin=anonymous></script>
 </head><body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control>
@@ -60,6 +60,8 @@ Synopsis #  Report an artifact creation to a pipeline in Merkely. The artifact S
 <a href=https://docs.merkely.com/client_reference/merkely_environment_report_ecs/>merkely environment report ecs</a>
 </li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_environment_report_k8s/>merkely environment report k8s</a>
+</li><li>
+<a href=https://docs.merkely.com/client_reference/merkely_environment_report_lambda/>merkely environment report lambda</a>
 </li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_environment_report_s3/>merkely environment report s3</a>
 </li><li>
@@ -137,15 +139,38 @@ The following flags are defaulted as follows in the CI list below:</p><pre><code
 | git-commit : ${BUILD_VCS_NUMBER}
 |---------------------------------------------------------------------------
 </code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>merkely pipeline artifact report creation ARTIFACT-NAME-OR-PATH <span style=color:#f92672>[</span>flags<span style=color:#f92672>]</span>
+</span></span></code></pre></div><h3 id=examples>
+Examples
+<a class=anchor href=#examples>#</a>
+</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Report that a file artifact has been created for a pipeline</span>
+</span></span><span style=display:flex><span>merkely pipeline artifact report creation FILE.tgz <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--api-token yourApiToken <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--owner yourOrgName <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--pipeline yourPipelineName <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--artifact-type file <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--build-url https://exampleci.com <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--commit-url https://github.com/YourOrg/YourProject/commit/yourCommitShaThatThisArtifactWasBuiltFrom <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--git-commit yourCommitShaThatThisArtifactWasBuiltFrom
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Report that an artifact with a sha256 has been created for a pipeline</span>
+</span></span><span style=display:flex><span>merkely pipeline artifact report creation <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--api-token yourApiToken <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--owner yourOrgName <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--pipeline yourPipelineName <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--sha256 yourSha256 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--build-url https://exampleci.com <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--commit-url https://github.com/YourOrg/YourProject/commit/yourCommitShaThatThisArtifactWasBuiltFrom <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>--git-commit yourCommitShaThatThisArtifactWasBuiltFrom
 </span></span></code></pre></div><h3 id=options>
 Options
 <a class=anchor href=#options>#</a>
-</h3><pre tabindex=0><code>  -t, --artifact-type string       The type of the artifact to calculate its SHA256 fingerprint.
-  -b, --build-url string           The url of CI pipeline that built the artifact. (default &#34;https://github.com/merkely-development/cli/actions/runs/1859276331&#34;)
-  -u, --commit-url string          The url for the git commit that created the artifact. (default &#34;https://github.com/merkely-development/cli/commit/c9fe3e38941ddbd0c4177efd0c7d1a8b0af926d1&#34;)
+</h3><pre tabindex=0><code>  -t, --artifact-type string       The type of the artifact to calculate its SHA256 fingerprint. One of: [docker, file, dir]
+  -b, --build-url string           The url of CI pipeline that built the artifact. (default &#34;https://github.com/merkely-development/cli/actions/runs/1915357107&#34;)
+  -u, --commit-url string          The url for the git commit that created the artifact. (default &#34;https://github.com/merkely-development/cli/commit/db7e69d466d9958ec7ce9574f3c5b042ef903f63&#34;)
   -C, --compliant                  Whether the artifact is compliant or not. (default true)
   -d, --description string         [optional] The artifact description.
-  -g, --git-commit string          The git commit from which the artifact was created. (default &#34;c9fe3e38941ddbd0c4177efd0c7d1a8b0af926d1&#34;)
+  -g, --git-commit string          The git commit from which the artifact was created. (default &#34;db7e69d466d9958ec7ce9574f3c5b042ef903f63&#34;)
   -h, --help                       help for creation
   -p, --pipeline string            The Merkely pipeline name.
       --registry-password string   The docker registry password or access token.
@@ -157,7 +182,7 @@ Options inherited from parent commands
 <a class=anchor href=#options-inherited-from-parent-commands>#</a>
 </h3><pre tabindex=0><code>  -a, --api-token string      The merkely API token.
   -c, --config-file string    [optional] The merkely config file path. (default &#34;merkely&#34;)
-  -D, --dry-run               Whether to send the request to the endpoint or just log it in stdout.
+  -D, --dry-run               Whether to run in dry-run mode. When enabled, data is not sent to Merkely and the CLI exits with 0 exit code regardless of errors.
   -H, --host string           The merkely endpoint. (default &#34;https://app.merkely.com&#34;)
   -r, --max-api-retries int   How many times should API calls be retried when the API host is not reachable. (default 3)
   -o, --owner string          The merkely user or organization.
