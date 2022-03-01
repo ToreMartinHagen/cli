@@ -4,22 +4,20 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="merkely environment report ecs #  Report images data from AWS ECS cluster to Merkely.
 Synopsis #  List the artifacts deployed in an AWS ECS cluster and their digests and report them to Merkely.
-merkely environment report ecs env-name [flags] Examples #  * report what's running in an entire AWS ECS cluster: merkely environment report ecs prod --api-token 1234 --owner exampleOrg Options #   -C, --cluster string The name of the ECS cluster.">
+merkely environment report ecs env-name [flags] Examples #   * report what's running in an entire AWS ECS cluster: merkely environment report ecs prod --api-token 1234 --owner exampleOrg Options #   -C, --cluster string The name of the ECS cluster.">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content="merkely environment report ecs">
 <meta property="og:description" content="merkely environment report ecs #  Report images data from AWS ECS cluster to Merkely.
 Synopsis #  List the artifacts deployed in an AWS ECS cluster and their digests and report them to Merkely.
-merkely environment report ecs env-name [flags] Examples #  * report what's running in an entire AWS ECS cluster: merkely environment report ecs prod --api-token 1234 --owner exampleOrg Options #   -C, --cluster string The name of the ECS cluster.">
+merkely environment report ecs env-name [flags] Examples #   * report what's running in an entire AWS ECS cluster: merkely environment report ecs prod --api-token 1234 --owner exampleOrg Options #   -C, --cluster string The name of the ECS cluster.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://docs.merkely.com/client_reference/merkely_environment_report_ecs/"><meta property="article:section" content="client_reference">
-<title>merkely environment report ecs | Merkely developer documentation</title>
-<link rel=manifest href=/manifest.json>
+<title>merkely environment report ecs | Merkely developer documentation</title><link rel=manifest href=/manifest.json>
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.92fc911b5878e3595bcf082ea98ffeecfc9cbfd1d5237f0dff82171afa4d4b37.css integrity="sha256-kvyRG1h441lbzwguqY/+7Pycv9HVI38N/4IXGvpNSzc=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.bbb1044b1fee96e12437bade17e2d031cc9cb0f8b3eb242d726ea228cbcd861c.js integrity="sha256-u7EESx/uluEkN7reF+LQMcycsPiz6yQtcm6iKMvNhhw=" crossorigin=anonymous></script>
-</head>
-<body dir=ltr>
+<script defer src=/en.search.min.e4241f9e0c5aa77bd32a60763e3caae2ed5907cfc938121c987061da0d616c38.js integrity="sha256-5CQfngxap3vTKmB2Pjyq4u1ZB8/JOBIcmHBh2g1hbDg=" crossorigin=anonymous></script>
+</head><body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control>
 <main class="container flex">
@@ -29,13 +27,9 @@ merkely environment report ecs env-name [flags] Examples #  * report what's runn
 <h2 class=book-brand>
 <a class="flex align-center" href=/><span>Merkely developer documentation</span>
 </a>
-</h2>
-<div class=book-search>
+</h2><div class=book-search>
 <input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
-<div class="book-search-spinner hidden"></div>
-<ul id=book-search-results></ul>
-</div>
-<ul>
+<div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul>
 <li>
 <input type=checkbox id=section-dc8a1c63e6da60163016ce21cae1faa0 class=toggle>
 <label for=section-dc8a1c63e6da60163016ce21cae1faa0 class="flex justify-between">
@@ -44,19 +38,13 @@ merkely environment report ecs env-name [flags] Examples #  * report what's runn
 <ul>
 <li>
 <a href=https://docs.merkely.com/concepts/devops_change_is_the_new_normal/>DevOps: Change is the New Normal</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/concepts/devops_and_change_management/>DevOps and Change Management</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/concepts/mapping_your_value_stream/>Mapping your value stream</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/concepts/understanding_binary_provenance/>Understanding Binary Provenance</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <input type=checkbox id=section-3993beb65ef7e76a7dbe6e66c07255ac class=toggle checked>
 <label for=section-3993beb65ef7e76a7dbe6e66c07255ac class="flex justify-between">
 <a href=https://docs.merkely.com/client_reference/>Merkely Commands</a>
@@ -64,70 +52,47 @@ merkely environment report ecs env-name [flags] Examples #  * report what's runn
 <ul>
 <li>
 <a href=https://docs.merkely.com/client_reference/merkely/>merkely</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_environment_allowedartifacts_add/>merkely environment allowedartifacts add</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_environment_declare/>merkely environment declare</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_environment_report_ecs/ class=active>merkely environment report ecs</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_environment_report_k8s/>merkely environment report k8s</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_environment_report_s3/>merkely environment report s3</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_environment_report_server/>merkely environment report server</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_fingerprint/>merkely fingerprint</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_approval_assert/>merkely pipeline approval assert</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_approval_report/>merkely pipeline approval report</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_approval_request/>merkely pipeline approval request</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_artifact_report_creation/>merkely pipeline artifact report creation</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_artifact_report_evidence_bitbucket-pullrequest/>merkely pipeline artifact report evidence bitbucket-pullrequest</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_artifact_report_evidence_generic/>merkely pipeline artifact report evidence generic</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_artifact_report_evidence_github-pullrequest/>merkely pipeline artifact report evidence github-pullrequest</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_artifact_report_evidence_pullrequest/>merkely pipeline artifact report evidence pullrequest</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_artifact_report_evidence_test/>merkely pipeline artifact report evidence test</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_declare/>merkely pipeline declare</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_deployment_report/>merkely pipeline deployment report</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_policy_allowedartifacts_create/>merkely policy allowedartifacts create</a>
-</li>
-<li>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_version/>merkely version</a>
-</li>
-</ul>
-</li>
-<li>
+</li></ul></li><li>
 <input type=checkbox id=section-d06928ff9c11121b26f141ced850796c class=toggle>
 <label for=section-d06928ff9c11121b26f141ced850796c class="flex justify-between">
 <a href=https://docs.merkely.com/helm/>Helm</a>
@@ -135,15 +100,8 @@ merkely environment report ecs env-name [flags] Examples #  * report what's runn
 <ul>
 <li>
 <a href=https://docs.merkely.com/helm/helm_chart/>Helm Chart</a>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
-<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-</div>
-</aside>
-<div class=book-page>
+</li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div></aside><div class=book-page>
 <header class=book-header>
 <div class="flex align-center justify-between">
 <label for=menu-control>
@@ -152,76 +110,53 @@ merkely environment report ecs env-name [flags] Examples #  * report what's runn
 <strong>merkely environment report ecs</strong>
 <label for=toc-control>
 </label>
-</div>
-</header>
-<article class=markdown>
+</div></header><article class=markdown>
 <h2 id=merkely-environment-report-ecs>
 merkely environment report ecs
 <a class=anchor href=#merkely-environment-report-ecs>#</a>
-</h2>
-<p>Report images data from AWS ECS cluster to Merkely.</p>
-<h3 id=synopsis>
+</h2><p>Report images data from AWS ECS cluster to Merkely.</p><h3 id=synopsis>
 Synopsis
 <a class=anchor href=#synopsis>#</a>
-</h3>
-<p>List the artifacts deployed in an AWS ECS cluster and their digests
-and report them to Merkely.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>merkely environment report ecs env-name <span style=color:#f92672>[</span>flags<span style=color:#f92672>]</span>
-</code></pre></div><h3 id=examples>
+</h3><p>List the artifacts deployed in an AWS ECS cluster and their digests
+and report them to Merkely.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>merkely environment report ecs env-name <span style=color:#f92672>[</span>flags<span style=color:#f92672>]</span>
+</span></span></code></pre></div><h3 id=examples>
 Examples
 <a class=anchor href=#examples>#</a>
-</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>
-* report what<span style=color:#960050;background-color:#1e0010>&#39;</span>s running in an entire AWS ECS cluster:
-merkely environment report ecs prod --api-token <span style=color:#ae81ff>1234</span> --owner exampleOrg
-
-</code></pre></div><h3 id=options>
+</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>
+</span></span><span style=display:flex><span>* report what<span style=color:#960050;background-color:#1e0010>&#39;</span>s running in an entire AWS ECS cluster:
+</span></span><span style=display:flex><span>merkely environment report ecs prod --api-token <span style=color:#ae81ff>1234</span> --owner exampleOrg
+</span></span></code></pre></div><h3 id=options>
 Options
 <a class=anchor href=#options>#</a>
-</h3>
-<pre tabindex=0><code>  -C, --cluster string        The name of the ECS cluster.
+</h3><pre tabindex=0><code>  -C, --cluster string        The name of the ECS cluster.
   -h, --help                  help for ecs
   -i, --id string             The unique identifier of the source infrastructure of the report (e.g. the ECS cluster/service name).If not set, it is defaulted based on the following order: --service-name, --cluster, environment name.
   -s, --service-name string   The name of the ECS service.
 </code></pre><h3 id=options-inherited-from-parent-commands>
 Options inherited from parent commands
 <a class=anchor href=#options-inherited-from-parent-commands>#</a>
-</h3>
-<pre tabindex=0><code>  -a, --api-token string      The merkely API token.
-  -c, --config-file string    [optional] The merkely config file path. (default &quot;merkely&quot;)
+</h3><pre tabindex=0><code>  -a, --api-token string      The merkely API token.
+  -c, --config-file string    [optional] The merkely config file path. (default &#34;merkely&#34;)
   -D, --dry-run               Whether to send the request to the endpoint or just log it in stdout.
-  -H, --host string           The merkely endpoint. (default &quot;https://app.merkely.com&quot;)
+  -H, --host string           The merkely endpoint. (default &#34;https://app.merkely.com&#34;)
   -r, --max-api-retries int   How many times should API calls be retried when the API host is not reachable. (default 3)
   -o, --owner string          The merkely user or organization.
   -v, --verbose               Print verbose logs to stdout.
-</code></pre>
-</article>
-<script>function changeHtmlTag(b,a){let c=document.querySelectorAll(`.markdown ${b}`);c.forEach(function(b){b.outerHTML=`<${a} id="${b.id}">${b.innerHTML}</${a}>`})}changeHtmlTag("h2","h1"),changeHtmlTag("h3","h2")</script>
+</code></pre></article><script>function changeHtmlTag(t,e){let n=document.querySelectorAll(`.markdown ${t}`);n.forEach(function(t){t.outerHTML=`<${e} id="${t.id}">${t.innerHTML}</${e}>`})}changeHtmlTag("h2","h1"),changeHtmlTag("h3","h2")</script>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-</div>
-<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
-</footer>
-<div class=book-comments>
-</div>
-<label for=menu-control class="hidden book-menu-overlay"></label>
-</div>
-</main>
-<div class=top-header>
+</div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</footer><div class=book-comments>
+</div><label for=menu-control class="hidden book-menu-overlay"></label>
+</div></main><div class=top-header>
 <div class="container flex">
 <div class=docs-logo>
 <a href=/>
 <img src=/merkely-docs-logo-white.svg alt="Merkely docs logo">
 </a>
-</div>
-<div class=separator>
-</div>
-<div class=back-to-site>
+</div><div class=separator>
+</div><div class=back-to-site>
 <a href=https://www.merkely.com target=_blank>
 <span class=left-carret>&lt;</span> Back to Website
 </a>
-</div>
-</div>
-</div>
-</body>
-</html>
+</div></div></div></body></html>
