@@ -16,7 +16,7 @@ Synopsis #  Report an artifact creation to a pipeline in Merkely. The artifact S
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.92fc911b5878e3595bcf082ea98ffeecfc9cbfd1d5237f0dff82171afa4d4b37.css integrity="sha256-kvyRG1h441lbzwguqY/+7Pycv9HVI38N/4IXGvpNSzc=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.02685d9572bc5490fd2b2d3e8ee44f9c38b388984f46dc4da488e5e4e8c5aaca.js integrity="sha256-AmhdlXK8VJD9Ky0+juRPnDiziJhPRtxNpIjl5OjFqso=" crossorigin=anonymous></script>
+<script defer src=/en.search.min.1dccee582218b86812385480f5dd546826410c2072ad2a6fb97b0b627277d318.js integrity="sha256-HczuWCIYuGgSOFSA9d1UaCZBDCByrSpvuXsLYnJ30xg=" crossorigin=anonymous></script>
 </head><body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control>
@@ -162,11 +162,11 @@ Examples
 Options
 <a class=anchor href=#options>#</a>
 </h3><pre tabindex=0><code>  -t, --artifact-type string       The type of the artifact to calculate its SHA256 fingerprint. One of: [docker, file, dir]
-  -b, --build-url string           The url of CI pipeline that built the artifact.
-  -u, --commit-url string          The url for the git commit that created the artifact.
+  -b, --build-url string           The url of CI pipeline that built the artifact. (default &#34;https://github.com/merkely-development/cli/actions/runs/1950470174&#34;)
+  -u, --commit-url string          The url for the git commit that created the artifact. (default &#34;https://github.com/merkely-development/cli/commit/b72323e971c39ccdc8f211d32592ddd18952060e&#34;)
   -C, --compliant                  Whether the artifact is compliant or not. (default true)
   -d, --description string         [optional] The artifact description.
-  -g, --git-commit string          The git commit from which the artifact was created.
+  -g, --git-commit string          The git commit from which the artifact was created. (default &#34;b72323e971c39ccdc8f211d32592ddd18952060e&#34;)
   -h, --help                       help for creation
   -p, --pipeline string            The Merkely pipeline name.
       --registry-password string   The docker registry password or access token.

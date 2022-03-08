@@ -16,7 +16,7 @@ Synopsis #  Check if a pull request exists for an artifact and report the pull-r
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.92fc911b5878e3595bcf082ea98ffeecfc9cbfd1d5237f0dff82171afa4d4b37.css integrity="sha256-kvyRG1h441lbzwguqY/+7Pycv9HVI38N/4IXGvpNSzc=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.02685d9572bc5490fd2b2d3e8ee44f9c38b388984f46dc4da488e5e4e8c5aaca.js integrity="sha256-AmhdlXK8VJD9Ky0+juRPnDiziJhPRtxNpIjl5OjFqso=" crossorigin=anonymous></script>
+<script defer src=/en.search.min.1dccee582218b86812385480f5dd546826410c2072ad2a6fb97b0b627277d318.js integrity="sha256-HczuWCIYuGgSOFSA9d1UaCZBDCByrSpvuXsLYnJ30xg=" crossorigin=anonymous></script>
 </head><body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control>
@@ -137,8 +137,8 @@ Options
       --bitbucket-password string    Bitbucket password.
       --bitbucket-username string    Bitbucket user name.
       --bitbucket-workspace string   Bitbucket workspace.
-  -b, --build-url string             The url of CI pipeline that generated the evidence.
-      --commit string                Git commit for which to find pull request evidence.
+  -b, --build-url string             The url of CI pipeline that generated the evidence. (default &#34;https://github.com/merkely-development/cli/actions/runs/1950470174&#34;)
+      --commit string                Git commit for which to find pull request evidence. (default &#34;b72323e971c39ccdc8f211d32592ddd18952060e&#34;)
   -d, --description string           [optional] The evidence description.
   -e, --evidence-type string         The type of evidence being reported.
   -h, --help                         help for bitbucket-pullrequest
@@ -146,7 +146,7 @@ Options
       --registry-password string     The docker registry password or access token.
       --registry-provider string     The docker registry provider or url.
       --registry-username string     The docker registry username.
-      --repository string            Git repository.
+      --repository string            Git repository. (default &#34;merkely-development/cli&#34;)
   -s, --sha256 string                The SHA256 fingerprint for the artifact. Only required if you don&#39;t specify --artifact-type.
 </code></pre><h3 id=options-inherited-from-parent-commands>
 Options inherited from parent commands
