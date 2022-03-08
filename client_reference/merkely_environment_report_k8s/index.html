@@ -16,7 +16,7 @@ merkely environment report k8s [-n namespace | -x namespace]... [-k /path/to/kub
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.92fc911b5878e3595bcf082ea98ffeecfc9cbfd1d5237f0dff82171afa4d4b37.css integrity="sha256-kvyRG1h441lbzwguqY/+7Pycv9HVI38N/4IXGvpNSzc=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.1dccee582218b86812385480f5dd546826410c2072ad2a6fb97b0b627277d318.js integrity="sha256-HczuWCIYuGgSOFSA9d1UaCZBDCByrSpvuXsLYnJ30xg=" crossorigin=anonymous></script>
+<script defer src=/en.search.min.481958397c836d3c6e6baeee8eae9dd1a194ceb0118d9ef81b1a8b02aac7b07e.js integrity="sha256-SBlYOXyDbTxua67ujq6d0aGUzrARjZ74GxqLAqrHsH4=" crossorigin=anonymous></script>
 </head><body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control>
@@ -53,6 +53,10 @@ merkely environment report k8s [-n namespace | -x namespace]... [-k /path/to/kub
 <li>
 <a href=https://docs.merkely.com/client_reference/merkely/>merkely</a>
 </li><li>
+<a href=https://docs.merkely.com/client_reference/merkely_assert_bitbucket-pullrequest/>merkely assert bitbucket-pullrequest</a>
+</li><li>
+<a href=https://docs.merkely.com/client_reference/merkely_assert_github-pullrequest/>merkely assert github-pullrequest</a>
+</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_environment_allowedartifacts_add/>merkely environment allowedartifacts add</a>
 </li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_environment_declare/>merkely environment declare</a>
@@ -88,6 +92,8 @@ merkely environment report k8s [-n namespace | -x namespace]... [-k /path/to/kub
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_declare/>merkely pipeline declare</a>
 </li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_deployment_report/>merkely pipeline deployment report</a>
+</li><li>
+<a href=https://docs.merkely.com/client_reference/merkely_status/>merkely status</a>
 </li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_version/>merkely version</a>
 </li></ul></li><li>
@@ -155,7 +161,7 @@ Options
 <a class=anchor href=#options>#</a>
 </h3><pre tabindex=0><code>  -x, --exclude-namespace strings   The comma separated list of namespaces regex patterns NOT to report artifacts info from. Can&#39;t be used together with --namespace.
   -h, --help                        help for k8s
-  -k, --kubeconfig string           The kubeconfig path for the target cluster.
+  -k, --kubeconfig string           The kubeconfig path for the target cluster. (default &#34;$HOME/.kube/config&#34;)
   -n, --namespace strings           The comma separated list of namespaces regex patterns to report artifacts info from. Can&#39;t be used together with --exclude-namespace.
 </code></pre><h3 id=options-inherited-from-parent-commands>
 Options inherited from parent commands
