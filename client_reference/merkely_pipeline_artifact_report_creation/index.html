@@ -16,7 +16,7 @@ Synopsis #  Report an artifact creation to a pipeline in Merkely. The artifact S
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.92fc911b5878e3595bcf082ea98ffeecfc9cbfd1d5237f0dff82171afa4d4b37.css integrity="sha256-kvyRG1h441lbzwguqY/+7Pycv9HVI38N/4IXGvpNSzc=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.a49e71e1cb300da8d0286793ec456810b00b540afdc3326a76a7a7a401e8669e.js integrity="sha256-pJ5x4cswDajQKGeT7EVoELALVAr9wzJqdqenpAHoZp4=" crossorigin=anonymous></script>
+<script defer src=/en.search.min.02685d9572bc5490fd2b2d3e8ee44f9c38b388984f46dc4da488e5e4e8c5aaca.js integrity="sha256-AmhdlXK8VJD9Ky0+juRPnDiziJhPRtxNpIjl5OjFqso=" crossorigin=anonymous></script>
 </head><body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control>
@@ -83,15 +83,11 @@ Synopsis #  Report an artifact creation to a pipeline in Merkely. The artifact S
 </li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_artifact_report_evidence_github-pullrequest/>merkely pipeline artifact report evidence github-pullrequest</a>
 </li><li>
-<a href=https://docs.merkely.com/client_reference/merkely_pipeline_artifact_report_evidence_pullrequest/>merkely pipeline artifact report evidence pullrequest</a>
-</li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_artifact_report_evidence_test/>merkely pipeline artifact report evidence test</a>
 </li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_declare/>merkely pipeline declare</a>
 </li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_pipeline_deployment_report/>merkely pipeline deployment report</a>
-</li><li>
-<a href=https://docs.merkely.com/client_reference/merkely_policy_allowedartifacts_create/>merkely policy allowedartifacts create</a>
 </li><li>
 <a href=https://docs.merkely.com/client_reference/merkely_version/>merkely version</a>
 </li></ul></li><li>
@@ -166,11 +162,11 @@ Examples
 Options
 <a class=anchor href=#options>#</a>
 </h3><pre tabindex=0><code>  -t, --artifact-type string       The type of the artifact to calculate its SHA256 fingerprint. One of: [docker, file, dir]
-  -b, --build-url string           The url of CI pipeline that built the artifact. (default &#34;https://github.com/merkely-development/cli/actions/runs/1915357107&#34;)
-  -u, --commit-url string          The url for the git commit that created the artifact. (default &#34;https://github.com/merkely-development/cli/commit/db7e69d466d9958ec7ce9574f3c5b042ef903f63&#34;)
+  -b, --build-url string           The url of CI pipeline that built the artifact.
+  -u, --commit-url string          The url for the git commit that created the artifact.
   -C, --compliant                  Whether the artifact is compliant or not. (default true)
   -d, --description string         [optional] The artifact description.
-  -g, --git-commit string          The git commit from which the artifact was created. (default &#34;db7e69d466d9958ec7ce9574f3c5b042ef903f63&#34;)
+  -g, --git-commit string          The git commit from which the artifact was created.
   -h, --help                       help for creation
   -p, --pipeline string            The Merkely pipeline name.
       --registry-password string   The docker registry password or access token.
