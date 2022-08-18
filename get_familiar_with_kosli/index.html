@@ -1,7 +1,7 @@
 <!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Get Familiar with Kosli # Kosli stores information about the SW you build in CI pipelines and run in your runtime environment. The Kosli CLI is used for reporting and querying the information.
 Typically all the reporting will be done as part of your CI and runtime systems. In the getting started you don't need any of this. Local code, git and a terminal are enough.
 The Kosli CLI is tool agnostic and can run on any major platform (Linux, Mac, Windows)."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="Get Familiar with Kosli"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://docs.kosli.com/get_familiar_with_kosli/"><title>Get Familiar with Kosli | Kosli developer documentation</title><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=stylesheet href=/book.min.1267e5eb46bf5a0b00fa1f3214c8ecfec4d9896a56620759cd0969d3c2498d97.css integrity="sha256-Emfl60a/WgsA+h8yFMjs/sTZiWpWYgdZzQlp08JJjZc=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.6a3d459b2ca0cced5e4113c2781b8aa461eee7fd315955275a46f7c11c0b6012.js integrity="sha256-aj1FmyygzO1eQRPCeBuKpGHu5/0xWVUnWkb3wRwLYBI=" crossorigin=anonymous></script>
+<script defer src=/en.search.min.626385182c390cae06fbe47b216005c4878acc4310342b0754b4b05357474b23.js integrity="sha256-YmOFGCw5DK4G++R7IWAFxIeKzEMQNCsHVLSwU1dHSyM=" crossorigin=anonymous></script>
 <link rel=alternate type=application/rss+xml href=https://docs.kosli.com/get_familiar_with_kosli/index.xml title="Kosli developer documentation"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>Kosli developer documentation</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=https://docs.kosli.com/get_familiar_with_kosli/ class=active>Get Familiar with Kosli</a><ul></ul></li><li><input type=checkbox id=section-90d1aeee0e96e115d1edea3b994d19fb class=toggle>
 <label for=section-90d1aeee0e96e115d1edea3b994d19fb class="flex justify-between"><a href=https://docs.kosli.com/tutorials/>Tutorials</a></label><ul><li><input type=checkbox id=section-7eca5fc2ae3a7a6d5837431d0a2728d1 class=toggle>
@@ -16,11 +16,12 @@ and run in your runtime environment. The Kosli CLI is used for reporting
 and querying the information.</p><p>Typically all the reporting will be done as part of your CI and runtime systems.
 In the getting started you don't need any of this. Local code, git and a terminal are enough.</p><p>The Kosli CLI is tool agnostic and can run on any major platform (Linux, Mac, Windows).
 Kosli does not require you to change your existing process.</p><p>The purpose of this guide is to familiarize you with the Kosli CLI and concepts.</p><p>When you are done with the guide you should be able to start adding Kosli to
-your CI system and runtime environment.</p><h2 id=things-to-prepare>Things to prepare
-<a class=anchor href=#things-to-prepare>#</a></h2><h3 id=cli>CLI
-<a class=anchor href=#cli>#</a></h3><p>The Kosli CLI can be downloaded from: <a href=https://github.com/kosli-dev/cli/releases>https://github.com/kosli-dev/cli/releases</a>
-Put it in a location you'll be running it from (as <code>./kosli</code>) or add it to your PATH so you can use it anywhere (as <code>kosli</code>)</p><h3 id=local-setup>Local setup
-<a class=anchor href=#local-setup>#</a></h3><p>For these examples we are simulating a system with source code, build and a running server.
+your CI system and runtime environment.</p><h2 id=installing-kosli-cli>Installing Kosli CLI
+<a class=anchor href=#installing-kosli-cli>#</a></h2><p>If you have <a href=https://brew.sh/>Homebrew</a> (available on MacOS, Linux or Windows Subsystem for Linux),
+you can install the Kosli CLI by running:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ brew install kosli-dev/tap/kosli
+</span></span></code></pre></div><p>Alternatively, the Kosli CLI can be downloaded from: <a href=https://github.com/kosli-dev/cli/releases>https://github.com/kosli-dev/cli/releases</a>
+Put it in a location you'll be running it from (as <code>./kosli</code>) or add it to your PATH so you can use it anywhere (as <code>kosli</code>)</p><h2 id=preparing-the-tutorial>Preparing the tutorial
+<a class=anchor href=#preparing-the-tutorial>#</a></h2><p>For these examples we are simulating a system with source code, build and a running server.
 We have a script to help you run these simulations so you don't need to type so many commands.</p><p>You can download the file from here:
 <a href=https://raw.githubusercontent.com/kosli-dev/cli/main/simulation_commands.bash>https://raw.githubusercontent.com/kosli-dev/cli/main/simulation_commands.bash</a></p><p>or from the command line with</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ cd /tmp
 </span></span><span style=display:flex><span>$ curl -O https://raw.githubusercontent.com/kosli-dev/cli/main/simulation_commands.bash
@@ -36,15 +37,15 @@ We have a script to help you run these simulations so you don't need to type so 
 </span></span><span style=display:flex><span>$ simulate_build
 </span></span><span style=display:flex><span>$ simulate_deployment
 </span></span></code></pre></div><p>While going through the getting started guide, feel free to explore the
-functionality by updating the source code, building and deploying new versions.</p><h3 id=use-of-environment-variables>Use of environment variables
-<a class=anchor href=#use-of-environment-variables>#</a></h3><p>All the kosli commands contain some common
+functionality by updating the source code, building and deploying new versions.</p><h2 id=using-environment-variables>Using environment variables
+<a class=anchor href=#using-environment-variables>#</a></h2><p>All the kosli commands contain some common
 flags <code>--api-token</code> and <code>--owner</code>. By setting
 these as environment variables we don't need to specify them.</p><p>You do this by capitalizing the flag in snake case and adding the <code>KOSLI_</code> prefix.
 For example, to set <code>--api-token xx</code> from an environment variable, you can <code>export KOSLI_API_TOKEN=xx</code>, etc:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>export KOSLI_API_TOKEN<span style=color:#f92672>=</span>&lt;put your kosli API token here&gt;
 </span></span><span style=display:flex><span>export KOSLI_OWNER<span style=color:#f92672>=</span>&lt;put your github username here&gt;
-</span></span></code></pre></div><p>To get the kosli API token go to <a href=https://app.kosli.com>https://app.kosli.com</a>, log in using your github account, and go to your Profile (you'll find it if you click on your avatar in the top right corner of the page)</p><h3 id=web-interface>Web interface
-<a class=anchor href=#web-interface>#</a></h3><p>As you go through the guide you can also check your progress from
-the <a href=https://app.kosli.com>web interface</a>.</p><p>In the upper left corner there is a house icon. Next to it you can select
+</span></span></code></pre></div><p>To get the kosli API token go to <a href=https://app.kosli.com>https://app.kosli.com</a>, log in using your github account, and go to your Profile (you'll find it if you click on your avatar in the top right corner of the page)</p><h2 id=using-a-web-browser>Using a web browser
+<a class=anchor href=#using-a-web-browser>#</a></h2><p>As you go through the guide you can also check your progress from
+<a href=https://app.kosli.com>your browser</a>.</p><p>In the upper left corner there is a house icon. Next to it you can select
 which organization you want to view. Your personal organization
 has the same name as your github login name, and is the organization you will
 be using in this guide.</p><h1 id=environment>Environment
@@ -54,8 +55,8 @@ We use one Kosli environment per runtime environment.</p><p>A typical setup repo
 staging server and on the production server. To report what is
 running you run the Kosli CLI command periodically. The Kosli CLI will
 detect the version of the SW you are currently running and report
-it to the Kosli environment.</p><h2 id=create-a-kosli-environment>Create a Kosli environment
-<a class=anchor href=#create-a-kosli-environment>#</a></h2><p>To follow the examples make sure you have followed the instructions in Local setup</p><p>We create a Kosli environment.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ kosli environment declare <span style=color:#ae81ff>\
+it to the Kosli environment.</p><h2 id=creating-a-kosli-environment>Creating a Kosli environment
+<a class=anchor href=#creating-a-kosli-environment>#</a></h2><p>To follow the examples make sure you have followed the instructions in Local setup</p><p>We create a Kosli environment.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ kosli environment declare <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --name production <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --environment-type server <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --description <span style=color:#e6db74>&#34;Production server (for kosli getting started)&#34;</span>
@@ -71,8 +72,8 @@ it to the Kosli environment.</p><h2 id=create-a-kosli-environment>Create a Kosli
 </span></span><span style=display:flex><span>Last Reported At:  N/A
 </span></span></code></pre></div><p>In the web interface you can select the <strong>Environments</strong> menu on the left.
 It will show you that you have a <em>production</em> environment and that
-no reports have been received.</p><h2 id=report-the-sw-running-in-your-environment>Report the SW running in your environment
-<a class=anchor href=#report-the-sw-running-in-your-environment>#</a></h2><p>We simulate a report from our server by reporting two dummy files for the web and
+no reports have been received.</p><h2 id=reporting-the-sw-running-in-your-environment>Reporting the SW running in your environment
+<a class=anchor href=#reporting-the-sw-running-in-your-environment>#</a></h2><p>We simulate a report from our server by reporting two dummy files for the web and
 database applications.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ kosli environment report server production <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --paths /tmp/try-kosli/server/web_*bin <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --paths /tmp/try-kosli/server/db_*.bin
@@ -137,8 +138,8 @@ artifacts. For both cases we use one Kosli pipeline for each artifact.
 We use the Kosli CLI to report information about the creation of an
 artifact to the Kosli pipeline.</p><p>A Kosli pipeline can also be used to store any information related to
 the artifact you have built, like test results, manual approvals,
-pull-requests and so on.</p><h2 id=create-a-kosli-pipeline>Create a Kosli pipeline
-<a class=anchor href=#create-a-kosli-pipeline>#</a></h2><p>To follow the examples make sure you have followed the instructions in Local setup.</p><p>We create a Kosli pipeline where we can report what SW our CI system
+pull-requests and so on.</p><h2 id=creating-a-kosli-pipeline>Creating a Kosli pipeline
+<a class=anchor href=#creating-a-kosli-pipeline>#</a></h2><p>To follow the examples make sure you have followed the instructions in Local setup.</p><p>We create a Kosli pipeline where we can report what SW our CI system
 is building. Since we are building two applications we are making
 two Kosli pipelines <code>web-server</code> and <code>database-server</code>.</p><p>Create your new pipelines:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ kosli pipeline declare <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --pipeline web-server <span style=color:#ae81ff>\
@@ -158,8 +159,8 @@ two Kosli pipelines <code>web-server</code> and <code>database-server</code>.</p
 </span></span></code></pre></div><p>In the web interface you can select the <strong>Pipelines</strong> menu on the left.
 It will show you that you have a <em>web-server</em> and <em>database-server</em> pipeline.
 If you press either of the pipelines they will show that no artifacts have
-been reported for the pipelines.</p><h2 id=build-artifacts-and-report-them-to-kosli>Build artifacts and report them to Kosli
-<a class=anchor href=#build-artifacts-and-report-them-to-kosli>#</a></h2><p>Simulate building our SW</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ simulate_build
+been reported for the pipelines.</p><h2 id=building-artifacts-and-reporting-them-to-kosli>Building artifacts and reporting them to Kosli
+<a class=anchor href=#building-artifacts-and-reporting-them-to-kosli>#</a></h2><p>Simulate building our SW</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ simulate_build
 </span></span></code></pre></div><p>We can now report we have built the web and database applications. We are using
 a dummy <code>--build-url</code>, in real life it would be a CI build URL.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ kosli pipeline artifact report creation /tmp/try-kosli/build/web_<span style=color:#66d9ef>$(</span>cat /tmp/try-kosli/code/web.src<span style=color:#66d9ef>)</span>.bin <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --pipeline web-server <span style=color:#ae81ff>\
@@ -195,8 +196,8 @@ a dummy <code>--build-url</code>, in real life it would be a CI build URL.</p><d
 </span></span></code></pre></div><p>In the web interface you can select the <em>database-server</em> pipeline and then the <em>db_1.bin</em>
 artifact to get more details.</p><h1 id=deployments>Deployments
 <a class=anchor href=#deployments>#</a></h1><p>We assume the user has done both Environments and Pipelines first.</p><p>A Kosli deployment command is used to indicate an aritfact is
-being deployed to a given runtime environment.</p><h2 id=deploy-sw-to-server-and-report-the-deployment-to-kosli>Deploy SW to server and report the deployment to Kosli
-<a class=anchor href=#deploy-sw-to-server-and-report-the-deployment-to-kosli>#</a></h2><p>Simulate deploying our SW to the server</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ simulate_deployment
+being deployed to a given runtime environment.</p><h2 id=deploying-sw-to-the-server-and-reporting-the-deployment-to-kosli>Deploying SW to the server and reporting the deployment to Kosli
+<a class=anchor href=#deploying-sw-to-the-server-and-reporting-the-deployment-to-kosli>#</a></h2><p>Simulate deploying our SW to the server</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ simulate_deployment
 </span></span></code></pre></div><p>Report to Kosli that the web SW has been deployed.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ kosli pipeline deployment report /tmp/try-kosli/build/web_<span style=color:#66d9ef>$(</span>cat /tmp/try-kosli/code/web.src<span style=color:#66d9ef>)</span>.bin <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --pipeline web-server <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --artifact-type file <span style=color:#ae81ff>\
