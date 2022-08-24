@@ -15,7 +15,7 @@ cd /tmp curl -O https://raw.githubusercontent.com/kosli-dev/cli/main/simulation_
 <label for=toc-control></label></div></header><article class=markdown><h1 id=preparing-the-tutorial>Preparing the tutorial
 <a class=anchor href=#preparing-the-tutorial>#</a></h1><p>For these examples we are simulating a system with source code, build and a running server.
 We have a script to help you run these simulations so you don't need to type so many commands.</p><p>You can download the file from here:
-<a href=https://raw.githubusercontent.com/kosli-dev/cli/main/simulation_commands.bash>https://raw.githubusercontent.com/kosli-dev/cli/main/simulation_commands.bash</a></p><p>or from the command line with</p><div class="highlight command multiple"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>cd /tmp
+<a href=https://raw.githubusercontent.com/kosli-dev/cli/main/simulation_commands.bash>https://raw.githubusercontent.com/kosli-dev/cli/main/simulation_commands.bash</a></p><p>or from the command line with</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>cd /tmp
 </span></span><span style=display:flex><span>curl -O https://raw.githubusercontent.com/kosli-dev/cli/main/simulation_commands.bash
 </span></span></code></pre></div><p>Source the simulation commands so you can use them later on in the examples.</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>source simulation_commands.bash
 </span></span></code></pre></div><p>To see what a command (eg create_git_repo_in_tmp) in the simulation is actually doing run</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>type create_git_repo_in_tmp
@@ -25,7 +25,7 @@ We have a script to help you run these simulations so you don't need to type so 
 </span></span><span style=display:flex><span>    pushd /tmp;
 </span></span><span style=display:flex><span>    mkdir try-kosli;
 </span></span><span style=display:flex><span>    ...
-</span></span></code></pre></div><p>Create the git repo and simulate a build and deployment to server.</p><div class="highlight command multiple"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>create_git_repo_in_tmp
+</span></span></code></pre></div><p>Create the git repo and simulate a build and deployment to server.</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>create_git_repo_in_tmp
 </span></span><span style=display:flex><span>simulate_build
 </span></span><span style=display:flex><span>simulate_deployment
 </span></span></code></pre></div><p>While going through the getting started guide, feel free to explore the
@@ -86,7 +86,7 @@ several times will not lead to duplication of snapshots.</p><div class="highligh
 </span></span><span style=display:flex><span>                                                                                                           
 </span></span><span style=display:flex><span>N/A     Name: /tmp/try-kosli/server/db_1.bin                                      N/A       <span style=color:#ae81ff>2</span> minutes ago  <span style=color:#ae81ff>1</span>
 </span></span><span style=display:flex><span>        SHA256: 0efde582a933f011c3ae9007467a7f973a874517093e9a5a05ea55476f7c91af                           
-</span></span></code></pre></div><p>We simulate an update of the web application to a new version, build and deploy it</p><div class="highlight command multiple"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>update_web_src
+</span></span></code></pre></div><p>We simulate an update of the web application to a new version, build and deploy it</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>update_web_src
 </span></span><span style=display:flex><span>simulate_build
 </span></span><span style=display:flex><span>simulate_deployment
 </span></span></code></pre></div><p>Report what is now running on server</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli environment report server production <span style=color:#ae81ff>\
