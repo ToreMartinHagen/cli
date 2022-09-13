@@ -2,7 +2,7 @@
 Something went wrong and https://cyber-dojo.org is displaying a 500 error!
 It was working an hour ago. What has happened in the last hour?
 Start with the environment # https://cyber-dojo.org is running in an AWS environment that reports to Kosli as aws-prod."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="Tracing a production incident back to git commits"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://docs.kosli.com/tutorials/tracing_a_production_incident_back_to_git_commits/"><title>Tracing a production incident back to git commits | Kosli developer documentation</title><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=stylesheet href=/book.min.63b164298756b66717a1db36ea286149e22b5c43671b6aaa42ed1c716c14cb03.css integrity="sha256-Y7FkKYdWtmcXods26ihhSeIrXENnG2qqQu0ccWwUywM=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.6872360c3b1d70b174b0e6ca01b9d2dc4324c9cf3cec303af12803e6715efa80.js integrity="sha256-aHI2DDsdcLF0sObKAbnS3EMkyc887DA68SgD5nFe+oA=" crossorigin=anonymous></script>
+<script defer src=/en.search.min.4ff66060e72e06f01aeb0d1df1594e519ca545c0bd3f1d2adf243a30b424244e.js integrity="sha256-T/ZgYOcuBvAa6w0d8VlOUZylRcC9Px0q3yQ6MLQkJE4=" crossorigin=anonymous></script>
 <link rel=alternate type=application/rss+xml href=https://docs.kosli.com/tutorials/tracing_a_production_incident_back_to_git_commits/index.xml title="Kosli developer documentation"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>Kosli developer documentation</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-cecd4ea74d1b57416f3e6afae6030290 class=toggle>
 <label for=section-cecd4ea74d1b57416f3e6afae6030290 class="flex justify-between"><a href=https://docs.kosli.com/guides/>Guides</a></label><ul><li><input type=checkbox id=section-70f06323c9fc8771b6f6b6608e912f12 class=toggle>
@@ -20,25 +20,24 @@ that reports to Kosli as <code>aws-prod</code>.<br>Get a log of this environment
 <code>aws-prod</code> has moved on since this incident (it has been resolved with new
 commits which have created new deployments). To get the same output as we have
 you can set the interval for the command:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli env log aws-prod --long 175..177
-</span></span></code></pre></div><div class="highlight light-console"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plaintext data-lang=plaintext><span style=display:flex><span>SNAPSHOT  EVENT                                                                      PIPELINE  DEPLOYMENTS
-</span></span><span style=display:flex><span>#177      Artifact: 274425519734.dkr.ecr.eu-central-1.amazonaws.com/creator:31dee35  creator   #87 
-</span></span><span style=display:flex><span>          SHA256: 5d1c926530213dadd5c9fcbf59c8822da56e32a04b0f9c774d7cdde3cf6ba66d             
+</span></span></code></pre></div><div class="highlight light-console"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plaintext data-lang=plaintext><span style=display:flex><span>SNAPSHOT  EVENT                                                                          PIPELINE  DEPLOYMENTS
+</span></span><span style=display:flex><span>#177      Artifact: 274425519734.dkr.ecr.eu-central-1.amazonaws.com/creator:31dee35      creator   #87 
+</span></span><span style=display:flex><span>          Fingerprint: 5d1c926530213dadd5c9fcbf59c8822da56e32a04b0f9c774d7cdde3cf6ba66d             
 </span></span><span style=display:flex><span>          Description: 1 instance stopped running (from 1 to 0).                               
 </span></span><span style=display:flex><span>          Reported at: Tue, 06 Sep 2022 16:53:28 CEST                                          
 </span></span><span style=display:flex><span>                                                                                               
-</span></span><span style=display:flex><span>#176      Artifact: 274425519734.dkr.ecr.eu-central-1.amazonaws.com/creator:b7a5908  creator   #89 
-</span></span><span style=display:flex><span>          SHA256: 860ad172ace5aee03e6a1e3492a88b3315ecac2a899d4f159f43ca7314290d5a             
+</span></span><span style=display:flex><span>#176      Artifact: 274425519734.dkr.ecr.eu-central-1.amazonaws.com/creator:b7a5908      creator   #89 
+</span></span><span style=display:flex><span>          Fingerprint: 860ad172ace5aee03e6a1e3492a88b3315ecac2a899d4f159f43ca7314290d5a             
 </span></span><span style=display:flex><span>          Description: 1 instance started running (from 0 to 1).                               
 </span></span><span style=display:flex><span>          Reported at: Tue, 06 Sep 2022 16:52:28 CEST
 </span></span><span style=display:flex><span>...
 </span></span></code></pre></div><p>These two snapshots belong to the same blue-green deployment.
 You see artifact <code>creator:b7a5908</code> starting in snapshot #176, and artifact
-<code>creator:31dee35</code> exiting in snapshot #177.</p><blockquote class="book-hint info"><h3 id=how-do-you-know-you-are-seeing-a-blue-green-deployment>How do you know you are seeing a blue-green deployment?
-<a class=anchor href=#how-do-you-know-you-are-seeing-a-blue-green-deployment>#</a></h3><p>Because these two snapshot events:</p><ul><li>relate to the same pipeline</li><li>are close in time</li></ul></blockquote><h2 id=dig-into-the-artifact>Dig into the artifact
+<code>creator:31dee35</code> exiting in snapshot #177.</p><h2 id=dig-into-the-artifact>Dig into the artifact
 <a class=anchor href=#dig-into-the-artifact>#</a></h2><p>You are interested in #176, showing the newly running artifact, <code>creator:b7a5908</code>,
-whos sha256 is <code>860ad172ace5aee03e6a1e3492a88b3315ecac2a899d4f159f43ca7314290d5a</code>.</p><p>Let's learn more about this artifact:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli artifact get creator@860ad172ace5aee03e6a1e3492a88b3315ecac2a899d4f159f43ca7314290d5a
+whose sha256 is <code>860ad172ace5aee03e6a1e3492a88b3315ecac2a899d4f159f43ca7314290d5a</code>.</p><p>Let's learn more about this artifact:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli artifact get creator@860ad172ace5aee03e6a1e3492a88b3315ecac2a899d4f159f43ca7314290d5a
 </span></span></code></pre></div><div class="highlight light-console"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plaintext data-lang=plaintext><span style=display:flex><span>Name:        cyberdojo/creator:b7a5908
-</span></span><span style=display:flex><span>SHA256:      860ad172ace5aee03e6a1e3492a88b3315ecac2a899d4f159f43ca7314290d5a
+</span></span><span style=display:flex><span>Fingerprint: 860ad172ace5aee03e6a1e3492a88b3315ecac2a899d4f159f43ca7314290d5a
 </span></span><span style=display:flex><span>Created on:  Tue, 06 Sep 2022 16:48:07 CEST • 21 hours ago
 </span></span><span style=display:flex><span>Git commit:  b7a590836cf140e17da3f01eadd5eca17d9efc65
 </span></span><span style=display:flex><span>Commit URL:  https://github.com/cyber-dojo/creator/commit/b7a590836cf140e17da3f01eadd5eca17d9efc65
