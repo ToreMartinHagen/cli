@@ -1,6 +1,6 @@
 <!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Following a git commit to runtime environments # Overview # In this 5 minute tutorial you'll learn how Kosli tracks &#34;life after git&#34; and shows you events from:
-CI-pipelines (eg, building the docker image, running the unit tests, deploying, etc) runtime environments (eg, the blue-green rollover, instance scaling, etc) You'll follow an actual git commit to an open-source project called cyber-dojo. cyber-dojo's runner service performs most of its heavy lifting and should run with three replicas."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="Following a git commit to runtime environments"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://docs.kosli.com/tutorials/following_a_git_commit_to_runtime_environments/"><title>Following a git commit to runtime environments | Kosli developer documentation</title><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=stylesheet href=/book.min.63b164298756b66717a1db36ea286149e22b5c43671b6aaa42ed1c716c14cb03.css integrity="sha256-Y7FkKYdWtmcXods26ihhSeIrXENnG2qqQu0ccWwUywM=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.4ff66060e72e06f01aeb0d1df1594e519ca545c0bd3f1d2adf243a30b424244e.js integrity="sha256-T/ZgYOcuBvAa6w0d8VlOUZylRcC9Px0q3yQ6MLQkJE4=" crossorigin=anonymous></script>
+CI-pipelines (eg, building the docker image, running the unit tests, deploying, etc) runtime environments (eg, the blue-green rollover, instance scaling, etc) You'll follow an actual git commit to an open-source project called cyber-dojo. In our example cyber-dojo’s runner service should run with three replicas."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="Following a git commit to runtime environments"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://docs.kosli.com/tutorials/following_a_git_commit_to_runtime_environments/"><title>Following a git commit to runtime environments | Kosli developer documentation</title><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=stylesheet href=/book.min.63b164298756b66717a1db36ea286149e22b5c43671b6aaa42ed1c716c14cb03.css integrity="sha256-Y7FkKYdWtmcXods26ihhSeIrXENnG2qqQu0ccWwUywM=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script>
+<script defer src=/en.search.min.721e7c0629852a48f728e7edfde8a65b23ba87d0e6c1867f21515927c71700c6.js integrity="sha256-ch58BimFKkj3KOft/eimWyO6h9DmwYZ/IVFZJ8cXAMY=" crossorigin=anonymous></script>
 <link rel=alternate type=application/rss+xml href=https://docs.kosli.com/tutorials/following_a_git_commit_to_runtime_environments/index.xml title="Kosli developer documentation"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>Kosli developer documentation</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-cecd4ea74d1b57416f3e6afae6030290 class=toggle>
 <label for=section-cecd4ea74d1b57416f3e6afae6030290 class="flex justify-between"><a href=https://docs.kosli.com/guides/>Guides</a></label><ul><li><input type=checkbox id=section-70f06323c9fc8771b6f6b6608e912f12 class=toggle>
@@ -13,9 +13,9 @@ CI-pipelines (eg, building the docker image, running the unit tests, deploying, 
 <label for=toc-control></label></div></header><article class=markdown><h1 id=following-a-git-commit-to-runtime-environments>Following a git commit to runtime environments
 <a class=anchor href=#following-a-git-commit-to-runtime-environments>#</a></h1><h2 id=overview>Overview
 <a class=anchor href=#overview>#</a></h2><p>In this 5 minute tutorial you'll learn how Kosli tracks "life after git" and shows you events from:</p><ul><li>CI-pipelines (eg, building the docker image, running the unit tests, deploying, etc)</li><li>runtime environments (eg, the blue-green rollover, instance scaling, etc)</li></ul><p>You'll follow an actual git commit to an open-source project called <strong>cyber-dojo</strong>.
-cyber-dojo's <code>runner</code> service performs most of its heavy lifting and
-should run with three replicas. Due to an oversight (whilst switching from K8S to AWS)
-it was running with just one replica. You will follow the commit that fixed this.</p><h2 id=getting-ready>Getting ready
+In our example cyber-dojo’s <code>runner</code> service should run with three replicas. However, due an oversight while switching
+from Google Kubernetes Engine (GKE) to AWS Elastic Container Service (ECS), it was running with just one replica.
+You will follow the commit that fixed this.</p><h2 id=getting-ready>Getting ready
 <a class=anchor href=#getting-ready>#</a></h2><p>You need to:</p><ul><li><a href=../../installation>Install the <code>kosli</code> CLI
 </a>.</li><li><a href=../../installation#getting-your-kosli-api-token>Get your Kosli API token
 </a>.</li><li><a href=../../installation#set-the-kosli_api_token-environment-variable>Set the KOSLI_API_TOKEN environment variable
@@ -49,22 +49,22 @@ The commit which fixed the problem was
 in the <code>runner</code> repository. Follow this commit using the <code>kosli</code> command:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli artifact get runner:16d9990
 </span></span></code></pre></div><p>You will see:</p><div class="highlight light-console"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plaintext data-lang=plaintext><span style=display:flex><span>Name:         cyberdojo/runner:16d9990
 </span></span><span style=display:flex><span>Fingerprint:  9af401c4350b21e3f1df17d6ad808da43d9646e75b6da902cc7c492bcfb9c625
-</span></span><span style=display:flex><span>Created on:   Mon, 22 Aug 2022 11:34:59 CEST • 15 days ago
+</span></span><span style=display:flex><span>Created on:   Mon, 22 Aug 2022 11:35:00 CEST • 15 days ago
 </span></span><span style=display:flex><span>Git commit:   16d9990ad23a40eecaf087abac2a58a2d2a4b3f4
 </span></span><span style=display:flex><span>Commit URL:   https://github.com/cyber-dojo/runner/commit/16d9990ad23a40eecaf087abac2a58a2d2a4b3f4
 </span></span><span style=display:flex><span>Build URL:    https://github.com/cyber-dojo/runner/actions/runs/2902808452
 </span></span><span style=display:flex><span>State:        COMPLIANT
 </span></span><span style=display:flex><span>History:
-</span></span><span style=display:flex><span>    Artifact created                                     Mon, 22 Aug 2022 11:34:59 CEST
-</span></span><span style=display:flex><span>    branch-coverage evidence received                    Mon, 22 Aug 2022 11:36:00 CEST
-</span></span><span style=display:flex><span>    Deployment #18 to aws-beta environment               Mon, 22 Aug 2022 11:37:15 CEST
-</span></span><span style=display:flex><span>    Deployment #19 to aws-prod environment               Mon, 22 Aug 2022 11:38:19 CEST
-</span></span><span style=display:flex><span>    Started running in aws-beta#83 environment           Mon, 22 Aug 2022 11:38:30 CEST
-</span></span><span style=display:flex><span>    Started running in aws-prod#63 environment           Mon, 22 Aug 2022 11:39:45 CEST
-</span></span><span style=display:flex><span>    Scaled down from 3 to 2 in aws-beta#117 environment  Wed, 24 Aug 2022 18:04:22 CEST
-</span></span><span style=display:flex><span>    No longer running in aws-beta#118 environment        Wed, 24 Aug 2022 18:05:22 CEST
-</span></span><span style=display:flex><span>    Scaled down from 3 to 1 in aws-prod#91 environment   Wed, 24 Aug 2022 18:10:14 CEST
-</span></span><span style=display:flex><span>    No longer running in aws-prod#93 environment         Wed, 24 Aug 2022 18:12:14 CEST
+</span></span><span style=display:flex><span>    Artifact created                                     Mon, 22 Aug 2022 11:35:00 CEST
+</span></span><span style=display:flex><span>    branch-coverage evidence received                    Mon, 22 Aug 2022 11:36:02 CEST
+</span></span><span style=display:flex><span>    Deployment #18 to aws-beta environment               Mon, 22 Aug 2022 11:37:17 CEST
+</span></span><span style=display:flex><span>    Deployment #19 to aws-prod environment               Mon, 22 Aug 2022 11:38:21 CEST
+</span></span><span style=display:flex><span>    Started running in aws-beta#84 environment           Mon, 22 Aug 2022 11:38:28 CEST
+</span></span><span style=display:flex><span>    Started running in aws-prod#65 environment           Mon, 22 Aug 2022 11:39:22 CEST
+</span></span><span style=display:flex><span>    Scaled down from 3 to 2 in aws-beta#117 environment  Wed, 24 Aug 2022 18:03:42 CEST
+</span></span><span style=display:flex><span>    No longer running in aws-beta#119 environment        Wed, 24 Aug 2022 18:05:42 CEST
+</span></span><span style=display:flex><span>    Scaled down from 3 to 1 in aws-prod#94 environment   Wed, 24 Aug 2022 18:10:28 CEST
+</span></span><span style=display:flex><span>    No longer running in aws-prod#96 environment         Wed, 24 Aug 2022 18:12:28 CEST
 </span></span></code></pre></div><p>Let's look at this output in detail:</p><ul><li><strong>Name</strong>: The name of the docker image is <code>cyberdojo/runner:16d9990</code>. Its image registry is defaulted to
 <code>dockerhub</code>. Its :tag is the short-sha of the git commit.</li><li><strong>Fingerprint</strong>: The unique tamper-proof SHA256 fingerprint of the artifact.</li><li><strong>Created on</strong>: The artifact was created on 22nd August 2022, at 11:35 CEST.</li><li><strong>Commit URL</strong>: You can follow <a href=https://github.com/cyber-dojo/runner/commit/16d9990ad23a40eecaf087abac2a58a2d2a4b3f4 target=_blank>the commit URL</a>
 to the actual commit on Github since cyber-dojo's git repositories are public.</li><li><strong>Build URL</strong>: You can follow <a href=https://github.com/cyber-dojo/runner/actions/runs/2902808452 target=_blank>the build URL</a>
@@ -78,7 +78,7 @@ to both its runtime environments <em>without</em> any manual approval steps.
 Some cyber-dojo services (eg web) have a manual approval step, and Kosli supports this.</blockquote><h2 id=environment-snapshots>Environment Snapshots
 <a class=anchor href=#environment-snapshots>#</a></h2><p>Kosli environments store information about what is running in your actual runtime environments (eg server, Kubernetes cluster, AWS, ...).
 We use one Kosli environment per runtime environment.</p><p>The Kosli CLI periodically fingerprints all the running artifacts in a runtime environment and reports them to Kosli.
-If a change is detected, a snapshot of the environment is saved.</p><blockquote class="book-hint info">Cyber-dojo runs the <code>kosli</code> CLI from inside its AWS runtime environments
+Whenever a change is detected, a snapshot of the environment is saved.</p><blockquote class="book-hint info">Cyber-dojo runs the <code>kosli</code> CLI from inside its AWS runtime environments
 using a <a href=https://github.com/cyber-dojo/merkely-environment-reporter/tree/main/deployment/terraform/lambda-reporter target=_blank>lambda function</a>
 to report the running services to Kosli.</blockquote><p>The <strong>History</strong> of the artifact tells you your artifact started running in snapshot #65 of <code>aws-prod</code>.</p><p>You query Kosli to see what was running in <code>aws-prod</code> snapshot #65:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli env get aws-prod#65
 </span></span></code></pre></div><p>The output will be:</p><div class="highlight light-console"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plaintext data-lang=plaintext><span style=display:flex><span>COMMIT   ARTIFACT                                                                         PIPELINE   RUNNING_SINCE  REPLICAS
@@ -98,8 +98,8 @@ to report the running services to Kosli.</blockquote><p>The <strong>History</str
 </span></span></code></pre></div><p>You see in this snapshot, the <code>runner:16d9990</code> artifact is indeed running with 3 replicas.
 You have proof the git commit has worked.</p><blockquote class="book-hint info"><h2 id=blue-green-deployment>Blue-green deployment
 <a class=anchor href=#blue-green-deployment>#</a></h2><p>There were <em>two</em> versions of <code>runner</code> at this point in time!
-The first, with three replicas (to fix the problem), but also a second (from commit <code>85d83c6</code>) with only one replica.</p><p>You are seeing a <strong>blue-green deployment</strong> happening;
-<code>runner:85d83c6</code> is about to be stopped, it will not be reported in
+The first had three replicas (to fix the problem), but there was also a second (from commit <code>85d83c6</code>) with only one replica.</p><p>You are seeing a <strong>blue-green deployment</strong> happening;
+<code>runner:85d83c6</code> is about to be stopped and will not be reported in
 snapshot <code>aws-prod#66</code>.</p></blockquote><h2 id=diffing-snapshots>Diffing snapshots
 <a class=anchor href=#diffing-snapshots>#</a></h2><p>Kosli's <code>env diff</code> command allows you to see differences between two versions of your
 runtime environment.</p><p>Let's find out what's <em>different</em> between the <code>aws-prod#64</code> and <code>aws-prod#65</code> snapshots:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli env diff aws-prod#64 aws-prod#65
