@@ -1,6 +1,6 @@
 <!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Preparing the tutorial # To follow the tutorial you need to:
-Install the kosli CLI . Get your Kosli API token . Set the KOSLI_API_TOKEN environment variable: export KOSLI_API_TOKEN=<paste-your-kosli-API-token-here> Set the KOSLI_OWNER environment variable to your Kosli organization name: export KOSLI_OWNER=<paste-your-kosli-organization-name> For this tutorial you will simulate a system with source code, a build system, and a running server. There is a script to help you run these simulations so you don't need to type so many commands."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="Simulating a DevOps system"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://docs.kosli.com/tutorials/simulating_a_devops_system/"><title>Simulating a DevOps system | Kosli developer documentation</title><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=stylesheet href=/book.min.b1d210a50a3e062edc3011f31a381037055eef11a01bd63f8b82456db87b66ea.css integrity="sha256-sdIQpQo+Bi7cMBHzGjgQNwVe7xGgG9Y/i4JFbbh7Zuo=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.cef3d6534b61f710040939f2f5eb329a58baa1dd865d138557e7dfb589c21c87.js integrity="sha256-zvPWU0th9xAECTny9esymli6od2GXROFV+fftYnCHIc=" crossorigin=anonymous></script>
+Install the kosli CLI . Get your Kosli API token . Set the KOSLI_API_TOKEN environment variable: export KOSLI_API_TOKEN=<paste-your-kosli-API-token-here> Set the KOSLI_OWNER environment variable to your Kosli organization name: export KOSLI_OWNER=<paste-your-kosli-organization-name> For this tutorial you will simulate a system with source code, a build system, and a running server. There is a script to help you run these simulations, so you won't need to type too many commands."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="Simulating a DevOps system"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://docs.kosli.com/tutorials/simulating_a_devops_system/"><title>Simulating a DevOps system | Kosli developer documentation</title><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=stylesheet href=/book.min.b1d210a50a3e062edc3011f31a381037055eef11a01bd63f8b82456db87b66ea.css integrity="sha256-sdIQpQo+Bi7cMBHzGjgQNwVe7xGgG9Y/i4JFbbh7Zuo=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script>
+<script defer src=/en.search.min.eba2f37edb06c44d3a7713b8fea36bec7085295ed77d6f8d450a2b5c357f9b0e.js integrity="sha256-66LzftsGxE06dxO4/qNr7HCFKV7XfW+NRQorXDV/mw4=" crossorigin=anonymous></script>
 <link rel=alternate type=application/rss+xml href=https://docs.kosli.com/tutorials/simulating_a_devops_system/index.xml title="Kosli developer documentation"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>Kosli developer documentation</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><input type=checkbox id=section-cecd4ea74d1b57416f3e6afae6030290 class=toggle>
 <label for=section-cecd4ea74d1b57416f3e6afae6030290 class="flex justify-between"><a href=https://docs.kosli.com/guides/>Guides</a></label><ul><li><input type=checkbox id=section-70f06323c9fc8771b6f6b6608e912f12 class=toggle>
@@ -17,7 +17,7 @@ Install the kosli CLI . Get your Kosli API token . Set the KOSLI_API_TOKEN envir
 </a>.</li><li>Set the KOSLI_API_TOKEN environment variable:<div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>export KOSLI_API_TOKEN<span style=color:#f92672>=</span>&lt;paste-your-kosli-API-token-here&gt;
 </span></span></code></pre></div></li><li>Set the KOSLI_OWNER environment variable to your Kosli organization name:<div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>export KOSLI_OWNER<span style=color:#f92672>=</span>&lt;paste-your-kosli-organization-name&gt;
 </span></span></code></pre></div></li></ul><p>For this tutorial you will simulate a system with source code, a build system, and a running server.
-There is a script to help you run these simulations so you don't need to type so many commands.</p><p>You can download the script from here:
+There is a script to help you run these simulations, so you won't need to type too many commands.</p><p>You can download the script from here:
 <a href=https://raw.githubusercontent.com/kosli-dev/cli/main/simulation_commands.bash target=_blank>https://raw.githubusercontent.com/kosli-dev/cli/main/simulation_commands.bash</a></p><p>or from the command line with:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>cd /tmp
 </span></span><span style=display:flex><span>curl -O https://raw.githubusercontent.com/kosli-dev/cli/main/simulation_commands.bash
 </span></span></code></pre></div><p>Source the simulation commands so you can use them later on in the examples:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>source simulation_commands.bash
@@ -28,10 +28,10 @@ There is a script to help you run these simulations so you don't need to type so
 </span></span><span style=display:flex><span>    pushd /tmp;
 </span></span><span style=display:flex><span>    mkdir try-kosli;
 </span></span><span style=display:flex><span>    ...
-</span></span></code></pre></div><p>Create the git repo and simulate a build and deployment to server:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>create_git_repo_in_tmp
+</span></span></code></pre></div><p>Create the git repo and simulate a build and deployment to the server:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>create_git_repo_in_tmp
 </span></span><span style=display:flex><span>simulate_build
 </span></span><span style=display:flex><span>simulate_deployment
-</span></span></code></pre></div><p>While going through the getting started guide, feel free to explore the
+</span></span></code></pre></div><p>While you're going through the getting started guide feel free to explore the
 functionality by updating the source code, building and deploying new versions.</p><blockquote class="book-hint info"><h2 id=using-a-web-browser>Using a web browser
 <a class=anchor href=#using-a-web-browser>#</a></h2><p>As you go through the guide you can also check your progress from
 <a href=https://app.kosli.com target=_blank>your browser
@@ -40,7 +40,7 @@ which organization you want to view. Your personal organization
 has the same name as your github login name, and is the organization you will
 be using in this guide.</p></blockquote><h1 id=environment>Environment
 <a class=anchor href=#environment>#</a></h1><p>A Kosli environment stores information about
-what software is running in your actual runtime environment (server, Kubernetes cluster, AWS, ...)</p><p>A typical setup reports what is running on the
+what software is running in your actual runtime environment (server, Kubernetes cluster, AWS, etc.)</p><p>A typical setup reports what is running on the
 staging server and on the production server. To report what is
 running you run the Kosli CLI command periodically. The Kosli CLI will
 detect the version of the software you are currently running and report
@@ -65,7 +65,7 @@ no reports have been received.</p><h2 id=reporting-the-software-running-in-your-
 database applications:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli environment report server production <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --paths /tmp/try-kosli/server/web_*bin <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --paths /tmp/try-kosli/server/db_*.bin
-</span></span></code></pre></div><p>You can see that the server has started, and how long it has run:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli environment log production
+</span></span></code></pre></div><p>You can see that the server has started, and how long it has been running for:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli environment log production
 </span></span></code></pre></div><div class="highlight light-console"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plaintext data-lang=plaintext><span style=display:flex><span>SNAPSHOT  FROM                  TO   DURATION
 </span></span><span style=display:flex><span>1         16 Aug 22 07:54 CEST  now  11 seconds
 </span></span></code></pre></div><p>Get a more detailed view of what is currently running on the server:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli environment get production
@@ -76,9 +76,9 @@ database applications:</p><div class="highlight command"><pre tabindex=0 style=c
 </span></span><span style=display:flex><span>N/A     Name: /tmp/try-kosli/server/db_1.bin                                           N/A       2 minutes ago  1
 </span></span><span style=display:flex><span>        Fingerprint: 0efde582a933f011c3ae9007467a7f973a874517093e9a5a05ea55476f7c91af                           
 </span></span></code></pre></div><p>If you refresh the environment page in the web browser you can see that there is
-a time-stamp for when the environment changed. Pressing the <em>production</em> link
-gives you a detailed view of what is running now.</p><p>Typically a server periodically sends a report of what is currently running to Kosli. Kosli
-only creates a new snapshot if the report has changes compared to previous snapshot, so resending the same environment report
+a timestamp for when the environment changed. Pressing the <em>production</em> link
+gives you a detailed view of what is running now.</p><p>Typically, a server periodically sends a report of what is currently running to Kosli. But Kosli
+will only create a new snapshot if the report shows changes compared to the previous snapshot, so resending the same environment report
 several times will not lead to duplication of snapshots.</p><p>Send an environment report:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli environment report server production <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --paths /tmp/try-kosli/server/web_*bin <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --paths /tmp/try-kosli/server/db_*.bin
@@ -88,7 +88,7 @@ several times will not lead to duplication of snapshots.</p><p>Send an environme
 </span></span></code></pre></div><p>Simulate an update of the web application to a new version, build and deploy it:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>update_web_src
 </span></span><span style=display:flex><span>simulate_build
 </span></span><span style=display:flex><span>simulate_deployment
-</span></span></code></pre></div><p>Report what is now running on server:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli environment report server production <span style=color:#ae81ff>\
+</span></span></code></pre></div><p>Report what is now running on the server:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli environment report server production <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --paths /tmp/try-kosli/server/web_*bin <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --paths /tmp/try-kosli/server/db_*.bin
 </span></span></code></pre></div><p>You can see Kosli has created a new snapshot:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli environment log production
@@ -116,12 +116,12 @@ Find what was running in snapshot #1 in production:</p><div class="highlight com
 tab should show what changed in snapshot 1 and snapshot 2.</p><h1 id=pipelines>Pipelines
 <a class=anchor href=#pipelines>#</a></h1><p>A Kosli pipeline stores information about what happens in your build system.
 The output of the build system is called an <em>artifact</em> in Kosli. This can be
-an application, docker image, documentation, filesystem and so on.</p><p>You use the Kosli CLI to report information about the creation of an
+an application, a docker image, documentation, a filesystem, etc.</p><p>You use the Kosli CLI to report information about the creation of an
 artifact to the Kosli pipeline.</p><p>A Kosli pipeline can also be used to store any information related to
 the artifact you have built, like test results, manual approvals,
-pull-requests and so on.</p><h2 id=creating-a-kosli-pipeline>Creating a Kosli pipeline
+pull-requests, and so on.</p><h2 id=creating-a-kosli-pipeline>Creating a Kosli pipeline
 <a class=anchor href=#creating-a-kosli-pipeline>#</a></h2><p>To follow the examples make sure you have followed the instructions in Local setup.</p><p>Create a Kosli pipeline where you can report what software your CI system
-is building. Since you are building two applications you are making
+is building. You are building two applications, so make
 two Kosli pipelines <code>web-server</code> and <code>database-server</code>.</p><p>Create your new pipelines:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli pipeline declare <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --pipeline web-server <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --description <span style=color:#e6db74>&#34;pipeline to build web-server&#34;</span> <span style=color:#ae81ff>\
@@ -132,17 +132,17 @@ two Kosli pipelines <code>web-server</code> and <code>database-server</code>.</p
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --description <span style=color:#e6db74>&#34;pipeline to build database-server&#34;</span> <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --visibility private <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --template artifact
-</span></span></code></pre></div><p>You can immediately verify the Kosli pipelines were created:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli pipeline ls
+</span></span></code></pre></div><p>You can immediately verify that the Kosli pipelines were created:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli pipeline ls
 </span></span></code></pre></div><div class="highlight light-console"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plaintext data-lang=plaintext><span style=display:flex><span>NAME             DESCRIPTION                        VISIBILITY
 </span></span><span style=display:flex><span>database-server  pipeline to build database-server  private
 </span></span><span style=display:flex><span>web-server       pipeline to build web-server       private
 </span></span></code></pre></div><p>In the web interface you can select the <strong>Pipelines</strong> menu on the left.
 It will show you that you have a <em>web-server</em> and <em>database-server</em> pipeline.
-If you press either of the pipelines they will show that no artifacts have
+If you select either of the pipelines they will show that no artifacts have
 been reported for the pipelines.</p><h2 id=building-artifacts-and-reporting-them-to-kosli>Building artifacts and reporting them to Kosli
 <a class=anchor href=#building-artifacts-and-reporting-them-to-kosli>#</a></h2><p>Simulate building your software:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>simulate_build
-</span></span></code></pre></div><p>Report you have built the web and database applications. You are using
-a dummy <code>--build-url</code>, in real life it would be a CI build URL:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli pipeline artifact report creation /tmp/try-kosli/build/web_<span style=color:#66d9ef>$(</span>cat /tmp/try-kosli/code/web.src<span style=color:#66d9ef>)</span>.bin <span style=color:#ae81ff>\
+</span></span></code></pre></div><p>Report that you have built the web and database applications. You are using
+a dummy <code>--build-url</code>, but in reality it would be a CI build URL:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli pipeline artifact report creation /tmp/try-kosli/build/web_<span style=color:#66d9ef>$(</span>cat /tmp/try-kosli/code/web.src<span style=color:#66d9ef>)</span>.bin <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --pipeline web-server <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --artifact-type file <span style=color:#ae81ff>\
 </span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --build-url file://dummy <span style=color:#ae81ff>\
