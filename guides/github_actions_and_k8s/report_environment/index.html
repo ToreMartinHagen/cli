@@ -17,7 +17,7 @@ You need a name for your environment - it doesn't have to be the same name you u
 <a class=anchor href=#create-an-environment-in-kosli>#</a></h2><p>The first thing we need to do is creating an <strong>environment</strong> in <a href=https://app.kosli.com target=_blank>Kosli
 </a>.
 Kosli <strong>Environments</strong> is where you'll be reporting the state of your actual environments, like <em>staging</em> or <em>production</em>.
-You can either create an environment with <a href=../../installation>Kosli CLI
+You can either create an environment with <a href=/installation>Kosli CLI
 </a>) or via the web UI. We will use the CLI in this guide.</p><p>You need a name for your <strong>environment</strong> - it doesn't have to be the same name you use for the actual environment, but it certainly helps to identify it in the future. In this guide we'll use <strong>github-k8s-test</strong> as the name of the <strong>environment</strong>.
 You also need to provide the description of the environment. You'll find this helpful as the number of your environments increases.</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>kosli env declare --name github-k8s-test --environment-type K8S --description <span style=color:#e6db74>&#34;k8s and github actions demo&#34;</span> --api-token &lt;your-api-token&gt; --owner &lt;your-github-username&gt;
 </span></span></code></pre></div><h2 id=report-an-environment>Report an environment

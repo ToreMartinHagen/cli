@@ -16,7 +16,7 @@ jobs: example: runs-on: ubuntu-latest env: KOSLI_API_TOKEN: ${{ secrets.MY_KOSLI
 <strong>Github Actions</strong>
 <label for=toc-control></label></div></header><article class=markdown><h2 id=github-actions>Github Actions
 <a class=anchor href=#github-actions>#</a></h2><p>To use Kosli in <a href=https://docs.github.com/en/actions target=_blank>Github Actions</a> workflows, you can use the kosli <a href=https://github.com/marketplace/actions/setup-kosli-cli target=_blank>CLI setup action</a> to install the CLI on your Github Actions Runner.
-Then, you can use all the <a href=https://docs.kosli.com/client_reference/ target=_blank>CLI commands</a> in your workflows.</p><p>Here is an example Github Actions workflow snippet using the Kosli declare pipeline command:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>jobs</span>:
+Then, you can use all the <a href=/client_reference>CLI commands</a> in your workflows.</p><p>Here is an example Github Actions workflow snippet using the Kosli declare pipeline command:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>jobs</span>:
 </span></span><span style=display:flex><span>  <span style=color:#f92672>example</span>:
 </span></span><span style=display:flex><span>    <span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-latest</span>
 </span></span><span style=display:flex><span>    <span style=color:#f92672>env</span>:
