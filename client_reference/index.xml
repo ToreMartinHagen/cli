@@ -21,12 +21,12 @@ kosli assert github-pullrequest [flags] Flags # Flag Description --commit string
 Synopsis # Assert the status of Kosli server. Exits with non-zero code if Kosli server down.
 kosli assert status [flags] Flags # Flag Description -h, --help help for status Options inherited from parent commands # Flag Description -a, --api-token string The Kosli API token. -c, --config-file string [optional] The Kosli config file path.</description></item><item><title>kosli completion</title><link>https://docs.kosli.com/client_reference/kosli_completion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.kosli.com/client_reference/kosli_completion/</guid><description>kosli completion # Generate completion script
 Synopsis # To load completions:
-Bash:
-$ source &amp;lt;(kosli completion bash)
-To load completions for each session, execute once: # Linux: # $ kosli completion bash &amp;gt; /etc/bash_completion.d/kosli
-macOS: # $ kosli completion bash &amp;gt; $(brew --prefix)/etc/bash_completion.d/kosli
-Zsh:
-If shell completion is not already enabled in your environment, # you will need to enable it. You can execute the following once: # $ echo &amp;quot;autoload -U compinit; compinit&amp;quot; &amp;gt;&amp;gt; ~/.</description></item><item><title>kosli deployment get</title><link>https://docs.kosli.com/client_reference/kosli_deployment_get/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.kosli.com/client_reference/kosli_deployment_get/</guid><description>kosli deployment get # Get a deployment from a specified pipeline
+Bash # $ source &amp;lt;(kosli completion bash) To load completions for each session, execute once:
+On Linux:
+$ kosli completion bash &amp;gt; /etc/bash_completion.d/kosli On macOS:
+$ kosli completion bash &amp;gt; $(brew --prefix)/etc/bash_completion.d/kosli Zsh # If shell completion is not already enabled in your environment,
+you will need to enable it. You can execute the following once:
+$ echo &amp;#34;autoload -U compinit; compinit&amp;#34; &amp;gt;&amp;gt; ~/.</description></item><item><title>kosli deployment get</title><link>https://docs.kosli.com/client_reference/kosli_deployment_get/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.kosli.com/client_reference/kosli_deployment_get/</guid><description>kosli deployment get # Get a deployment from a specified pipeline
 Synopsis # Get a deployment from a specified pipeline
 kosli deployment get SNAPPISH [flags] Flags # Flag Description -h, --help help for get -o, --output string [defaulted] The format of the output. Valid formats are: [table, json]. (default &amp;quot;table&amp;quot;) Options inherited from parent commands # Flag Description -a, --api-token string The Kosli API token. -c, --config-file string [optional] The Kosli config file path.</description></item><item><title>kosli deployment ls</title><link>https://docs.kosli.com/client_reference/kosli_deployment_ls/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.kosli.com/client_reference/kosli_deployment_ls/</guid><description>kosli deployment ls # List a number of deployments in a pipeline.
 Synopsis # List a number of deployments in a pipeline.
