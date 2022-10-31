@@ -154,10 +154,11 @@ func (o *pullRequestEvidenceGithubOptions) getGithubPullRequests() ([]*GithubPrE
 		opts := gh.ListOptions{}
 		commit, _, err := client.Repositories.GetCommit(ctx, owner, repository, lastCommit, &opts)
 		if err == nil {
-			fmt.Println(approvers)
-			fmt.Println("xxxxxxxxxxx")
-			fmt.Println(commit.GetAuthor().GetLogin())
-			fmt.Println("xxxxxxxxxxx")
+			fmt.Printf("commit:    %s\n", lastCommit)
+			fmt.Printf("approver:  %s\n", approvers)
+			fmt.Printf("committer: %s\n", commit.GetAuthor().GetLogin())
+			//fmt.Println(commit.GetAuthor().GetLogin())
+			//fmt.Println("xxxxxxxxxxx")
 		}
 
 	}
