@@ -51,7 +51,7 @@ it will show you that you have a <em>quickstart</em> environment and that
 no reports have been received.</blockquote><h2 id=artifacts>Artifacts
 <a class=anchor href=#artifacts>#</a></h2><h3 id=reporting-artifacts-to-kosli>Reporting artifacts to Kosli
 <a class=anchor href=#reporting-artifacts-to-kosli>#</a></h3><p>Typically, you would build an artifact in your CI system.
-The quickstart-docker repository contains a <code>docker-compose.yml</code> file which uses an <a href=nginx.org>nginx</a> docker image
+The quickstart-docker repository contains a <code>docker-compose.yml</code> file which uses an <a href=https://nginx.org/ target=_blank>nginx</a> docker image
 which you will be using as your artifact in this tutorial instead.</p><p>Pull the docker image - Kosli CLI needs the artifact to be locally present to
 generate a "fingerprint" to identify it:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>docker-compose pull
 </span></span></code></pre></div><p>You can check that this has worked by typing:</p><div class="highlight command"><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>docker images nginx
