@@ -1,0 +1,262 @@
+<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Part 8: Querying # All the information stored in Kosli may be helpful both for operations and development. A set of get, ls, log and inspect commands allows you to quickly access the information about your environments, artifacts and deployments, without leaving your development environment.
+Visit Reference to learn more about how to run each command.
+The same CLI you use to record and connect your changes can be used to search for and browse information in Kosli."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:image" content="https://docs.kosli.com/images/kosli.jpg"><meta name=twitter:image content="https://docs.kosli.com/images/kosli.jpg"><meta property="og:title" content><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://docs.kosli.com/getting_started/part_8_querying/"><title>Part 8: Querying</title><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=stylesheet href=/book.min.d1e6b64483b6b040981c8f7c7276caba04c1fe2958013ef2f9bf3304b530f646.css integrity="sha256-0ea2RIO2sECYHI98cnbKugTB/ilYAT7y+b8zBLUw9kY=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script>
+<script defer src=/en.search.min.c3f0761ff780ad3c7d659feda123774d76fa87587c713b474e6c9194f9aa8eba.js integrity="sha256-w/B2H/eArTx9ZZ/toSN3TXb6h1h8cTtHTmyRlPmqjro=" crossorigin=anonymous></script>
+<script src=https://cdn.usefathom.com/script.js data-site=AUFUAQWT data-excluded-domains=localhost defer></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>Kosli developer documentation</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div></div><ul><li><input type=checkbox id=section-6725160d2344d44f6214ab4d7c34286a class=toggle>
+<label for=section-6725160d2344d44f6214ab4d7c34286a class="flex justify-between"><a role=button>Kosli Overview</a></label><ul><li><a href=https://docs.kosli.com/kosli_overview/what_is_kosli/>What is Kosli?</a></li><li><a href=https://docs.kosli.com/kosli_overview/kosli_tools/>How to use Kosli?</a></li><li><a href=https://docs.kosli.com/kosli_overview/kosli_integrations/>Kosli integrations</a></li></ul></li><li><input type=checkbox id=section-acdc30ff5cf57e4ff3a5b04fe43650db class=toggle checked>
+<label for=section-acdc30ff5cf57e4ff3a5b04fe43650db class="flex justify-between"><a role=button>Getting started</a></label><ul><li><a href=https://docs.kosli.com/getting_started/part_1_overview/>Part 1: Overview</a></li><li><a href=https://docs.kosli.com/getting_started/part_2_environments/>Part 2: Environments</a></li><li><a href=https://docs.kosli.com/getting_started/part_3_pipelines/>Part 3: Pipelines</a></li><li><a href=https://docs.kosli.com/getting_started/part_4_artifacts/>Part 4: Artifacts</a></li><li><a href=https://docs.kosli.com/getting_started/part_5_evidence/>Part 5: Evidence</a></li><li><a href=https://docs.kosli.com/getting_started/part_6_approvals/>Part 6: Approvals</a></li><li><a href=https://docs.kosli.com/getting_started/part_7_deployments/>Part 7: Deployments</a></li><li><a href=https://docs.kosli.com/getting_started/part_8_querying/ class=active>Part 8: Querying</a></li></ul></li><li><input type=checkbox id=section-07a282edef5130f1b67f1822bafb90e0 class=toggle>
+<label for=section-07a282edef5130f1b67f1822bafb90e0 class="flex justify-between"><a role=button>Kosli integrations</a></label><ul><li><a href=https://docs.kosli.com/integrations/ci_cd/>CI/CD</a></li><li><a href=https://docs.kosli.com/integrations/slack/>Slack integration</a></li></ul></li><li><input type=checkbox id=section-90d1aeee0e96e115d1edea3b994d19fb class=toggle>
+<label for=section-90d1aeee0e96e115d1edea3b994d19fb class="flex justify-between"><a role=button>Tutorials</a></label><ul><li><a href=https://docs.kosli.com/tutorials/get_familiar_with_kosli/>Get familiar with Kosli</a></li><li><a href=https://docs.kosli.com/tutorials/following_a_git_commit_to_runtime_environments/>Following a git commit to runtime environments</a></li><li><a href=https://docs.kosli.com/tutorials/tracing_a_production_incident_back_to_git_commits/>Tracing a production incident back to git commits</a></li><li><a href=https://docs.kosli.com/tutorials/simulating_a_devops_system/>Simulating a DevOps system</a></li></ul></li><li><input type=checkbox id=section-3993beb65ef7e76a7dbe6e66c07255ac class=toggle>
+<label for=section-3993beb65ef7e76a7dbe6e66c07255ac class="flex justify-between"><a href=https://docs.kosli.com/client_reference/>Reference</a></label><ul><li><a href=https://docs.kosli.com/client_reference/kosli/>kosli</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_approval_get/>kosli approval get</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_approval_ls/>kosli approval ls</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_artifact_get/>kosli artifact get</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_artifact_ls/>kosli artifact ls</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_assert_artifact/>kosli assert artifact</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_assert_bitbucket-pullrequest/>kosli assert bitbucket-pullrequest</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_assert_environment/>kosli assert environment</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_assert_github-pullrequest/>kosli assert github-pullrequest</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_assert_status/>kosli assert status</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_completion/>kosli completion</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_deployment_get/>kosli deployment get</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_deployment_ls/>kosli deployment ls</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_environment_allowedartifacts_add/>kosli environment allowedartifacts add</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_environment_declare/>kosli environment declare</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_environment_diff/>kosli environment diff</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_environment_get/>kosli environment get</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_environment_inspect/>kosli environment inspect</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_environment_log/>kosli environment log</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_environment_ls/>kosli environment ls</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_environment_rename/>kosli environment rename</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_environment_report_docker/>kosli environment report docker</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_environment_report_ecs/>kosli environment report ecs</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_environment_report_k8s/>kosli environment report k8s</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_environment_report_lambda/>kosli environment report lambda</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_environment_report_s3/>kosli environment report s3</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_environment_report_server/>kosli environment report server</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_expect_deployment/>kosli expect deployment</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_fingerprint/>kosli fingerprint</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_pipeline_approval_assert/>kosli pipeline approval assert</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_pipeline_approval_report/>kosli pipeline approval report</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_pipeline_approval_request/>kosli pipeline approval request</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_pipeline_artifact_report_creation/>kosli pipeline artifact report creation</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_pipeline_artifact_report_evidence_bitbucket-pullrequest/>kosli pipeline artifact report evidence bitbucket-pullrequest</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_pipeline_artifact_report_evidence_generic/>kosli pipeline artifact report evidence generic</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_pipeline_artifact_report_evidence_github-pullrequest/>kosli pipeline artifact report evidence github-pullrequest</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_pipeline_artifact_report_evidence_junit/>kosli pipeline artifact report evidence junit</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_pipeline_artifact_report_evidence_snyk/>kosli pipeline artifact report evidence snyk</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_pipeline_artifact_report_evidence_test/>kosli pipeline artifact report evidence test</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_pipeline_declare/>kosli pipeline declare</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_pipeline_inspect/>kosli pipeline inspect</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_pipeline_ls/>kosli pipeline ls</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_search/>kosli search</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_status/>kosli status</a></li><li><a href=https://docs.kosli.com/client_reference/kosli_version/>kosli version</a></li></ul></li><li><a href=https://docs.kosli.com/faq/>FAQ</a><ul></ul></li><li><a href=https://docs.kosli.com/helm/>Kubernetes Reporter Helm Chart</a><ul></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><ul id=book-search-results class=search-results></ul><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
+<strong>Part 8: Querying</strong>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><h4 class=toc-title>On this page:</h4><nav id=TableOfContents><ul><li><a href=#part-8-querying>Part 8: Querying</a><ul><li><a href=#search-with-git-commit-sha>Search with git commit sha</a></li><li><a href=#search-for-a-pipeline>Search for a pipeline</a></li><li><a href=#list-artifacts>List artifacts</a></li><li><a href=#get-artifact>Get artifact</a></li><li><a href=#search-for-an-environment>Search for an environment</a></li><li><a href=#get-environment-log>Get environment log</a></li><li><a href=#get-a-snapshot>Get a snapshot</a></li><li><a href=#diff-environments>Diff environments</a></li></ul></li></ul></nav></aside></header><div class=content-container><article class=markdown><div><ul class=breadcrumbs><li><a href=https://docs.kosli.com/>Home</a></li><li><a href=https://docs.kosli.com/getting_started/>Getting started</a></li><li class=active aria-current=page>Part 8: Querying</li></ul><h1 id=part-8-querying>Part 8: Querying
+<a class=anchor href=#part-8-querying>#</a></h1><p>All the information stored in Kosli may be helpful both for operations and development. A set of <code>get</code>, <code>ls</code>, <code>log</code> and <code>inspect</code> commands allows you to quickly access the information about your environments, artifacts and deployments, without leaving your development environment.</p><p>Visit <a href=/client_reference/>Reference</a> to learn more about how to run each command.</p><p>The same CLI you use to record and connect your changes can be used to search for and browse information in Kosli.</p><p>To make it easier to run Kosli search commands with the CLI you can export the <code>owner</code> and <code>api-token</code> as environment variables, so you don't have to provide them every time you run commands. This approach is valid for <a href=/kosli_overview/kosli_tools/#environment-variables>any flag</a></p><pre tabindex=0><code>export KOSLI_OWNER=yourOrganizationName
+export KOSLI_API_TOKEN=yourKosliApiToken
+</code></pre><p>You can try all the commands below by setting the <code>owner</code> to <code>cyber-dojo</code>.<br>the Kosli cyber-dojo organization is public so any authenticated user can read its data:</p><pre tabindex=0><code>export KOSLI_OWNER=cyber-dojo
+</code></pre><h2 id=search-with-git-commit-sha>Search with git commit sha
+<a class=anchor href=#search-with-git-commit-sha>#</a></h2><p>You can use <code>kosli search</code> command to find out if Kosli knows of any artifact that was build using that commit - both short and full shas are accepted:</p><pre tabindex=0><code>$ kosli search 0f5c9e1
+Search result resolved to commit 0f5c9e19c4d4f948d19ce4c8495b2a44745cda96
+Name:              cyberdojo/web:0f5c9e1
+Fingerprint:       62e1d2909cc59193b31bfd120276fcb8ba5e42dd6becd873218a41e4ce022505
+Has provenance:    true
+Pipeline:          web
+Git commit:        0f5c9e19c4d4f948d19ce4c8495b2a44745cda96
+Commit URL:        https://github.com/cyber-dojo/web/commit/0f5c9e19c4d4f948d19ce4c8495b2a44745cda96
+Build URL:         https://github.com/cyber-dojo/web/actions/runs/3021563461
+Compliance state:  COMPLIANT
+History:
+    Artifact created                                   Fri, 09 Sep 2022 11:59:50 CEST
+    Deployment #59 to aws-beta environment             Fri, 09 Sep 2022 12:01:12 CEST
+    Started running in aws-beta#217 environment        Fri, 09 Sep 2022 12:02:42 CEST
+    Deployment #60 to aws-prod environment             Fri, 09 Sep 2022 12:06:37 CEST
+    Started running in aws-prod#202 environment        Fri, 09 Sep 2022 12:07:28 CEST
+    Scaled up from 1 to 3 in aws-prod#203 environment  Fri, 09 Sep 2022 12:08:28 CEST
+    No longer running in aws-beta#222 environment      Sat, 10 Sep 2022 08:44:42 CEST
+    No longer running in aws-prod#210 environment      Sat, 10 Sep 2022 08:49:28 CEST
+</code></pre><p>The information returned by <code>kosli search</code> - like Pipeline, Fingerprint or History - can be used to run more dedicated searches in Kosli.</p><h2 id=search-for-a-pipeline>Search for a pipeline
+<a class=anchor href=#search-for-a-pipeline>#</a></h2><p>When you search in Kosli you often need to refer to a specific pipeline. If you don't remember all the pipelines' names it is easy to list them with <code>kosli pipeline ls</code> command:</p><pre tabindex=0><code>% kosli pipeline ls 
+NAME                    DESCRIPTION                         VISIBILITY
+creator                 UX for Group/Kata creation          public
+custom-start-points     Custom exercises choices            public
+dashboard               UX for a group practice dashboard   public
+differ                  Diff files from two traffic-lights  public
+exercises-start-points  Exercises choices                   public
+languages-start-points  Language+TestFramework choices      public
+nginx                   Reverse proxy                       public
+repler                  REPL for Python images              public
+runner                  Test runner                         public
+saver                   Group/Kata model+persistence        public
+shas                    UX for git+image shas               public
+web                     UX for practicing TDD               public
+</code></pre><p>And if you want to check metadata of a specific pipeline (like description or template) use <code>kosli pipeline inspect</code></p><pre tabindex=0><code>% kosli pipeline inspect creator
+Name:                creator
+Description:         UX for Group/Kata creation
+Visibility:          public
+Template:            [artifact, branch-coverage]
+Last Deployment At:  Wed, 14 Sep 2022 10:51:43 CEST • one month ago
+</code></pre><h2 id=list-artifacts>List artifacts
+<a class=anchor href=#list-artifacts>#</a></h2><p>To find the information about artifacts reported to a specific pipeline in Kosli use <code>kosli artifact ls</code> command</p><pre tabindex=0><code>% kosli artifact ls creator
+COMMIT   ARTIFACT                                  STATE       CREATED_AT
+344430d  Name: cyberdojo/creator:344430d           COMPLIANT   Wed, 14 Sep 2022 10:48:09 CEST
+         Fingerprint: 817a72(...)6b5a273399c693             
+                                                                                                    
+41bfb7b  Name: cyberdojo/creator:41bfb7b           COMPLIANT   Sat, 10 Sep 2022 08:41:15 CEST
+         Fingerprint: 8d6fef(...)b84c281f712ef8             
+                                                                                                    
+aa0a3d3  Name: cyberdojo/creator:aa0a3d3           COMPLIANT   Fri, 09 Sep 2022 11:58:56 CEST
+         Fingerprint: 3ede07(...)238845a631e96a             
+                                                                                                    
+[...]
+</code></pre><p>The output of the command is shortened above, for readability purposes.</p><p>The amount of artifacts may be really long and by default you can see the last 15 artifacts - the first page of the result list. You can use <code>-n</code> flag to limit the amount of artifacts displayed per page, and <code>--page</code> to select which page of the result list you want to see.</p><p>E.g. to see last five artifacts you'd use:</p><pre tabindex=0><code>kosli artifact ls creator -n 5
+</code></pre><p>And to see the next page:</p><pre tabindex=0><code>kosli artifact ls creator -n 5 --page 2
+</code></pre><p>You can also use the <code>--output</code> flag to change the format of the response. By default the response comes in a <em>table</em> format, but you can choose to switch to <em>json</em>:</p><pre tabindex=0><code>kosli artifact ls creator --output json
+</code></pre><h2 id=get-artifact>Get artifact
+<a class=anchor href=#get-artifact>#</a></h2><p>To get more detailed information about a given artifact use <code>kosli artifact get</code>. To identify the artifact you need to use:</p><ul><li>pipeline name followed by <code>@</code> and artifact fingerprint
+OR</li><li>pipeline name followed by <code>:</code> and commit sha</li></ul><p>Both are available in the output of <code>kosli artifact ls</code> command</p><pre tabindex=0><code># search for artifact by its fingerprint
+$ kosli artifact get creator@817a72609041c51cd2a3bbbcbeb048c687677986b5a273399c6938b5e6aa1ded
+Name:                     cyberdojo/creator:344430d
+Pipeline:                 creator
+Fingerprint:              817a72609041c51cd2a3bbbcbeb048c687677986b5a273399c6938b5e6aa1ded
+Created on:               Wed, 14 Sep 2022 10:48:09 CEST • 2 months ago
+Git commit:               344430d530d26068aa1f39760a9c094c989382f3
+Commit URL:               https://github.com/cyber-dojo/creator/commit/344430d530d26068aa1f39760a9c094c989382f3
+Build URL:                https://github.com/cyber-dojo/creator/actions/runs/3051390570
+State:                    COMPLIANT
+Running in environments:  aws-beta#265, aws-prod#259
+History:
+    Artifact created                               Wed, 14 Sep 2022 10:48:09 CEST
+    branch-coverage evidence received              Wed, 14 Sep 2022 10:49:11 CEST
+    Deployment #100 to aws-beta environment        Wed, 14 Sep 2022 10:50:40 CEST
+    Deployment #101 to aws-prod environment        Wed, 14 Sep 2022 10:51:43 CEST
+    Started running in aws-beta#229 environment    Wed, 14 Sep 2022 10:52:42 CEST
+    Started running in aws-prod#217 environment    Wed, 14 Sep 2022 10:53:28 CEST
+    No longer running in aws-prod#252 environment  Fri, 14 Oct 2022 08:17:28 CEST
+    Started running in aws-prod#254 environment    Fri, 14 Oct 2022 08:22:28 CEST
+    No longer running in aws-beta#254 environment  Fri, 14 Oct 2022 16:35:42 CEST
+    Started running in aws-beta#256 environment    Fri, 14 Oct 2022 16:38:42 CEST
+    No longer running in aws-beta#257 environment  Sun, 16 Oct 2022 07:45:42 CEST
+    Started running in aws-beta#259 environment    Sun, 16 Oct 2022 07:49:42 CEST
+    No longer running in aws-beta#260 environment  Wed, 19 Oct 2022 09:28:42 CEST
+    Started running in aws-beta#262 environment    Wed, 19 Oct 2022 09:32:42 CEST
+    No longer running in aws-beta#263 environment  Wed, 19 Oct 2022 09:42:42 CEST
+    Started running in aws-beta#265 environment    Wed, 19 Oct 2022 09:46:42 CEST
+    No longer running in aws-prod#257 environment  Fri, 21 Oct 2022 11:02:28 CEST
+    Started running in aws-prod#259 environment    Fri, 21 Oct 2022 11:05:28 CEST
+
+# search for artifact by its commit sha
+$ kosli artifact get creator:344430d
+Name:                     cyberdojo/creator:344430d
+Pipeline:                 creator
+Fingerprint:              817a72609041c51cd2a3bbbcbeb048c687677986b5a273399c6938b5e6aa1ded
+Created on:               Wed, 14 Sep 2022 10:48:09 CEST • 2 months ago
+Git commit:               344430d530d26068aa1f39760a9c094c989382f3
+Commit URL:               https://github.com/cyber-dojo/creator/commit/344430d530d26068aa1f39760a9c094c989382f3
+Build URL:                https://github.com/cyber-dojo/creator/actions/runs/3051390570
+State:                    COMPLIANT
+Running in environments:  aws-beta#265, aws-prod#259
+History:
+    Artifact created                               Wed, 14 Sep 2022 10:48:09 CEST
+    branch-coverage evidence received              Wed, 14 Sep 2022 10:49:11 CEST
+    Deployment #100 to aws-beta environment        Wed, 14 Sep 2022 10:50:40 CEST
+    Deployment #101 to aws-prod environment        Wed, 14 Sep 2022 10:51:43 CEST
+    Started running in aws-beta#229 environment    Wed, 14 Sep 2022 10:52:42 CEST
+    Started running in aws-prod#217 environment    Wed, 14 Sep 2022 10:53:28 CEST
+    No longer running in aws-prod#252 environment  Fri, 14 Oct 2022 08:17:28 CEST
+    Started running in aws-prod#254 environment    Fri, 14 Oct 2022 08:22:28 CEST
+    No longer running in aws-beta#254 environment  Fri, 14 Oct 2022 16:35:42 CEST
+    Started running in aws-beta#256 environment    Fri, 14 Oct 2022 16:38:42 CEST
+    No longer running in aws-beta#257 environment  Sun, 16 Oct 2022 07:45:42 CEST
+    Started running in aws-beta#259 environment    Sun, 16 Oct 2022 07:49:42 CEST
+    No longer running in aws-beta#260 environment  Wed, 19 Oct 2022 09:28:42 CEST
+    Started running in aws-beta#262 environment    Wed, 19 Oct 2022 09:32:42 CEST
+    No longer running in aws-beta#263 environment  Wed, 19 Oct 2022 09:42:42 CEST
+    Started running in aws-beta#265 environment    Wed, 19 Oct 2022 09:46:42 CEST
+    No longer running in aws-prod#257 environment  Fri, 21 Oct 2022 11:02:28 CEST
+    Started running in aws-prod#259 environment    Fri, 21 Oct 2022 11:05:28 CEST
+</code></pre><h2 id=search-for-an-environment>Search for an environment
+<a class=anchor href=#search-for-an-environment>#</a></h2><p>As is the case for pipelines and artifacts, you can list all the Kosli environments you created under your organization</p><pre tabindex=0><code>$ kosli environment ls
+NAME      TYPE  LAST REPORT                LAST MODIFIED
+aws-beta  ECS   2022-10-30T14:51:42+01:00  2022-10-30T14:51:42+01:00
+aws-prod  ECS   2022-10-30T14:51:28+01:00  2022-10-30T14:51:28+01:00
+beta      K8S   2022-06-15T11:39:59+02:00  2022-06-15T11:39:59+02:00
+prod      K8S   2022-06-15T11:40:01+02:00  2022-06-15T11:40:01+02:00
+</code></pre><p>And inspect the metadata (including the type) of each environment:</p><pre tabindex=0><code>$ kosli environment inspect aws-beta
+Name:              aws-beta
+Type:              ECS
+Description:       The ECS beta namespace
+State:             COMPLIANT
+Last Reported At:  Sun, 30 Oct 2022 14:55:42 CET • 5 seconds ago
+</code></pre><p>When you have the name of the environment you want to dig into use <code>kosli environment log</code> to browse changes in the environment, or <code>kosli environment get</code> to have a look at a specific snapshot.</p><h2 id=get-environment-log>Get environment log
+<a class=anchor href=#get-environment-log>#</a></h2><pre tabindex=0><code>kosli environment log aws-beta
+SNAPSHOT  FROM                            TO                              DURATION
+266       Wed, 19 Oct 2022 09:47:42 CEST  now                             11 days
+265       Wed, 19 Oct 2022 09:46:42 CEST  Wed, 19 Oct 2022 09:47:42 CEST  59 seconds
+264       Wed, 19 Oct 2022 09:45:42 CEST  Wed, 19 Oct 2022 09:46:42 CEST  about a minute
+263       Wed, 19 Oct 2022 09:42:42 CEST  Wed, 19 Oct 2022 09:45:42 CEST  3 minutes
+262       Wed, 19 Oct 2022 09:32:42 CEST  Wed, 19 Oct 2022 09:42:42 CEST  10 minutes
+261       Wed, 19 Oct 2022 09:31:42 CEST  Wed, 19 Oct 2022 09:32:42 CEST  about a minute
+260       Wed, 19 Oct 2022 09:28:42 CEST  Wed, 19 Oct 2022 09:31:42 CEST  3 minutes
+259       Sun, 16 Oct 2022 07:49:42 CEST  Wed, 19 Oct 2022 09:28:42 CEST  3 days
+258       Sun, 16 Oct 2022 07:48:42 CEST  Sun, 16 Oct 2022 07:49:42 CEST  59 seconds
+257       Sun, 16 Oct 2022 07:45:42 CEST  Sun, 16 Oct 2022 07:48:42 CEST  3 minutes
+256       Fri, 14 Oct 2022 16:38:42 CEST  Sun, 16 Oct 2022 07:45:42 CEST  2 days
+255       Fri, 14 Oct 2022 16:37:42 CEST  Fri, 14 Oct 2022 16:38:42 CEST  about a minute
+254       Fri, 14 Oct 2022 16:35:42 CEST  Fri, 14 Oct 2022 16:37:42 CEST  2 minutes
+253       Thu, 13 Oct 2022 09:04:42 CEST  Fri, 14 Oct 2022 16:35:42 CEST  one day
+252       Mon, 10 Oct 2022 08:47:42 CEST  Thu, 13 Oct 2022 09:04:42 CEST  3 days
+</code></pre><p>By default you can see the last 15 changes to the environment. You can choose to only print e.g. last 3 events (<code>-n</code> flag) and have a more detailed output (<code>--long</code> flag):</p><pre tabindex=0><code>$ kosli environment log aws-beta --long -n 3
+SNAPSHOT  EVENT                                                                          PIPELINE   DEPLOYMENTS
+#266      Artifact: 244531986313.dkr.ecr.eu-central-1.amazonaws.com/dashboard:d90a3e4    dashboard  #15 
+          Fingerprint: dd5308fdcda117c1ff3963e192a069ae390c2fe9e10e8abfa2430224265efe98             
+          Description: 1 instance started running (from 0 to 1)                                     
+          Reported at: Wed, 19 Oct 2022 09:47:42 CEST                                               
+                                                                                                    
+#265      Artifact: 244531986313.dkr.ecr.eu-central-1.amazonaws.com/web:7ac7cdc          web        #63 
+          Fingerprint: 88c082eee192653ea5826d14f714bcfbdadbd1827a7a29416bfddbdff2b69507             
+          Description: 3 instances started running (from 0 to 3)                                    
+          Reported at: Wed, 19 Oct 2022 09:46:42 CEST                                               
+                                                                                                    
+#265      Artifact: 244531986313.dkr.ecr.eu-central-1.amazonaws.com/runner:2872115       runner     #24 
+          Fingerprint: 9461946e43393404ce744292331e7efbfe4e17cc2e5a32972169a90c81ec875c             
+          Description: 3 instances started running (from 0 to 3)                                    
+          Reported at: Wed, 19 Oct 2022 09:46:42 CEST  
+</code></pre><p>You can also use an <em>interval</em> expression, like <code>262..264</code> (to see specified snapshot list) , or <code>~4..NOW</code> (to get a list of snapshots starting from 4 behind a currently running one and the current one)</p><pre tabindex=0><code>$ kosli environment log aws-beta 262..264
+SNAPSHOT  FROM                            TO                              DURATION
+264       Wed, 19 Oct 2022 09:45:42 CEST  Wed, 19 Oct 2022 09:46:42 CEST  about a minute
+263       Wed, 19 Oct 2022 09:42:42 CEST  Wed, 19 Oct 2022 09:45:42 CEST  3 minutes
+262       Wed, 19 Oct 2022 09:32:42 CEST  Wed, 19 Oct 2022 09:42:42 CEST  10 minutes
+
+$ kosli environment log aws-beta ~4..NOW
+SNAPSHOT  FROM                            TO                              DURATION
+266       Wed, 19 Oct 2022 09:47:42 CEST  now                             11 days
+265       Wed, 19 Oct 2022 09:46:42 CEST  Wed, 19 Oct 2022 09:47:42 CEST  59 seconds
+264       Wed, 19 Oct 2022 09:45:42 CEST  Wed, 19 Oct 2022 09:46:42 CEST  about a minute
+263       Wed, 19 Oct 2022 09:42:42 CEST  Wed, 19 Oct 2022 09:45:42 CEST  3 minutes
+262       Wed, 19 Oct 2022 09:32:42 CEST  Wed, 19 Oct 2022 09:42:42 CEST  10 minutes
+</code></pre><h2 id=get-a-snapshot>Get a snapshot
+<a class=anchor href=#get-a-snapshot>#</a></h2><p>To have a look at what is or was running in a given snapshot use <code>kosli environment get</code> command. You can use just the environment name as the argument, which will give you the latest snapshot, add <code>#</code> and snapshot number, to get a specific one, or <code>~n</code> where <em>n</em> is a number, to get <em>n-th</em> snapshot behind a current one:</p><pre tabindex=0><code>$ kosli environment get aws-beta
+COMMIT   ARTIFACT                                                                              PIPELINE  RUNNING_SINCE  REPLICAS
+d90a3e4  Name: 244531986313.dkr.ecr.eu-central-1.amazonaws.com/dashboard:d90a3e4               N/A       11 days ago    1
+         Fingerprint: dd5308fdcda117c1ff3963e192a069ae390c2fe9e10e8abfa2430224265efe98                                  
+                                                                                                                        
+9f669e5  Name: 244531986313.dkr.ecr.eu-central-1.amazonaws.com/languages-start-points:9f669e5  N/A       11 days ago    1
+         Fingerprint: e6b72f6a41d0944824538334120804ccde795b4b5aeb8aa311dbc0721b4e40fd                                  
+                                                                                                                        
+1c162e4  Name: 244531986313.dkr.ecr.eu-central-1.amazonaws.com/differ:1c162e4                  N/A       11 days ago    1
+         Fingerprint: b7fd766dd2514b2610c0c8d70d8f762de4921931f97fdd6fbbfcc9745ac3ce3b                                  
+[...]
+
+$ kosli environment get aws-beta#256
+COMMIT   ARTIFACT                                                                              PIPELINE  RUNNING_SINCE  REPLICAS
+6fe0d30  Name: 244531986313.dkr.ecr.eu-central-1.amazonaws.com/repler:6fe0d30                  N/A       16 days ago    1
+         Fingerprint: a0c03099c832e4ce5f23f5e33dac9889c0b7ccd61297fffdaf1c67e7b99e6f8f                                  
+                                                                                                                        
+d90a3e4  Name: 244531986313.dkr.ecr.eu-central-1.amazonaws.com/dashboard:d90a3e4               N/A       16 days ago    1
+         Fingerprint: dd5308fdcda117c1ff3963e192a069ae390c2fe9e10e8abfa2430224265efe98                                  
+                                                                                                                        
+1c162e4  Name: 244531986313.dkr.ecr.eu-central-1.amazonaws.com/differ:1c162e4                  N/A       16 days ago    1
+         Fingerprint: b7fd766dd2514b2610c0c8d70d8f762de4921931f97fdd6fbbfcc9745ac3ce3b                                  
+[...]
+
+$ kosli environment get aws-beta~19
+COMMIT   ARTIFACT                                                                              PIPELINE  RUNNING_SINCE  REPLICAS
+2e8646c  Name: 244531986313.dkr.ecr.eu-central-1.amazonaws.com/shas:2e8646c                    N/A       one month ago  1
+         Fingerprint: a3158c3e79c83905fd3613e06b8cf5a45141c50cf49d4f99de90a2d081b77771                                  
+                                                                                                                        
+344430d  Name: 244531986313.dkr.ecr.eu-central-1.amazonaws.com/creator:344430d                 N/A       2 months ago   1
+         Fingerprint: 817a72609041c51cd2a3bbbcbeb048c687677986b5a273399c6938b5e6aa1ded                                  
+                                                                                                                        
+7ac7cdc  Name: 244531986313.dkr.ecr.eu-central-1.amazonaws.com/web:7ac7cdc                     N/A       2 months ago   3
+         Fingerprint: 88c082eee192653ea5826d14f714bcfbdadbd1827a7a29416bfddbdff2b69507                                 
+</code></pre><p>The same expressions (with <code>#</code> and <code>~</code>) can be used to reference snapshots when diffing environment.</p><p>In the example below there was only one difference between snapshots: one new artifact started running in the latest snapshot.</p><pre tabindex=0><code>$ kosli environment diff aws-beta aws-beta~1
+Only present in aws-beta (snapshot: aws-beta#266)
+                   
+     Name:         244531986313.dkr.ecr.eu-central-1.amazonaws.com/dashboard:d90a3e4
+     Fingerprint:  dd5308fdcda117c1ff3963e192a069ae390c2fe9e10e8abfa2430224265efe98
+     Pipeline:     dashboard
+     Commit URL:   https://github.com/cyber-dojo/dashboard/commit/d90a3e481d57023816f6694ba4252342889405eb
+     Started:      Wed, 19 Oct 2022 09:47:33 CEST • 11 days ago
+</code></pre><h2 id=diff-environments>Diff environments
+<a class=anchor href=#diff-environments>#</a></h2><p>You can use <code>diff</code> to compare two different environments:</p><pre tabindex=0><code>$ kosli environment diff aws-beta~3 aws-prod
+Only present in aws-prod (snapshot: aws-prod#261)
+                   
+     Name:         274425519734.dkr.ecr.eu-central-1.amazonaws.com/saver:8d724a1
+     Fingerprint:  3e52f9b838cbb4e31455524c908eb8dd878b2ae25144427de8160f6658ee191f
+     Pipeline:     saver
+     Commit URL:   https://github.com/cyber-dojo/saver/commit/8d724a14c6e95947f0c56ad6af8251bca656a599
+     Started:      Fri, 21 Oct 2022 11:04:59 CEST • 9 days ago
+                   
+     Name:         274425519734.dkr.ecr.eu-central-1.amazonaws.com/nginx:d491f5c
+     Fingerprint:  4f66ab1b0a7a9f7ed064a3b1033a53ec7dd99359ff68d509ab555dcf4516b23e
+     Pipeline:     nginx
+     Commit URL:   https://github.com/cyber-dojo/nginx/commit/d491f5c06babe70bfebe2f9df0a9a66db7957f17
+     Started:      Fri, 21 Oct 2022 11:03:53 CEST • 9 days ago
+                   
+     Name:         274425519734.dkr.ecr.eu-central-1.amazonaws.com/custom-start-points:8c551d3
+     Fingerprint:  76ad6ffc1828d8213a39bc39c879b3c35a75d4705d1d8df5977a87a11e6ae25e
+     Pipeline:     custom-start-points
+     Commit URL:   https://github.com/cyber-dojo/custom-start-points/commit/8c551d378051b6ef1fde7fd58aaced1047264405
+     Started:      Fri, 21 Oct 2022 11:04:30 CEST • 9 days ago
+[...]
+</code></pre></div><div class="justify-between flex flex-wrap navigation-buttons"><div><div class=nav-title>Previous</div><div><a href=/getting_started/part_7_deployments/>« Part 7: Deployments</a></div></div><div><div class="nav-title text-right">Next</div><div><a href=/integrations/ci_cd/>CI/CD »</a></div></div></div></article><aside class=book-toc><div class=book-toc-content><h4 class=toc-title>On this page:</h4><nav id=TableOfContents><ul><li><a href=#part-8-querying>Part 8: Querying</a><ul><li><a href=#search-with-git-commit-sha>Search with git commit sha</a></li><li><a href=#search-for-a-pipeline>Search for a pipeline</a></li><li><a href=#list-artifacts>List artifacts</a></li><li><a href=#get-artifact>Get artifact</a></li><li><a href=#search-for-an-environment>Search for an environment</a></li><li><a href=#get-environment-log>Get environment log</a></li><li><a href=#get-a-snapshot>Get a snapshot</a></li><li><a href=#diff-environments>Diff environments</a></li></ul></li></ul></nav></div></aside></div><footer class=book-footer><hr><div class=footer-grid><div><h3 class=h5-style>Get started for FREE!<br>Sign up GitHub.<br>Easy!</h3><a class="btn btn-main" href=https://app.kosli.com target=_blank>Sign up</a></div><div><h3 class=h5-style>Share your feedback on the docs so we can make them easier for you to use</h3><a href=https://www.kosli.com/community/ target=_blank class="btn btn-secondary">Join the Slack Community</a></div><div><h3 class=h5-style>Stuck with something?</h3><p>We have an open Slack channel where you can get in touch with the Kosli team and other users.</p><p><a href=https://www.kosli.com/community/ target=_blank>Ask the Kosli Slack community</a></p><p><a href=mailto:info@kosli.com>Email support</a></p></div></div><hr><div class="secondary-footer flex align-center flex-wrap" style=gap:40px><div><img src=/images/kosli-logo.svg alt="Kosli Logo"></div><div>© 2022 Kosli Inc.</div><div><a href=https://www.kosli.com target=_blank>kosli.com</a></div><div><a href=https://www.kosli.com/privacy-policy/ target=_blank>Privacy</a></div><div><a href=https://www.kosli.com/contact/ target=_blank>Contact Kosli</a></div><div><a href=https://www.kosli.com/pricing/ target=_blank>Pricing</a></div><div><a href=https://www.kosli.com/blog/ target=_blank>Blog</a></div><div><a href=https://www.kosli.com/about/ target=_blank>About</a></div></div><script>(function(){document.querySelectorAll("div.command").forEach(e=>{let t=document.createElement("div"),n=document.createTextNode("copied!");t.appendChild(n),e.appendChild(t),t.classList.add("copiedText"),e.addEventListener("click",function(){if(navigator.clipboard){let n=e.querySelector("code");navigator.clipboard.writeText(n.textContent),t.classList.add("visible"),setTimeout(()=>{t.classList.remove("visible")},1500)}})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div></main><div class=top-header><div class="container flex"><div class=docs-logo><a href=/><img src=/kosli-docs-logo-white.svg alt="Kosli docs logo"></a></div><div class=separator></div></div></div></body></html>
