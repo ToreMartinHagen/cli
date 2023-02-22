@@ -1,17 +1,17 @@
 ---
-title: "kosli commit report evidence generic"
+title: "kosli report evidence commit generic"
 ---
 
-## kosli commit report evidence generic
+## kosli report evidence commit generic
 
-Report Generic evidence for a commit in a Kosli pipeline.
+Report Generic evidence for a commit in a Kosli flow.
 
 ### Synopsis
 
-Report Generic evidence for a commit in a Kosli pipeline.
+Report Generic evidence for a commit in a Kosli flow.
 
 ```shell
-kosli commit report evidence generic [flags]
+kosli report evidence commit generic [flags]
 ```
 
 ### Flags
@@ -22,9 +22,9 @@ kosli commit report evidence generic [flags]
 |    -C, --compliant  |  [defaulted] Whether the evidence is compliant or not.  |
 |    -d, --description string  |  [optional] The evidence description.  |
 |    -D, --dry-run  |  [optional] Run in dry-run mode. When enabled, no data is sent to Kosli and the CLI exits with 0 exit code regardless of any errors.  |
+|    -f, --flow strings  |  The comma separated list of pipelines for which a commit evidence belongs.  |
 |    -h, --help  |  help for generic  |
 |    -n, --name string  |  The name of the evidence.  |
-|    -p, --pipelines strings  |  The comma separated list of pipelines for which a commit evidence belongs.  |
 |    -u, --user-data string  |  [optional] The path to a JSON file containing additional data you would like to attach to this evidence.  |
 
 
@@ -43,24 +43,24 @@ kosli commit report evidence generic [flags]
 
 ```shell
 
-# report Generic evidence for a commit related to one Kosli pipeline:
-kosli commit report evidence generic \
+# report Generic evidence for a commit related to one Kosli flow:
+kosli report evidence commit generic \
 	--commit yourGitCommitSha1 \
 	--name yourEvidenceName \
 	--description "some description" \
 	--compliant \
-	--pipelines yourPipelineName \
+	--flow yourFlowName \
 	--build-url https://exampleci.com \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 
-# report Generic evidence for a commit related to multiple Kosli pipelines with user-data:
-kosli commit report evidence generic \
+# report Generic evidence for a commit related to multiple Kosli flows with user-data:
+kosli report evidence commit generic \
 	--commit yourGitCommitSha1 \
 	--name yourEvidenceName \
 	--description "some description" \
 	--compliant \
-	--pipelines yourFirstPipelineName,yourSecondPipelineName \
+	--flow yourFlowName1,yourFlowName2 \
 	--build-url https://exampleci.com \
 	--api-token yourAPIToken \
 	--owner yourOrgName \
