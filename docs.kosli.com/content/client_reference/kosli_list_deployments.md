@@ -1,38 +1,29 @@
 ---
-title: "kosli environment log"
+title: "kosli list deployments"
 ---
 
-## kosli environment log
+## kosli list deployments
 
-List environment events.
+List deployments in a flow.
 
 ### Synopsis
 
-List environment events.
+List deployments in a flow.
 The results are paginated and ordered from latests to oldest. 
-By default, the page limit is 15 events per page.
-
-You can optionally specify an INTERVAL between two snapshot expressions with <expression>..<expression>.
-Expressions can be:
-	~N   N'th behind the latest snapshot
-	N    snapshot number N
-	NOW  the latest snapshot
-Either expression can be omitted to default to NOW.
+By default, the page limit is 15 deployments per page.
 
 
 ```shell
-kosli environment log ENV_NAME [INTERVAL] [flags]
+kosli list deployments FLOW-NAME [flags]
 ```
 
 ### Flags
 | Flag | Description |
 | :--- | :--- |
-|    -h, --help  |  help for log  |
-|    -l, --long  |  [optional] Print detailed output.  |
+|    -h, --help  |  help for deployments  |
 |    -o, --output string  |  [defaulted] The format of the output. Valid formats are: [table, json]. (default "table")  |
 |        --page int  |  [defaulted] The page number of a response. (default 1)  |
 |    -n, --page-limit int  |  [defaulted] The number of elements per page. (default 15)  |
-|        --reverse  |  [defaulted] Reverse the order of output list.  |
 
 
 ### Options inherited from parent commands
@@ -50,19 +41,19 @@ kosli environment log ENV_NAME [INTERVAL] [flags]
 
 ```shell
 
-# list the last 15 events for an environment:
-kosli environment log yourEnvironmentName \
+# list the last 15 deployments for a flow:
+kosli list deployments yourFlowName \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 
-# list the last 30 events for an environment:
-kosli environment log yourEnvironmentName \
+# list the last 30 deployments for a flow:
+kosli list deployments yourFlowName \
 	--page-limit 30 \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 
-# list the last 30 events for an environment (in JSON):
-kosli environment log yourEnvironmentName \
+# list the last 30 deployments for a flow (in JSON):
+kosli list deployments yourFlowName \
 	--page-limit 30 \
 	--api-token yourAPIToken \
 	--owner yourOrgName \

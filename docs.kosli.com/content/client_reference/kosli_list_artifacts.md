@@ -1,28 +1,28 @@
 ---
-title: "kosli environment get"
+title: "kosli list artifacts"
 ---
 
-## kosli environment get
+## kosli list artifacts
 
-Get a specific environment snapshot.
+List artifacts in a flow. 
 
 ### Synopsis
 
-Get a specific environment snapshot.
-Specify SNAPPISH by:
-	environmentName~<N>  N'th behind the latest snapshot
-	environmentName#<N>  snapshot number N
-	environmentName      the latest snapshot
+List artifacts in a flow. The results are paginated and ordered from latests to oldest. 
+By default, the page limit is 15 artifacts per page.
+
 
 ```shell
-kosli environment get ENVIRONMENT-NAME-OR-EXPRESSION [flags]
+kosli list artifacts FLOW-NAME [flags]
 ```
 
 ### Flags
 | Flag | Description |
 | :--- | :--- |
-|    -h, --help  |  help for get  |
+|    -h, --help  |  help for artifacts  |
 |    -o, --output string  |  [defaulted] The format of the output. Valid formats are: [table, json]. (default "table")  |
+|        --page int  |  [defaulted] The page number of a response. (default 1)  |
+|    -n, --page-limit int  |  [defaulted] The number of elements per page. (default 15)  |
 
 
 ### Options inherited from parent commands
@@ -39,19 +39,24 @@ kosli environment get ENVIRONMENT-NAME-OR-EXPRESSION [flags]
 ### Examples
 
 ```shell
-# get the latest snapshot of an environment:
-kosli environment get yourEnvironmentName
-	--api-token yourAPIToken \
-	--owner yourOrgName 
 
-# get the SECOND latest snapshot of an environment:
-kosli environment get yourEnvironmentName~1
+# list the last 15 artifacts for a flow:
+kosli list artifacts yourFlowName \
 	--api-token yourAPIToken \
-	--owner yourOrgName 
+	--owner yourOrgName
 
-# get the snapshot number 23 of an environment:
-kosli environment get yourEnvironmentName#23
+# list the last 30 artifacts for a flow:
+kosli list artifacts yourFlowName \
+	--page-limit 30 \
 	--api-token yourAPIToken \
-	--owner yourOrgName 
+	--owner yourOrgName
+
+# list the last 30 artifacts for a flow (in JSON):
+kosli list artifacts yourFlowName \
+	--page-limit 30 \
+	--api-token yourAPIToken \
+	--owner yourOrgName \
+	--output json
+
 ```
 

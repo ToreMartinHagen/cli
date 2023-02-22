@@ -1,29 +1,38 @@
 ---
-title: "kosli approval ls"
+title: "kosli list snapshots"
 ---
 
-## kosli approval ls
+## kosli list snapshots
 
-List approvals in a pipeline.
+List environment snapshots.
 
 ### Synopsis
 
-List approvals in a pipeline.
+List environment snapshots.
 The results are paginated and ordered from latests to oldest. 
-By default, the page limit is 15 approvals per page.  
+By default, the page limit is 15 events per page.
+
+You can optionally specify an INTERVAL between two snapshot expressions with <expression>..<expression>.
+Expressions can be:
+	~N   N'th behind the latest snapshot
+	N    snapshot number N
+	NOW  the latest snapshot
+Either expression can be omitted to default to NOW.
 
 
 ```shell
-kosli approval ls PIPELINE-NAME [flags]
+kosli list snapshots ENV_NAME [INTERVAL] [flags]
 ```
 
 ### Flags
 | Flag | Description |
 | :--- | :--- |
-|    -h, --help  |  help for ls  |
+|    -h, --help  |  help for snapshots  |
 |    -o, --output string  |  [defaulted] The format of the output. Valid formats are: [table, json]. (default "table")  |
 |        --page int  |  [defaulted] The page number of a response. (default 1)  |
 |    -n, --page-limit int  |  [defaulted] The number of elements per page. (default 15)  |
+|        --reverse  |  [defaulted] Reverse the order of output list.  |
+|    -l, --show-events  |  [optional] Print detailed output.  |
 
 
 ### Options inherited from parent commands
@@ -41,19 +50,19 @@ kosli approval ls PIPELINE-NAME [flags]
 
 ```shell
 
-# list the last 15 approvals for a pipeline:
-kosli approval list yourPipelineName \
+# list the last 15 events for an environment:
+kosli list snapshots yourEnvironmentName \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 
-# list the last 30 approvals for a pipeline:
-kosli approval list yourPipelineName \
+# list the last 30 events for an environment:
+kosli list snapshots yourEnvironmentName \
 	--page-limit 30 \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 
-# list the last 30 approvals for a pipeline (in JSON):
-kosli approval list yourPipelineName \
+# list the last 30 events for an environment (in JSON):
+kosli list snapshots yourEnvironmentName \
 	--page-limit 30 \
 	--api-token yourAPIToken \
 	--owner yourOrgName \

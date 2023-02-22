@@ -9,7 +9,7 @@ Report a JUnit test evidence to an artifact in a Kosli pipeline.
 ### Synopsis
 
 Report a JUnit test evidence to an artifact in a Kosli pipeline.
-The artifact SHA256 fingerprint is calculated (based on --artifact-type flag) or alternatively it can be provided directly (with --sha256 flag).
+The artifact SHA256 fingerprint is calculated (based on --artifact-type flag) or alternatively it can be provided directly (with --fingerprint flag).
 
 ```shell
 kosli pipeline artifact report evidence test [IMAGE-NAME | FILE-PATH | DIR-PATH] [flags]
@@ -29,7 +29,7 @@ kosli pipeline artifact report evidence test [IMAGE-NAME | FILE-PATH | DIR-PATH]
 |        --registry-provider string  |  [conditional] The docker registry provider or url. Only required if you want to read docker image SHA256 digest from a remote docker registry.  |
 |        --registry-username string  |  [conditional] The docker registry username. Only required if you want to read docker image SHA256 digest from a remote docker registry.  |
 |    -R, --results-dir string  |  [defaulted] The path to a folder with JUnit test results. (default "/data/junit/")  |
-|    -s, --sha256 string  |  [conditional] The SHA256 fingerprint for the artifact. Only required if you don't specify '--artifact-type'.  |
+|    -s, --sha256 string  |  [conditional] The SHA256 fingerprint of the artifact. Only required if you don't specify '--artifact-type'.  |
 |    -u, --user-data string  |  [optional] The path to a JSON file containing additional data you would like to attach to this evidence.  |
 
 

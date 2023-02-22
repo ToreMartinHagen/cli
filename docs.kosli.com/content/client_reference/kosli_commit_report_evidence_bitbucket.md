@@ -1,34 +1,33 @@
 ---
-title: "kosli commit report evidence github-pullrequest"
+title: "kosli commit report evidence bitbucket"
 ---
 
-## kosli commit report evidence github-pullrequest
+## kosli commit report evidence bitbucket
 
-Report a Github pull request evidence for a git commit in a Kosli pipeline.
+Report a Bitbucket pull request evidence for a commit in a Kosli flow.
 
 ### Synopsis
 
-Report a Github pull request evidence for a git commit in a Kosli pipeline.
-It checks if a pull request exists for a commit and report the pull-request evidence to the commit in Kosli. 
-
+Report a Bitbucket pull request evidence for a commit in a Kosli flow.
+It checks if a pull request exists for the git commit and reports the pull-request evidence to the commit in Kosli.
 
 ```shell
-kosli commit report evidence github-pullrequest [flags]
+kosli commit report evidence bitbucket [flags]
 ```
 
 ### Flags
 | Flag | Description |
 | :--- | :--- |
 |        --assert  |  [optional] Exit with non-zero code if no pull requests found for the given commit.  |
+|        --bitbucket-password string  |  Bitbucket App password. See https://developer.atlassian.com/cloud/bitbucket/rest/intro/#authentication for more details.  |
+|        --bitbucket-username string  |  Bitbucket username.  |
+|        --bitbucket-workspace string  |  Bitbucket workspace ID.  |
 |    -b, --build-url string  |  The url of CI pipeline that generated the evidence. (defaulted in some CIs: https://docs.kosli.com/ci-defaults ).  |
 |        --commit string  |  Git commit for which to find pull request evidence. (defaulted in some CIs: https://docs.kosli.com/ci-defaults ).  |
 |    -D, --dry-run  |  [optional] Run in dry-run mode. When enabled, no data is sent to Kosli and the CLI exits with 0 exit code regardless of any errors.  |
-|        --github-base-url string  |  [optional] GitHub base URL (only needed for GitHub Enterprise installations).  |
-|        --github-org string  |  Github organization. (defaulted if you are running in GitHub Actions: https://docs.kosli.com/ci-defaults ).  |
-|        --github-token string  |  Github token.  |
-|    -h, --help  |  help for github-pullrequest  |
+|    -f, --flow strings  |  The comma separated list of pipelines for which a commit evidence belongs.  |
+|    -h, --help  |  help for bitbucket  |
 |    -n, --name string  |  The name of the evidence.  |
-|    -p, --pipelines strings  |  The comma separated list of pipelines for which a commit evidence belongs.  |
 |        --repository string  |  Git repository. (defaulted in some CIs: https://docs.kosli.com/ci-defaults ).  |
 |    -u, --user-data string  |  [optional] The path to a JSON file containing additional data you would like to attach to this evidence.  |
 
@@ -48,26 +47,28 @@ kosli commit report evidence github-pullrequest [flags]
 
 ```shell
 
-# report a pull request commit evidence to Kosli
-kosli commit report evidence github-pullrequest \
-	--commit yourGitCommitSha1 \
-	--repository yourGithubGitRepository \
-	--github-token yourGithubToken \
-	--github-org yourGithubOrg \
+# report a pull request evidence to Kosli
+kosli report evidence commit pullrequest bitbucket \
+	--commit yourArtifactGitCommit \
+	--repository yourBitbucketGitRepository \
+	--bitbucket-username yourBitbucketUsername \
+	--bitbucket-password yourBitbucketPassword \
+	--bitbucket-workspace yourBitbucketWorkspace \
 	--name yourEvidenceName \
-	--pipelines yourPipelineName1,yourPipelineName2 \
+	--flow yourFlowName \
 	--build-url https://exampleci.com \
 	--owner yourOrgName \
 	--api-token yourAPIToken
 	
 # fail if a pull request does not exist for your commit
-kosli commit report evidence github-pullrequest \
-	--commit yourGitCommitSha1 \
-	--repository yourGithubGitRepository \
-	--github-token yourGithubToken \
-	--github-org yourGithubOrg \
+kosli report evidence commit pullrequest bitbucket \
+	--commit yourArtifactGitCommit \
+	--repository yourBitbucketGitRepository \
+	--bitbucket-username yourBitbucketUsername \
+	--bitbucket-password yourBitbucketPassword \
+	--bitbucket-workspace yourBitbucketWorkspace \
 	--name yourEvidenceName \
-	--pipelines yourPipelineName1,yourPipelineName2 \
+	--flow yourFlowName \
 	--build-url https://exampleci.com \
 	--owner yourOrgName \
 	--api-token yourAPIToken \

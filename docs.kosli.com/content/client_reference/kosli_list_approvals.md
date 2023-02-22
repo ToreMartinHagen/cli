@@ -1,25 +1,26 @@
 ---
-title: "kosli artifact ls"
+title: "kosli list approvals"
 ---
 
-## kosli artifact ls
+## kosli list approvals
 
-List artifacts in a pipeline. 
+List approvals in a flow.
 
 ### Synopsis
 
-List artifacts in a pipeline. The results are paginated and ordered from latests to oldest. 
-By default, the page limit is 15 artifacts per page.
+List approvals in a flow.
+The results are paginated and ordered from latests to oldest. 
+By default, the page limit is 15 approvals per page.  
 
 
 ```shell
-kosli artifact ls PIPELINE-NAME [flags]
+kosli list approvals FLOW-NAME [flags]
 ```
 
 ### Flags
 | Flag | Description |
 | :--- | :--- |
-|    -h, --help  |  help for ls  |
+|    -h, --help  |  help for approvals  |
 |    -o, --output string  |  [defaulted] The format of the output. Valid formats are: [table, json]. (default "table")  |
 |        --page int  |  [defaulted] The page number of a response. (default 1)  |
 |    -n, --page-limit int  |  [defaulted] The number of elements per page. (default 15)  |
@@ -40,19 +41,19 @@ kosli artifact ls PIPELINE-NAME [flags]
 
 ```shell
 
-# list the last 15 artifacts for a pipeline:
-kosli artifact list yourPipelineName \
+# list the last 15 approvals for a flow:
+kosli list approvals yourFlowName \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 
-# list the last 30 artifacts for a pipeline:
-kosli artifact list yourPipelineName \
+# list the last 30 approvals for a flow:
+kosli list approvals yourFlowName \
 	--page-limit 30 \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 
-# list the last 30 artifacts for a pipeline (in JSON):
-kosli artifact list yourPipelineName \
+# list the last 30 approvals for a flow (in JSON):
+kosli list approvals yourFlowName \
 	--page-limit 30 \
 	--api-token yourAPIToken \
 	--owner yourOrgName \

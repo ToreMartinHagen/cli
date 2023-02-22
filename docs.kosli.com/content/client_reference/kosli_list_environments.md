@@ -1,27 +1,23 @@
 ---
-title: "kosli environment diff"
+title: "kosli list environments"
 ---
 
-## kosli environment diff
+## kosli list environments
 
-Diff snapshots.
+List environments.
 
 ### Synopsis
 
-Diff snapshots.
-Specify SNAPPISH_1 and SNAPPISH_2 by:
-	environmentName~<N>  N'th behind the latest snapshot
-	environmentName#<N>  snapshot number N
-	environmentName      the latest snapshot
+List environments.
 
 ```shell
-kosli environment diff SNAPPISH_1 SNAPPISH_2 [flags]
+kosli list environments [flags]
 ```
 
 ### Flags
 | Flag | Description |
 | :--- | :--- |
-|    -h, --help  |  help for diff  |
+|    -h, --help  |  help for environments  |
 |    -o, --output string  |  [defaulted] The format of the output. Valid formats are: [table, json]. (default "table")  |
 
 
@@ -35,18 +31,4 @@ kosli environment diff SNAPPISH_1 SNAPPISH_2 [flags]
 |    -r, --max-api-retries int  |  [defaulted] How many times should API calls be retried when the API host is not reachable. (default 3)  |
 |        --owner string  |  The Kosli user or organization.  |
 
-
-### Examples
-
-```shell
-# compare the third latest snapshot in an environment to the latest
-kosli environment diff envName~3 envName \
-	--api-token yourAPIToken \
-	--owner orgName
-	
-# compare two different environments of the same type
-kosli environment diff envName1 envName2 \
-	--api-token yourAPIToken \
-	--owner orgName
-```
 

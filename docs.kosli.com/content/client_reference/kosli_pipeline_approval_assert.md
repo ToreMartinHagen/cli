@@ -10,7 +10,7 @@ Assert if an artifact in Kosli has been approved for deployment.
 
 Assert if an artifact in Kosli has been approved for deployment.
 Exits with non-zero code if artifact has not been approved.
-The artifact SHA256 fingerprint is calculated (based on --artifact-type flag) or alternatively it can be provided directly (with --sha256 flag).
+The artifact SHA256 fingerprint is calculated (based on --artifact-type flag) or alternatively it can be provided directly (with --fingerprint flag).
 
 ```shell
 kosli pipeline approval assert [IMAGE-NAME | FILE-PATH | DIR-PATH] [flags]
@@ -26,7 +26,7 @@ kosli pipeline approval assert [IMAGE-NAME | FILE-PATH | DIR-PATH] [flags]
 |        --registry-password string  |  [conditional] The docker registry password or access token. Only required if you want to read docker image SHA256 digest from a remote docker registry.  |
 |        --registry-provider string  |  [conditional] The docker registry provider or url. Only required if you want to read docker image SHA256 digest from a remote docker registry.  |
 |        --registry-username string  |  [conditional] The docker registry username. Only required if you want to read docker image SHA256 digest from a remote docker registry.  |
-|    -s, --sha256 string  |  [conditional] The SHA256 fingerprint for the artifact. Only required if you don't specify '--artifact-type'.  |
+|    -s, --sha256 string  |  [conditional] The SHA256 fingerprint of the artifact. Only required if you don't specify '--artifact-type'.  |
 
 
 ### Options inherited from parent commands

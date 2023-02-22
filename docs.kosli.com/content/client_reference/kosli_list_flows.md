@@ -1,23 +1,23 @@
 ---
-title: "kosli environment ls"
+title: "kosli list flows"
 ---
 
-## kosli environment ls
+## kosli list flows
 
-List environments.
+List flows for an org.
 
 ### Synopsis
 
-List environments.
+List flows for an org.
 
 ```shell
-kosli environment ls [flags]
+kosli list flows [flags]
 ```
 
 ### Flags
 | Flag | Description |
 | :--- | :--- |
-|    -h, --help  |  help for ls  |
+|    -h, --help  |  help for flows  |
 |    -o, --output string  |  [defaulted] The format of the output. Valid formats are: [table, json]. (default "table")  |
 
 

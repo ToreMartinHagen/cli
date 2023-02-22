@@ -9,7 +9,7 @@ Report a generic evidence to an artifact in a Kosli flow.
 ### Synopsis
 
 Report a generic evidence to an artifact in a Kosli flow.
-The artifact SHA256 fingerprint is calculated (based on --artifact-type flag) or alternatively it can be provided directly (with --sha256 flag).
+The artifact SHA256 fingerprint is calculated (based on --artifact-type flag) or alternatively it can be provided directly (with --fingerprint flag).
 
 ```shell
 kosli report evidence artifact generic [IMAGE-NAME | FILE-PATH | DIR-PATH] [flags]
@@ -23,7 +23,7 @@ kosli report evidence artifact generic [IMAGE-NAME | FILE-PATH | DIR-PATH] [flag
 |    -C, --compliant  |  [defaulted] Whether the evidence is compliant or not. (default true)  |
 |    -d, --description string  |  [optional] The evidence description.  |
 |    -D, --dry-run  |  [optional] Run in dry-run mode. When enabled, no data is sent to Kosli and the CLI exits with 0 exit code regardless of any errors.  |
-|    -F, --fingerprint string  |  [conditional] The SHA256 fingerprint for the artifact. Only required if you don't specify '--artifact-type'.  |
+|    -F, --fingerprint string  |  [conditional] The SHA256 fingerprint of the artifact. Only required if you don't specify '--artifact-type'.  |
 |    -f, --flow string  |  The Kosli flow name.  |
 |    -h, --help  |  help for generic  |
 |    -n, --name string  |  The name of the evidence.  |

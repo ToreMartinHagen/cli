@@ -9,7 +9,7 @@ Request an approval of a deployment of an artifact in Kosli.
 ### Synopsis
 
 Request an approval of a deployment of an artifact in Kosli.
-The request should be reviewed in Kosli UI.The artifact SHA256 fingerprint is calculated (based on --artifact-type flag) or alternatively it can be provided directly (with --sha256 flag).
+The request should be reviewed in Kosli UI.The artifact SHA256 fingerprint is calculated (based on --artifact-type flag) or alternatively it can be provided directly (with --fingerprint flag).
 
 ```shell
 kosli pipeline approval request [IMAGE-NAME | FILE-PATH | DIR-PATH] [flags]
@@ -29,7 +29,7 @@ kosli pipeline approval request [IMAGE-NAME | FILE-PATH | DIR-PATH] [flags]
 |        --registry-provider string  |  [conditional] The docker registry provider or url. Only required if you want to read docker image SHA256 digest from a remote docker registry.  |
 |        --registry-username string  |  [conditional] The docker registry username. Only required if you want to read docker image SHA256 digest from a remote docker registry.  |
 |        --repo-root string  |  [defaulted] The directory where the source git repository is volume-mounted. (default ".")  |
-|    -s, --sha256 string  |  [conditional] The SHA256 fingerprint for the artifact. Only required if you don't specify '--artifact-type'.  |
+|    -s, --sha256 string  |  [conditional] The SHA256 fingerprint of the artifact. Only required if you don't specify '--artifact-type'.  |
 |    -u, --user-data string  |  [optional] The path to a JSON file containing additional data you would like to attach to this approval.  |
 
 

@@ -1,23 +1,27 @@
 ---
-title: "kosli pipeline ls"
+title: "kosli diff snapshots"
 ---
 
-## kosli pipeline ls
+## kosli diff snapshots
 
-List pipelines for an org.
+Diff environment snapshots.
 
 ### Synopsis
 
-List pipelines for an org.
+Diff environment snapshots.
+Specify SNAPPISH_1 and SNAPPISH_2 by:
+	environmentName~<N>  N'th behind the latest snapshot
+	environmentName#<N>  snapshot number N
+	environmentName      the latest snapshot
 
 ```shell
-kosli pipeline ls [flags]
+kosli diff snapshots SNAPPISH_1 SNAPPISH_2 [flags]
 ```
 
 ### Flags
 | Flag | Description |
 | :--- | :--- |
-|    -h, --help  |  help for ls  |
+|    -h, --help  |  help for snapshots  |
 |    -o, --output string  |  [defaulted] The format of the output. Valid formats are: [table, json]. (default "table")  |
 
 
@@ -31,4 +35,19 @@ kosli pipeline ls [flags]
 |    -r, --max-api-retries int  |  [defaulted] How many times should API calls be retried when the API host is not reachable. (default 3)  |
 |        --owner string  |  The Kosli user or organization.  |
 
+
+### Examples
+
+```shell
+
+# compare the third latest snapshot in an environment to the latest
+kosli diff snapshots envName~3 envName \
+	--api-token yourAPIToken \
+	--owner orgName
+	
+# compare snapshots of two different environments of the same type
+kosli diff snapshots envName1 envName2 \
+	--api-token yourAPIToken \
+	--owner orgName
+```
 

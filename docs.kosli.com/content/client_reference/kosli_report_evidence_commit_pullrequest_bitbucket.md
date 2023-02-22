@@ -1,18 +1,18 @@
 ---
-title: "kosli commit report evidence bitbucket-pullrequest"
+title: "kosli report evidence commit pullrequest bitbucket"
 ---
 
-## kosli commit report evidence bitbucket-pullrequest
+## kosli report evidence commit pullrequest bitbucket
 
-Report a Bitbucket pull request evidence for a commit in a Kosli pipeline.
+Report a Bitbucket pull request evidence for a commit in a Kosli flow.
 
 ### Synopsis
 
-Report a Bitbucket pull request evidence for a commit in a Kosli pipeline.
+Report a Bitbucket pull request evidence for a commit in a Kosli flow.
 It checks if a pull request exists for the git commit and reports the pull-request evidence to the commit in Kosli.
 
 ```shell
-kosli commit report evidence bitbucket-pullrequest [flags]
+kosli report evidence commit pullrequest bitbucket [flags]
 ```
 
 ### Flags
@@ -25,9 +25,9 @@ kosli commit report evidence bitbucket-pullrequest [flags]
 |    -b, --build-url string  |  The url of CI pipeline that generated the evidence. (defaulted in some CIs: https://docs.kosli.com/ci-defaults ).  |
 |        --commit string  |  Git commit for which to find pull request evidence. (defaulted in some CIs: https://docs.kosli.com/ci-defaults ).  |
 |    -D, --dry-run  |  [optional] Run in dry-run mode. When enabled, no data is sent to Kosli and the CLI exits with 0 exit code regardless of any errors.  |
-|    -h, --help  |  help for bitbucket-pullrequest  |
+|    -f, --flow strings  |  The comma separated list of pipelines for which a commit evidence belongs.  |
+|    -h, --help  |  help for bitbucket  |
 |    -n, --name string  |  The name of the evidence.  |
-|    -p, --pipelines strings  |  The comma separated list of pipelines for which a commit evidence belongs.  |
 |        --repository string  |  Git repository. (defaulted in some CIs: https://docs.kosli.com/ci-defaults ).  |
 |    -u, --user-data string  |  [optional] The path to a JSON file containing additional data you would like to attach to this evidence.  |
 
@@ -48,27 +48,27 @@ kosli commit report evidence bitbucket-pullrequest [flags]
 ```shell
 
 # report a pull request evidence to Kosli
-kosli commit report evidence bitbucket-pullrequest \
+kosli report evidence commit pullrequest bitbucket \
 	--commit yourArtifactGitCommit \
 	--repository yourBitbucketGitRepository \
 	--bitbucket-username yourBitbucketUsername \
 	--bitbucket-password yourBitbucketPassword \
 	--bitbucket-workspace yourBitbucketWorkspace \
 	--name yourEvidenceName \
-	--pipelines yourPipelineName \
+	--flow yourFlowName \
 	--build-url https://exampleci.com \
 	--owner yourOrgName \
 	--api-token yourAPIToken
 	
 # fail if a pull request does not exist for your commit
-kosli commit report evidence bitbucket-pullrequest \
+kosli report evidence commit pullrequest bitbucket \
 	--commit yourArtifactGitCommit \
 	--repository yourBitbucketGitRepository \
 	--bitbucket-username yourBitbucketUsername \
 	--bitbucket-password yourBitbucketPassword \
 	--bitbucket-workspace yourBitbucketWorkspace \
 	--name yourEvidenceName \
-	--pipelines yourPipelineName \
+	--flow yourFlowName \
 	--build-url https://exampleci.com \
 	--owner yourOrgName \
 	--api-token yourAPIToken \

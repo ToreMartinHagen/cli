@@ -1,8 +1,8 @@
 ---
-title: "kosli commit report evidence gitlab-mergerequest"
+title: "kosli commit report evidence gitlab"
 ---
 
-## kosli commit report evidence gitlab-mergerequest
+## kosli commit report evidence gitlab
 
 Report a Gitlab merge request evidence for a commit in a Kosli pipeline.
 
@@ -12,7 +12,7 @@ Report a Gitlab merge request evidence for a commit in a Kosli pipeline.
 It checks if a merge request exists for the git commit and reports the merge-request evidence to the commit in Kosli.
 
 ```shell
-kosli commit report evidence gitlab-mergerequest [flags]
+kosli commit report evidence gitlab [flags]
 ```
 
 ### Flags
@@ -22,12 +22,12 @@ kosli commit report evidence gitlab-mergerequest [flags]
 |    -b, --build-url string  |  The url of CI pipeline that generated the evidence. (defaulted in some CIs: https://docs.kosli.com/ci-defaults ).  |
 |        --commit string  |  Git commit for which to find pull request evidence. (defaulted in some CIs: https://docs.kosli.com/ci-defaults ).  |
 |    -D, --dry-run  |  [optional] Run in dry-run mode. When enabled, no data is sent to Kosli and the CLI exits with 0 exit code regardless of any errors.  |
+|    -f, --flow strings  |  The comma separated list of pipelines for which a commit evidence belongs.  |
 |        --gitlab-base-url string  |  [optional] Gitlab base URL (only needed for on-prem Gitlab installations).  |
 |        --gitlab-org string  |  Gitlab organization. (defaulted if you are running in Gitlab Pipelines: https://docs.kosli.com/ci-defaults ).  |
 |        --gitlab-token string  |  Gitlab token.  |
-|    -h, --help  |  help for gitlab-mergerequest  |
+|    -h, --help  |  help for gitlab  |
 |    -n, --name string  |  The name of the evidence.  |
-|    -p, --pipelines strings  |  The comma separated list of pipelines for which a commit evidence belongs.  |
 |        --repository string  |  Git repository. (defaulted in some CIs: https://docs.kosli.com/ci-defaults ).  |
 |    -u, --user-data string  |  [optional] The path to a JSON file containing additional data you would like to attach to this evidence.  |
 
@@ -48,25 +48,25 @@ kosli commit report evidence gitlab-mergerequest [flags]
 ```shell
 
 # report a merge request evidence to Kosli
-kosli commit report evidence gitlab-mergerequest \
+kosli report evidence commit pullrequest gitlab \
 	--commit yourArtifactGitCommit \
 	--repository yourBitbucketGitRepository \
 	--gitlab-token yourGitlabToken \
 	--gitlab-org yourGitlabOrg \
 	--name yourEvidenceName \
-	--pipelines yourPipelineName \
+	--flow yourFlowName1,yourFlowName2 \
 	--build-url https://exampleci.com \
 	--owner yourOrgName \
 	--api-token yourAPIToken
 	
 # fail if a pull request does not exist for your commit
-kosli commit report evidence gitlab-mergerequest \
+kosli report evidence commit pullrequest gitlab \
 	--commit yourArtifactGitCommit \
 	--repository yourBitbucketGitRepository \
 	--gitlab-token yourGitlabToken \
 	--gitlab-org yourGitlabOrg \
 	--name yourEvidenceName \
-	--pipelines yourPipelineName \
+	--flow yourFlowName1,yourFlowName2 \
 	--build-url https://exampleci.com \
 	--owner yourOrgName \
 	--api-token yourAPIToken \
