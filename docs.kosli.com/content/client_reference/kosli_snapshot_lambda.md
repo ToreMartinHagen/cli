@@ -1,14 +1,14 @@
 ---
-title: "kosli environment report lambda"
+title: "kosli snapshot lambda"
 ---
 
-## kosli environment report lambda
+## kosli snapshot lambda
 
-Report the artifact deployed in an AWS Lambda and its digest to Kosli.
+Report a snapshot of the artifact deployed in an AWS Lambda and its digest to Kosli.
 
 ### Synopsis
 
-Report the artifact deployed in an AWS Lambda and its digest to Kosli.
+Report a snapshot of the artifact deployed in an AWS Lambda and its digest to Kosli.
 To authenticate to AWS, you can either: 
 	1) provide the AWS static credentials via flags or by exporting the equivalent KOSLI env vars (e.g. KOSLI_AWS_KEY_ID)
 	2) export the AWS env vars (e.g. AWS_ACCESS_KEY_ID).
@@ -18,7 +18,7 @@ More details can be found here: https://aws.github.io/aws-sdk-go-v2/docs/configu
 	
 
 ```shell
-kosli environment report lambda ENVIRONMENT-NAME [flags]
+kosli snapshot lambda ENVIRONMENT-NAME [flags]
 ```
 
 ### Flags
@@ -53,13 +53,13 @@ export AWS_REGION=yourAWSRegion
 export AWS_ACCESS_KEY_ID=yourAWSAccessKeyID
 export AWS_SECRET_ACCESS_KEY=yourAWSSecretAccessKey
 
-kosli environment report lambda yourEnvironmentName \
+kosli snapshot lambda yourEnvironmentName \
 	--function-name yourFunctionName \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 
 # report what is running in a specific version of an AWS Lambda function (AWS auth provided in flags):
-kosli environment report lambda yourEnvironmentName \
+kosli snapshot lambda yourEnvironmentName \
 	--function-name yourFunctionName \
 	--function-version yourFunctionVersion \
 	--aws-key-id yourAWSAccessKeyID \

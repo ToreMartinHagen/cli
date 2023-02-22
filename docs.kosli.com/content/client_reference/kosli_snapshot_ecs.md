@@ -1,14 +1,14 @@
 ---
-title: "kosli environment report ecs"
+title: "kosli snapshot ecs"
 ---
 
-## kosli environment report ecs
+## kosli snapshot ecs
 
-Report running containers data from AWS ECS cluster or service to Kosli.
+Report a snapshot of running containers in an AWS ECS cluster or service to Kosli.
 
 ### Synopsis
 
-Report running containers data from AWS ECS cluster or service to Kosli.
+Report a snapshot of running containers in an AWS ECS cluster or service to Kosli.
 The reported data includes container image digests and creation timestamps.
 To authenticate to AWS, you can either: 
 	1) provide the AWS static credentials via flags or by exporting the equivalent KOSLI env vars (e.g. KOSLI_AWS_KEY_ID)
@@ -19,7 +19,7 @@ More details can be found here: https://aws.github.io/aws-sdk-go-v2/docs/configu
 	
 
 ```shell
-kosli environment report ecs ENVIRONMENT-NAME [flags]
+kosli snapshot ecs ENVIRONMENT-NAME [flags]
 ```
 
 ### Flags
@@ -31,7 +31,7 @@ kosli environment report ecs ENVIRONMENT-NAME [flags]
 |    -C, --cluster string  |  The name of the ECS cluster.  |
 |    -D, --dry-run  |  [optional] Run in dry-run mode. When enabled, no data is sent to Kosli and the CLI exits with 0 exit code regardless of any errors.  |
 |    -h, --help  |  help for ecs  |
-|    -s, --service-name string  |  The name of the ECS service.  |
+|    -s, --service-name string  |  [optional] The name of the ECS service.  |
 
 
 ### Options inherited from parent commands
@@ -54,23 +54,25 @@ export AWS_REGION=yourAWSRegion
 export AWS_ACCESS_KEY_ID=yourAWSAccessKeyID
 export AWS_SECRET_ACCESS_KEY=yourAWSSecretAccessKey
 
-kosli environment report ecs yourEnvironmentName \
+kosli snapshot ecs yourEnvironmentName \
 	--cluster yourECSClusterName \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 
-# report what is running in a specific AWS ECS service:
+# report what is running in a specific AWS ECS service within a cluster:
 export AWS_REGION=yourAWSRegion
 export AWS_ACCESS_KEY_ID=yourAWSAccessKeyID
 export AWS_SECRET_ACCESS_KEY=yourAWSSecretAccessKey
 
-kosli environment report ecs yourEnvironmentName \
+kosli snapshot ecs yourEnvironmentName \
+	--cluster yourECSClusterName \
 	--service-name yourECSServiceName \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 
-# report what is running in in a specific AWS ECS service (AWS auth provided in flags):
-kosli environment report ecs yourEnvironmentName \
+# report what is running in in a specific AWS ECS service within a cluster (AWS auth provided in flags):
+kosli snapshot ecs yourEnvironmentName \
+	--cluster yourECSClusterName \
 	--service-name yourECSServiceName \
 	--aws-key-id yourAWSAccessKeyID \
 	--aws-secret-key yourAWSSecretAccessKey \

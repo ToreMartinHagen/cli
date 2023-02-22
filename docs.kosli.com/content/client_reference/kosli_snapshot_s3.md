@@ -1,14 +1,14 @@
 ---
-title: "kosli environment report s3"
+title: "kosli snapshot s3"
 ---
 
-## kosli environment report s3
+## kosli snapshot s3
 
-Report an artifact deployed in AWS S3 bucket to Kosli.
+Report a snapshot of an artifact deployed in AWS S3 bucket to Kosli.
 
 ### Synopsis
 
-Report an artifact deployed in AWS S3 bucket to Kosli.
+Report a snapshot of an artifact deployed in AWS S3 bucket to Kosli.
 To authenticate to AWS, you can either: 
 	1) provide the AWS static credentials via flags or by exporting the equivalent KOSLI env vars (e.g. KOSLI_AWS_KEY_ID)
 	2) export the AWS env vars (e.g. AWS_ACCESS_KEY_ID).
@@ -18,7 +18,7 @@ More details can be found here: https://aws.github.io/aws-sdk-go-v2/docs/configu
 	
 
 ```shell
-kosli environment report s3 ENVIRONMENT-NAME [flags]
+kosli snapshot s3 ENVIRONMENT-NAME [flags]
 ```
 
 ### Flags
@@ -52,13 +52,13 @@ export AWS_REGION=yourAWSRegion
 export AWS_ACCESS_KEY_ID=yourAWSAccessKeyID
 export AWS_SECRET_ACCESS_KEY=yourAWSSecretAccessKey
 
-kosli environment report s3 yourEnvironmentName \
+kosli snapshot s3 yourEnvironmentName \
 	--bucket yourBucketName \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 
 # report what is running in an AWS S3 bucket (AWS auth provided in flags):
-kosli environment report s3 yourEnvironmentName \
+kosli snapshot s3 yourEnvironmentName \
 	--bucket yourBucketName \
 	--aws-key-id yourAWSAccessKeyID \
 	--aws-secret-key yourAWSSecretAccessKey \

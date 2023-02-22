@@ -1,18 +1,18 @@
 ---
-title: "kosli environment report server"
+title: "kosli snapshot server"
 ---
 
-## kosli environment report server
+## kosli snapshot server
 
-Report artifacts running in a server environment to Kosli.
+Report a snapshot of artifacts running in a server environment to Kosli.
 
 ### Synopsis
 
-Report artifacts running in a server environment to Kosli.
+Report a snapshot of artifacts running in a server environment to Kosli.
 You can report directory or file artifacts in one or more server paths.
 
 ```shell
-kosli environment report server ENVIRONMENT-NAME [flags]
+kosli snapshot server ENVIRONMENT-NAME [flags]
 ```
 
 ### Flags
@@ -39,7 +39,7 @@ kosli environment report server ENVIRONMENT-NAME [flags]
 ```shell
 
 # report directory artifacts running in a server at a list of paths:
-kosli environment report server yourEnvironmentName \
+kosli snapshot server yourEnvironmentName \
 	--paths a/b/c,e/f/g \
 	--api-token yourAPIToken \
 	--owner yourOrgName  
