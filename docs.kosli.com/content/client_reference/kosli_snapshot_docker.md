@@ -1,20 +1,20 @@
 ---
-title: "kosli environment report docker"
+title: "kosli snapshot docker"
 ---
 
-## kosli environment report docker
+## kosli snapshot docker
 
-Report running containers data from docker host to Kosli.
+Report a snapshot of running containers from docker host to Kosli.
 
 ### Synopsis
 
-Report running containers data from docker host to Kosli.
+Report a snapshot of running containers from docker host to Kosli.
 The reported data includes container image digests 
 and creation timestamps. Containers running images which have not
 been pushed to or pulled from a registry will be ignored.
 
 ```shell
-kosli environment report docker ENVIRONMENT-NAME [flags]
+kosli snapshot docker ENVIRONMENT-NAME [flags]
 ```
 
 ### Flags
@@ -40,7 +40,7 @@ kosli environment report docker ENVIRONMENT-NAME [flags]
 ```shell
 
 # report what is running in a docker host:
-kosli environment report docker yourEnvironmentName \
+kosli snapshot docker yourEnvironmentName \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 ```
