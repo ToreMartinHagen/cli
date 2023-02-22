@@ -43,7 +43,7 @@ kosli search YOUR_GIT_COMMIT \
 	--owner yourOrgName
 
 # Search for an artifact fingerprint in Kosli
-kosli search YOUR_FINGERPRINT \
+kosli search YOUR_ARTIFACT_FINGERPRINT \
 	--api-token yourApiToken \
 	--owner yourOrgName
 

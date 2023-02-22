@@ -1,24 +1,26 @@
 ---
-title: "kosli environment environment"
+title: "kosli rename environment"
 ---
 
-## kosli environment environment
+## kosli rename environment
 
-Get an environment's metadata.
+Rename a Kosli environment.
 
 ### Synopsis
 
-Get an environment's metadata.
+Rename a Kosli environment.
+The environment will remain accessible under its old name until that name is taken by another environment.
+
 
 ```shell
-kosli environment environment ENVIRONMENT-NAME [flags]
+kosli rename environment OLD_NAME NEW_NAME [flags]
 ```
 
 ### Flags
 | Flag | Description |
 | :--- | :--- |
+|    -D, --dry-run  |  [optional] Run in dry-run mode. When enabled, no data is sent to Kosli and the CLI exits with 0 exit code regardless of any errors.  |
 |    -h, --help  |  help for environment  |
-|    -o, --output string  |  [defaulted] The format of the output. Valid formats are: [table, json]. (default "table")  |
 
 
 ### Options inherited from parent commands
@@ -31,4 +33,15 @@ kosli environment environment ENVIRONMENT-NAME [flags]
 |    -r, --max-api-retries int  |  [defaulted] How many times should API calls be retried when the API host is not reachable. (default 3)  |
 |        --owner string  |  The Kosli user or organization.  |
 
+
+### Examples
+
+```shell
+
+# rename a Kosli environment:
+kosli rename environment oldName newName \
+	--api-token yourAPIToken \
+	--owner yourOrgName 
+
+```
 
