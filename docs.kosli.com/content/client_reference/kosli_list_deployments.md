@@ -12,12 +12,13 @@ By default, the page limit is 15 deployments per page.
 
 
 ```shell
-kosli list deployments FLOW-NAME [flags]
+kosli list deployments [flags]
 ```
 
 ## Flags
 | Flag | Description |
 | :--- | :--- |
+|    -f, --flow string  |  The Kosli flow name.  |
 |    -h, --help  |  help for deployments  |
 |    -o, --output string  |  [defaulted] The format of the output. Valid formats are: [table, json]. (default "table")  |
 |        --page int  |  [defaulted] The page number of a response. (default 1)  |
@@ -40,18 +41,21 @@ kosli list deployments FLOW-NAME [flags]
 ```shell
 
 # list the last 15 deployments for a flow:
-kosli list deployments yourFlowName \
+kosli list deploymentss \ 
+	--flow yourFlowName \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 
 # list the last 30 deployments for a flow:
-kosli list deployments yourFlowName \
+kosli list deployments \ 
+	--flow yourFlowName \	
 	--page-limit 30 \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 
 # list the last 30 deployments for a flow (in JSON):
-kosli list deployments yourFlowName \
+kosli list deployments \ 
+	--flow yourFlowName \
 	--page-limit 30 \
 	--api-token yourAPIToken \
 	--owner yourOrgName \

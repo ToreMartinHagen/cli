@@ -12,12 +12,13 @@ By default, the page limit is 15 approvals per page.
 
 
 ```shell
-kosli list approvals FLOW-NAME [flags]
+kosli list approvals [flags]
 ```
 
 ## Flags
 | Flag | Description |
 | :--- | :--- |
+|    -f, --flow string  |  The Kosli flow name.  |
 |    -h, --help  |  help for approvals  |
 |    -o, --output string  |  [defaulted] The format of the output. Valid formats are: [table, json]. (default "table")  |
 |        --page int  |  [defaulted] The page number of a response. (default 1)  |
@@ -40,18 +41,21 @@ kosli list approvals FLOW-NAME [flags]
 ```shell
 
 # list the last 15 approvals for a flow:
-kosli list approvals yourFlowName \
+kosli list approvals \ 
+	--flow yourFlowName \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 
 # list the last 30 approvals for a flow:
-kosli list approvals yourFlowName \
+kosli list approvals \
+	--flow yourFlowName \
 	--page-limit 30 \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 
 # list the last 30 approvals for a flow (in JSON):
-kosli list approvals yourFlowName \
+kosli list approvals \
+	--flow yourFlowName \
 	--page-limit 30 \
 	--api-token yourAPIToken \
 	--owner yourOrgName \

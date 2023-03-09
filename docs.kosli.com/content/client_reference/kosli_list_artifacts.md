@@ -11,12 +11,13 @@ By default, the page limit is 15 artifacts per page.
 
 
 ```shell
-kosli list artifacts FLOW-NAME [flags]
+kosli list artifacts [flags]
 ```
 
 ## Flags
 | Flag | Description |
 | :--- | :--- |
+|    -f, --flow string  |  The Kosli flow name.  |
 |    -h, --help  |  help for artifacts  |
 |    -o, --output string  |  [defaulted] The format of the output. Valid formats are: [table, json]. (default "table")  |
 |        --page int  |  [defaulted] The page number of a response. (default 1)  |
@@ -39,18 +40,21 @@ kosli list artifacts FLOW-NAME [flags]
 ```shell
 
 # list the last 15 artifacts for a flow:
-kosli list artifacts yourFlowName \
+kosli list artifacts \
+	--flow yourFlowName \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 
 # list the last 30 artifacts for a flow:
-kosli list artifacts yourFlowName \
+kosli list artifacts \
+	--flow yourFlowName \
 	--page-limit 30 \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 
 # list the last 30 artifacts for a flow (in JSON):
-kosli list artifacts yourFlowName \
+kosli list artifacts \
+	--flow yourFlowName \	
 	--page-limit 30 \
 	--api-token yourAPIToken \
 	--owner yourOrgName \

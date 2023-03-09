@@ -38,7 +38,7 @@ kosli create environment ENVIRONMENT-NAME [flags]
 
 # create a Kosli environment:
 kosli create environment yourEnvironmentName
-	--environment-type K8S \
+	--type K8S \
 	--description "my new env" \
 	--api-token yourAPIToken \
 	--owner yourOrgName 
