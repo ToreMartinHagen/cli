@@ -2,18 +2,16 @@
 title: "kosli get artifact"
 ---
 
-## kosli get artifact
+# kosli get artifact
 
-Get artifact from a specified flow
-
-### Synopsis
+## Synopsis
 
 Get artifact from a specified flow
 You can get an artifact by its fingerprint or by its git commit sha.
 In case of using the git commit, it is possible to get multiple artifacts matching the git commit.
 
 The expected argument is an expression to specify the artifact to get.
-It has the format <FLOW_NAME><SEPARATOR><COMMIT_SHA1|ARTIFACT_SHA256> 
+It has the format <FLOW_NAME><SEPARATOR><COMMIT_SHA1|ARTIFACT_FINGERPRINT> 
 
 Specify SNAPPISH by:
 	flowName@<fingerprint>  artifact with a given fingerprint. The fingerprint can be short or complete.
@@ -26,14 +24,14 @@ Examples of valid expressions are: flow@184c799cd551dd1d8d5c5f9a5d593b2e931f5e36
 kosli get artifact SNAPPISH [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |    -h, --help  |  help for artifact  |
 |    -o, --output string  |  [defaulted] The format of the output. Valid formats are: [table, json]. (default "table")  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |
@@ -44,9 +42,10 @@ kosli get artifact SNAPPISH [flags]
 |        --owner string  |  The Kosli user or organization.  |
 
 
-### Examples
+## Examples
 
 ```shell
+
 # get an artifact with a given fingerprint from a flow
 kosli get artifact flowName@fingerprint \
 	--api-token yourAPIToken \

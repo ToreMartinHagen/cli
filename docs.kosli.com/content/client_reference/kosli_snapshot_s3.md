@@ -2,11 +2,9 @@
 title: "kosli snapshot s3"
 ---
 
-## kosli snapshot s3
+# kosli snapshot s3
 
-Report a snapshot of an artifact deployed in AWS S3 bucket to Kosli.
-
-### Synopsis
+## Synopsis
 
 Report a snapshot of an artifact deployed in AWS S3 bucket to Kosli.
 To authenticate to AWS, you can either: 
@@ -21,7 +19,7 @@ More details can be found here: https://aws.github.io/aws-sdk-go-v2/docs/configu
 kosli snapshot s3 ENVIRONMENT-NAME [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |        --aws-key-id string  |  The AWS access key ID.  |
@@ -32,7 +30,7 @@ kosli snapshot s3 ENVIRONMENT-NAME [flags]
 |    -h, --help  |  help for s3  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |
@@ -43,7 +41,7 @@ kosli snapshot s3 ENVIRONMENT-NAME [flags]
 |        --owner string  |  The Kosli user or organization.  |
 
 
-### Examples
+## Examples
 
 ```shell
 

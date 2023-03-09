@@ -1,14 +1,17 @@
 ---
-title: "Part 5: Evidence"
+title: "Part 6: Evidence"
 bookCollapseSection: false
 weight: 250
 ---
-# Part 5: Evidence
+# Part 6: Evidence
 
 Whenever an event related to required evidence happens you should report it to Kosli. 
 You can report evidence to either a git commit or an artifact. 
 Evidence reported against a git commit will be automatically 
 attached to any artifact produced from that git commit. 
+
+If a given named evidence is reported multiple times it is the compliance status of the 
+last reported version of the evidence that is considered the compliance state of that evidence.
 
 Currently we support following types of evidence:
 

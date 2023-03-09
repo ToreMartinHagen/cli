@@ -2,11 +2,9 @@
 title: "kosli rename environment"
 ---
 
-## kosli rename environment
+# kosli rename environment
 
-Rename a Kosli environment.
-
-### Synopsis
+## Synopsis
 
 Rename a Kosli environment.
 The environment will remain accessible under its old name until that name is taken by another environment.
@@ -16,14 +14,14 @@ The environment will remain accessible under its old name until that name is tak
 kosli rename environment OLD_NAME NEW_NAME [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |    -D, --dry-run  |  [optional] Run in dry-run mode. When enabled, no data is sent to Kosli and the CLI exits with 0 exit code regardless of any errors.  |
 |    -h, --help  |  help for environment  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |
@@ -34,7 +32,7 @@ kosli rename environment OLD_NAME NEW_NAME [flags]
 |        --owner string  |  The Kosli user or organization.  |
 
 
-### Examples
+## Examples
 
 ```shell
 

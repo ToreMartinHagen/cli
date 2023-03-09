@@ -2,11 +2,9 @@
 title: "kosli snapshot ecs"
 ---
 
-## kosli snapshot ecs
+# kosli snapshot ecs
 
-Report a snapshot of running containers in an AWS ECS cluster or service to Kosli.
-
-### Synopsis
+## Synopsis
 
 Report a snapshot of running containers in an AWS ECS cluster or service to Kosli.
 The reported data includes container image digests and creation timestamps.
@@ -22,7 +20,7 @@ More details can be found here: https://aws.github.io/aws-sdk-go-v2/docs/configu
 kosli snapshot ecs ENVIRONMENT-NAME [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |        --aws-key-id string  |  The AWS access key ID.  |
@@ -34,7 +32,7 @@ kosli snapshot ecs ENVIRONMENT-NAME [flags]
 |    -s, --service-name string  |  [optional] The name of the ECS service.  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |
@@ -45,7 +43,7 @@ kosli snapshot ecs ENVIRONMENT-NAME [flags]
 |        --owner string  |  The Kosli user or organization.  |
 
 
-### Examples
+## Examples
 
 ```shell
 

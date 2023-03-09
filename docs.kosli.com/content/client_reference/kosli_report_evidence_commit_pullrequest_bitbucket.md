@@ -2,20 +2,18 @@
 title: "kosli report evidence commit pullrequest bitbucket"
 ---
 
-## kosli report evidence commit pullrequest bitbucket
+# kosli report evidence commit pullrequest bitbucket
 
-Report a Bitbucket pull request evidence for a commit in a Kosli flow.
+## Synopsis
 
-### Synopsis
-
-Report a Bitbucket pull request evidence for a commit in a Kosli flow.
+Report a Bitbucket pull request evidence for a commit in Kosli flows.
 It checks if a pull request exists for the git commit and reports the pull-request evidence to the commit in Kosli.
 
 ```shell
 kosli report evidence commit pullrequest bitbucket [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |        --assert  |  [optional] Exit with non-zero code if no pull requests found for the given commit.  |
@@ -25,14 +23,16 @@ kosli report evidence commit pullrequest bitbucket [flags]
 |    -b, --build-url string  |  The url of CI pipeline that generated the evidence. (defaulted in some CIs: https://docs.kosli.com/ci-defaults ).  |
 |        --commit string  |  Git commit for which to find pull request evidence. (defaulted in some CIs: https://docs.kosli.com/ci-defaults ).  |
 |    -D, --dry-run  |  [optional] Run in dry-run mode. When enabled, no data is sent to Kosli and the CLI exits with 0 exit code regardless of any errors.  |
-|    -f, --flow strings  |  The comma separated list of pipelines for which a commit evidence belongs.  |
+|        --evidence-fingerprint string  |  [optional] The SHA256 fingerprint of the evidence file or dir.  |
+|        --evidence-url string  |  [optional] The external URL where the evidence file or dir is stored.  |
+|    -f, --flows strings  |  The comma separated list of Kosli flows.  |
 |    -h, --help  |  help for bitbucket  |
 |    -n, --name string  |  The name of the evidence.  |
 |        --repository string  |  Git repository. (defaulted in some CIs: https://docs.kosli.com/ci-defaults ).  |
 |    -u, --user-data string  |  [optional] The path to a JSON file containing additional data you would like to attach to this evidence.  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |
@@ -43,7 +43,7 @@ kosli report evidence commit pullrequest bitbucket [flags]
 |        --owner string  |  The Kosli user or organization.  |
 
 
-### Examples
+## Examples
 
 ```shell
 
@@ -55,7 +55,7 @@ kosli report evidence commit pullrequest bitbucket \
 	--bitbucket-password yourBitbucketPassword \
 	--bitbucket-workspace yourBitbucketWorkspace \
 	--name yourEvidenceName \
-	--flow yourFlowName \
+	--flows yourFlowName1,yourFlowName2 \
 	--build-url https://exampleci.com \
 	--owner yourOrgName \
 	--api-token yourAPIToken
@@ -68,7 +68,7 @@ kosli report evidence commit pullrequest bitbucket \
 	--bitbucket-password yourBitbucketPassword \
 	--bitbucket-workspace yourBitbucketWorkspace \
 	--name yourEvidenceName \
-	--flow yourFlowName \
+	--flows yourFlowName1,yourFlowName2 \
 	--build-url https://exampleci.com \
 	--owner yourOrgName \
 	--api-token yourAPIToken \

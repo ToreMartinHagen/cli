@@ -2,26 +2,24 @@
 title: "kosli get flow"
 ---
 
-## kosli get flow
+# kosli get flow
 
-Inspect the metadata of a specific flow.
+## Synopsis
 
-### Synopsis
-
-Inspect the metadata of a specific flow.
+Get the metadata of a specific flow.
 
 ```shell
 kosli get flow FLOW-NAME [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |    -h, --help  |  help for flow  |
 |    -o, --output string  |  [defaulted] The format of the output. Valid formats are: [table, json]. (default "table")  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |

@@ -2,11 +2,9 @@
 title: "kosli get environment"
 ---
 
-## kosli get environment
+# kosli get environment
 
-Get an environment's metadata.
-
-### Synopsis
+## Synopsis
 
 Get an environment's metadata.
 
@@ -14,14 +12,14 @@ Get an environment's metadata.
 kosli get environment ENVIRONMENT-NAME [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |    -h, --help  |  help for environment  |
 |    -o, --output string  |  [defaulted] The format of the output. Valid formats are: [table, json]. (default "table")  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |

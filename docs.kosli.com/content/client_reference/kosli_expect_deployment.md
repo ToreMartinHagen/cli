@@ -2,11 +2,9 @@
 title: "kosli expect deployment"
 ---
 
-## kosli expect deployment
+# kosli expect deployment
 
-Report a deployment of an artifact to an environment to Kosli.
-
-### Synopsis
+## Synopsis
 
 Report a deployment of an artifact to an environment to Kosli.
 The artifact SHA256 fingerprint is calculated (based on --artifact-type flag) or alternatively it can be provided directly (with --fingerprint flag).
@@ -15,7 +13,7 @@ The artifact SHA256 fingerprint is calculated (based on --artifact-type flag) or
 kosli expect deployment [IMAGE-NAME | FILE-PATH | DIR-PATH] [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |    -t, --artifact-type string  |  [conditional] The type of the artifact to calculate its SHA256 fingerprint. One of: [docker, file, dir]. Only required if you don't specify '--sha256' or '--fingerprint'.  |
@@ -24,7 +22,7 @@ kosli expect deployment [IMAGE-NAME | FILE-PATH | DIR-PATH] [flags]
 |    -D, --dry-run  |  [optional] Run in dry-run mode. When enabled, no data is sent to Kosli and the CLI exits with 0 exit code regardless of any errors.  |
 |    -e, --environment string  |  The environment name.  |
 |    -F, --fingerprint string  |  [conditional] The SHA256 fingerprint of the artifact. Only required if you don't specify '--artifact-type'.  |
-|    -f, --flow string  |  The Kosli pipeline name.  |
+|    -f, --flow string  |  The Kosli flow name.  |
 |    -h, --help  |  help for deployment  |
 |        --registry-password string  |  [conditional] The docker registry password or access token. Only required if you want to read docker image SHA256 digest from a remote docker registry.  |
 |        --registry-provider string  |  [conditional] The docker registry provider or url. Only required if you want to read docker image SHA256 digest from a remote docker registry.  |
@@ -32,7 +30,7 @@ kosli expect deployment [IMAGE-NAME | FILE-PATH | DIR-PATH] [flags]
 |    -u, --user-data string  |  [optional] The path to a JSON file containing additional data you would like to attach to this deployment.  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |

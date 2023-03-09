@@ -2,11 +2,9 @@
 title: "kosli get deployment"
 ---
 
-## kosli get deployment
+# kosli get deployment
 
-Get a deployment from a specified flow.
-
-### Synopsis
+## Synopsis
 
 Get a deployment from a specified flow.
 Specify SNAPPISH by:
@@ -18,14 +16,14 @@ Specify SNAPPISH by:
 kosli get deployment SNAPPISH [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |    -h, --help  |  help for deployment  |
 |    -o, --output string  |  [defaulted] The format of the output. Valid formats are: [table, json]. (default "table")  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |
@@ -36,9 +34,10 @@ kosli get deployment SNAPPISH [flags]
 |        --owner string  |  The Kosli user or organization.  |
 
 
-### Examples
+## Examples
 
 ```shell
+
 # get previous deployment in a flow
 kosli get deployment flowName~1 \
 	--api-token yourAPIToken \

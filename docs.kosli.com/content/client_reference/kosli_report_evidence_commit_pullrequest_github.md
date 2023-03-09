@@ -2,13 +2,11 @@
 title: "kosli report evidence commit pullrequest github"
 ---
 
-## kosli report evidence commit pullrequest github
+# kosli report evidence commit pullrequest github
 
-Report a Github pull request evidence for a git commit in a Kosli flow.
+## Synopsis
 
-### Synopsis
-
-Report a Github pull request evidence for a git commit in a Kosli flow.
+Report a Github pull request evidence for a git commit in Kosli flows.
 It checks if a pull request exists for a commit and report the pull-request evidence to the commit in Kosli. 
 
 
@@ -16,14 +14,16 @@ It checks if a pull request exists for a commit and report the pull-request evid
 kosli report evidence commit pullrequest github [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |        --assert  |  [optional] Exit with non-zero code if no pull requests found for the given commit.  |
 |    -b, --build-url string  |  The url of CI pipeline that generated the evidence. (defaulted in some CIs: https://docs.kosli.com/ci-defaults ).  |
 |        --commit string  |  Git commit for which to find pull request evidence. (defaulted in some CIs: https://docs.kosli.com/ci-defaults ).  |
 |    -D, --dry-run  |  [optional] Run in dry-run mode. When enabled, no data is sent to Kosli and the CLI exits with 0 exit code regardless of any errors.  |
-|    -f, --flow strings  |  The comma separated list of pipelines for which a commit evidence belongs.  |
+|        --evidence-fingerprint string  |  [optional] The SHA256 fingerprint of the evidence file or dir.  |
+|        --evidence-url string  |  [optional] The external URL where the evidence file or dir is stored.  |
+|    -f, --flows strings  |  The comma separated list of Kosli flows.  |
 |        --github-base-url string  |  [optional] GitHub base URL (only needed for GitHub Enterprise installations).  |
 |        --github-org string  |  Github organization. (defaulted if you are running in GitHub Actions: https://docs.kosli.com/ci-defaults ).  |
 |        --github-token string  |  Github token.  |
@@ -33,7 +33,7 @@ kosli report evidence commit pullrequest github [flags]
 |    -u, --user-data string  |  [optional] The path to a JSON file containing additional data you would like to attach to this evidence.  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |
@@ -44,7 +44,7 @@ kosli report evidence commit pullrequest github [flags]
 |        --owner string  |  The Kosli user or organization.  |
 
 
-### Examples
+## Examples
 
 ```shell
 
@@ -55,7 +55,7 @@ kosli report evidence commit pullrequest github \
 	--github-token yourGithubToken \
 	--github-org yourGithubOrg \
 	--name yourEvidenceName \
-	--flow yourFlowName1,yourFlowName2 \
+	--flows yourFlowName1,yourFlowName2 \
 	--build-url https://exampleci.com \
 	--owner yourOrgName \
 	--api-token yourAPIToken
@@ -67,7 +67,7 @@ kosli report evidence commit pullrequest github \
 	--github-token yourGithubToken \
 	--github-org yourGithubOrg \
 	--name yourEvidenceName \
-	--flow yourFlowName1,yourFlowName2 \
+	--flows yourFlowName1,yourFlowName2 \
 	--build-url https://exampleci.com \
 	--owner yourOrgName \
 	--api-token yourAPIToken \

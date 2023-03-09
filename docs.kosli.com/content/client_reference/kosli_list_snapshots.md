@@ -2,15 +2,13 @@
 title: "kosli list snapshots"
 ---
 
-## kosli list snapshots
+# kosli list snapshots
 
-List environment snapshots.
-
-### Synopsis
+## Synopsis
 
 List environment snapshots.
 The results are paginated and ordered from latests to oldest. 
-By default, the page limit is 15 events per page.
+By default, the page limit is 15 snapshots per page.
 
 You can optionally specify an INTERVAL between two snapshot expressions with <expression>..<expression>.
 Expressions can be:
@@ -24,7 +22,7 @@ Either expression can be omitted to default to NOW.
 kosli list snapshots ENV_NAME [INTERVAL] [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |    -h, --help  |  help for snapshots  |
@@ -32,10 +30,9 @@ kosli list snapshots ENV_NAME [INTERVAL] [flags]
 |        --page int  |  [defaulted] The page number of a response. (default 1)  |
 |    -n, --page-limit int  |  [defaulted] The number of elements per page. (default 15)  |
 |        --reverse  |  [defaulted] Reverse the order of output list.  |
-|    -l, --show-events  |  [optional] Print detailed output.  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |
@@ -46,22 +43,22 @@ kosli list snapshots ENV_NAME [INTERVAL] [flags]
 |        --owner string  |  The Kosli user or organization.  |
 
 
-### Examples
+## Examples
 
 ```shell
 
-# list the last 15 events for an environment:
+# list the last 15 snapshots for an environment:
 kosli list snapshots yourEnvironmentName \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 
-# list the last 30 events for an environment:
+# list the last 30 snapshots for an environment:
 kosli list snapshots yourEnvironmentName \
 	--page-limit 30 \
 	--api-token yourAPIToken \
 	--owner yourOrgName
 
-# list the last 30 events for an environment (in JSON):
+# list the last 30 snapshots for an environment (in JSON):
 kosli list snapshots yourEnvironmentName \
 	--page-limit 30 \
 	--api-token yourAPIToken \

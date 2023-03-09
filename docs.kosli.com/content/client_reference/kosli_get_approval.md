@@ -2,11 +2,9 @@
 title: "kosli get approval"
 ---
 
-## kosli get approval
+# kosli get approval
 
-Get an approval from a specified flow.
-
-### Synopsis
+## Synopsis
 
 Get an approval from a specified flow.
 The expected argument is an expression to specify the approval to get.
@@ -23,14 +21,14 @@ Examples of valid expressions are: flow (latest approval), flow#10 (approval num
 kosli get approval SNAPPISH [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |    -h, --help  |  help for approval  |
 |    -o, --output string  |  [defaulted] The format of the output. Valid formats are: [table, json]. (default "table")  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |
@@ -41,7 +39,7 @@ kosli get approval SNAPPISH [flags]
 |        --owner string  |  The Kosli user or organization.  |
 
 
-### Examples
+## Examples
 
 ```shell
 

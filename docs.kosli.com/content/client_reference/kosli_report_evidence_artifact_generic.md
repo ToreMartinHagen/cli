@@ -2,11 +2,9 @@
 title: "kosli report evidence artifact generic"
 ---
 
-## kosli report evidence artifact generic
+# kosli report evidence artifact generic
 
-Report a generic evidence to an artifact in a Kosli flow.
-
-### Synopsis
+## Synopsis
 
 Report a generic evidence to an artifact in a Kosli flow.
 The artifact SHA256 fingerprint is calculated (based on --artifact-type flag) or alternatively it can be provided directly (with --fingerprint flag).
@@ -15,7 +13,7 @@ The artifact SHA256 fingerprint is calculated (based on --artifact-type flag) or
 kosli report evidence artifact generic [IMAGE-NAME | FILE-PATH | DIR-PATH] [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |    -t, --artifact-type string  |  [conditional] The type of the artifact to calculate its SHA256 fingerprint. One of: [docker, file, dir]. Only required if you don't specify '--sha256' or '--fingerprint'.  |
@@ -23,6 +21,8 @@ kosli report evidence artifact generic [IMAGE-NAME | FILE-PATH | DIR-PATH] [flag
 |    -C, --compliant  |  [defaulted] Whether the evidence is compliant or not. (default true)  |
 |    -d, --description string  |  [optional] The evidence description.  |
 |    -D, --dry-run  |  [optional] Run in dry-run mode. When enabled, no data is sent to Kosli and the CLI exits with 0 exit code regardless of any errors.  |
+|        --evidence-fingerprint string  |  [optional] The SHA256 fingerprint of the evidence file or dir.  |
+|        --evidence-url string  |  [optional] The external URL where the evidence file or dir is stored.  |
 |    -F, --fingerprint string  |  [conditional] The SHA256 fingerprint of the artifact. Only required if you don't specify '--artifact-type'.  |
 |    -f, --flow string  |  The Kosli flow name.  |
 |    -h, --help  |  help for generic  |
@@ -33,7 +33,7 @@ kosli report evidence artifact generic [IMAGE-NAME | FILE-PATH | DIR-PATH] [flag
 |    -u, --user-data string  |  [optional] The path to a JSON file containing additional data you would like to attach to this evidence.  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |
@@ -44,7 +44,7 @@ kosli report evidence artifact generic [IMAGE-NAME | FILE-PATH | DIR-PATH] [flag
 |        --owner string  |  The Kosli user or organization.  |
 
 
-### Examples
+## Examples
 
 ```shell
 
@@ -73,7 +73,7 @@ kosli report evidence artifact generic \
 	--name yourEvidenceName \
 	--owner yourOrgName \
 	--flow yourFlowName \
-	--fingerprint yourFingerprint
+	--fingerprint yourArtifactFingerprint
 
 ```
 

@@ -2,11 +2,9 @@
 title: "kosli report artifact"
 ---
 
-## kosli report artifact
+# kosli report artifact
 
-Report an artifact creation to a Kosli flow.
-
-### Synopsis
+## Synopsis
 
 Report an artifact creation to a Kosli flow.
 The artifact SHA256 fingerprint is calculated (based on --artifact-type flag) or alternatively it can be provided directly (with --fingerprint flag).
@@ -15,7 +13,7 @@ The artifact SHA256 fingerprint is calculated (based on --artifact-type flag) or
 kosli report artifact {IMAGE-NAME | FILE-PATH | DIR-PATH} [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |    -t, --artifact-type string  |  [conditional] The type of the artifact to calculate its SHA256 fingerprint. One of: [docker, file, dir]. Only required if you don't specify '--sha256' or '--fingerprint'.  |
@@ -32,7 +30,7 @@ kosli report artifact {IMAGE-NAME | FILE-PATH | DIR-PATH} [flags]
 |        --repo-root string  |  [defaulted] The directory where the source git repository is volume-mounted. (default ".")  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |
@@ -43,7 +41,7 @@ kosli report artifact {IMAGE-NAME | FILE-PATH | DIR-PATH} [flags]
 |        --owner string  |  The Kosli user or organization.  |
 
 
-### Examples
+## Examples
 
 ```shell
 
@@ -65,7 +63,7 @@ kosli report artifact ANOTHER_FILE.txt \
 	--git-commit yourCommitShaThatThisArtifactWasBuiltFrom \
 	--owner yourOrgName \
 	--flow yourFlowName \
-	--fingerprint yourFingerprint 
+	--fingerprint yourArtifactFingerprint 
 
 ```
 

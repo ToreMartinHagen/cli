@@ -2,29 +2,26 @@
 title: "kosli create environment"
 ---
 
-## kosli create environment
+# kosli create environment
 
-Create a Kosli environment.
-
-### Synopsis
+## Synopsis
 
 Create a Kosli environment.
 
 ```shell
-kosli create environment [flags]
+kosli create environment ENVIRONMENT-NAME [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |    -d, --description string  |  [optional] The environment description.  |
 |    -D, --dry-run  |  [optional] Run in dry-run mode. When enabled, no data is sent to Kosli and the CLI exits with 0 exit code regardless of any errors.  |
-|    -t, --environment-type string  |  The type of environment. Valid types are: [K8S, ECS, server, S3, lambda, docker].  |
 |    -h, --help  |  help for environment  |
-|    -n, --name string  |  The name of environment to be created.  |
+|    -t, --type string  |  The type of environment. Valid types are: [K8S, ECS, server, S3, lambda, docker].  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |
@@ -35,13 +32,12 @@ kosli create environment [flags]
 |        --owner string  |  The Kosli user or organization.  |
 
 
-### Examples
+## Examples
 
 ```shell
 
 # create a Kosli environment:
-kosli create environment 
-	--name yourEnvironmentName \
+kosli create environment yourEnvironmentName
 	--environment-type K8S \
 	--description "my new env" \
 	--api-token yourAPIToken \

@@ -2,11 +2,9 @@
 title: "kosli list artifacts"
 ---
 
-## kosli list artifacts
+# kosli list artifacts
 
-List artifacts in a flow. 
-
-### Synopsis
+## Synopsis
 
 List artifacts in a flow. The results are paginated and ordered from latests to oldest. 
 By default, the page limit is 15 artifacts per page.
@@ -16,7 +14,7 @@ By default, the page limit is 15 artifacts per page.
 kosli list artifacts FLOW-NAME [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |    -h, --help  |  help for artifacts  |
@@ -25,7 +23,7 @@ kosli list artifacts FLOW-NAME [flags]
 |    -n, --page-limit int  |  [defaulted] The number of elements per page. (default 15)  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |
@@ -36,7 +34,7 @@ kosli list artifacts FLOW-NAME [flags]
 |        --owner string  |  The Kosli user or organization.  |
 
 
-### Examples
+## Examples
 
 ```shell
 

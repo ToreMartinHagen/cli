@@ -2,11 +2,9 @@
 title: "kosli list approvals"
 ---
 
-## kosli list approvals
+# kosli list approvals
 
-List approvals in a flow.
-
-### Synopsis
+## Synopsis
 
 List approvals in a flow.
 The results are paginated and ordered from latests to oldest. 
@@ -17,7 +15,7 @@ By default, the page limit is 15 approvals per page.
 kosli list approvals FLOW-NAME [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |    -h, --help  |  help for approvals  |
@@ -26,7 +24,7 @@ kosli list approvals FLOW-NAME [flags]
 |    -n, --page-limit int  |  [defaulted] The number of elements per page. (default 15)  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |
@@ -37,7 +35,7 @@ kosli list approvals FLOW-NAME [flags]
 |        --owner string  |  The Kosli user or organization.  |
 
 
-### Examples
+## Examples
 
 ```shell
 

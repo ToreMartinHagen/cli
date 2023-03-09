@@ -2,33 +2,33 @@
 title: "kosli report evidence commit generic"
 ---
 
-## kosli report evidence commit generic
+# kosli report evidence commit generic
 
-Report Generic evidence for a commit in a Kosli flow.
+## Synopsis
 
-### Synopsis
-
-Report Generic evidence for a commit in a Kosli flow.
+Report Generic evidence for a commit in Kosli flows.
 
 ```shell
 kosli report evidence commit generic [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |    -b, --build-url string  |  The url of CI pipeline that generated the evidence. (defaulted in some CIs: https://docs.kosli.com/ci-defaults ).  |
-|        --commit string  |  The git commit SHA1 for which the evidence belongs. (defaulted in some CIs: https://docs.kosli.com/ci-defaults ).  |
+|        --commit string  |  Git commit for which to find pull request evidence. (defaulted in some CIs: https://docs.kosli.com/ci-defaults ).  |
 |    -C, --compliant  |  [defaulted] Whether the evidence is compliant or not.  |
 |    -d, --description string  |  [optional] The evidence description.  |
 |    -D, --dry-run  |  [optional] Run in dry-run mode. When enabled, no data is sent to Kosli and the CLI exits with 0 exit code regardless of any errors.  |
-|    -f, --flow strings  |  The comma separated list of pipelines for which a commit evidence belongs.  |
+|        --evidence-fingerprint string  |  [optional] The SHA256 fingerprint of the evidence file or dir.  |
+|        --evidence-url string  |  [optional] The external URL where the evidence file or dir is stored.  |
+|    -f, --flows strings  |  The comma separated list of Kosli flows.  |
 |    -h, --help  |  help for generic  |
 |    -n, --name string  |  The name of the evidence.  |
 |    -u, --user-data string  |  [optional] The path to a JSON file containing additional data you would like to attach to this evidence.  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |
@@ -39,7 +39,7 @@ kosli report evidence commit generic [flags]
 |        --owner string  |  The Kosli user or organization.  |
 
 
-### Examples
+## Examples
 
 ```shell
 
@@ -49,7 +49,7 @@ kosli report evidence commit generic \
 	--name yourEvidenceName \
 	--description "some description" \
 	--compliant \
-	--flow yourFlowName \
+	--flows yourFlowName \
 	--build-url https://exampleci.com \
 	--api-token yourAPIToken \
 	--owner yourOrgName
@@ -60,7 +60,7 @@ kosli report evidence commit generic \
 	--name yourEvidenceName \
 	--description "some description" \
 	--compliant \
-	--flow yourFlowName1,yourFlowName2 \
+	--flows yourFlowName1,yourFlowName2 \
 	--build-url https://exampleci.com \
 	--api-token yourAPIToken \
 	--owner yourOrgName \

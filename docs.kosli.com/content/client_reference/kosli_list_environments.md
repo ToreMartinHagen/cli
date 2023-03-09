@@ -2,11 +2,9 @@
 title: "kosli list environments"
 ---
 
-## kosli list environments
+# kosli list environments
 
-List environments.
-
-### Synopsis
+## Synopsis
 
 List environments.
 
@@ -14,14 +12,14 @@ List environments.
 kosli list environments [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |    -h, --help  |  help for environments  |
 |    -o, --output string  |  [defaulted] The format of the output. Valid formats are: [table, json]. (default "table")  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |

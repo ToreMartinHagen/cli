@@ -2,11 +2,9 @@
 title: "kosli list deployments"
 ---
 
-## kosli list deployments
+# kosli list deployments
 
-List deployments in a flow.
-
-### Synopsis
+## Synopsis
 
 List deployments in a flow.
 The results are paginated and ordered from latests to oldest. 
@@ -17,7 +15,7 @@ By default, the page limit is 15 deployments per page.
 kosli list deployments FLOW-NAME [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |    -h, --help  |  help for deployments  |
@@ -26,7 +24,7 @@ kosli list deployments FLOW-NAME [flags]
 |    -n, --page-limit int  |  [defaulted] The number of elements per page. (default 15)  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |
@@ -37,7 +35,7 @@ kosli list deployments FLOW-NAME [flags]
 |        --owner string  |  The Kosli user or organization.  |
 
 
-### Examples
+## Examples
 
 ```shell
 

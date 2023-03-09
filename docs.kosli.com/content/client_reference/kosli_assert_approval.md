@@ -2,11 +2,9 @@
 title: "kosli assert approval"
 ---
 
-## kosli assert approval
+# kosli assert approval
 
-Assert if an artifact in Kosli has been approved for deployment.
-
-### Synopsis
+## Synopsis
 
 Assert if an artifact in Kosli has been approved for deployment.
 Exits with non-zero code if artifact has not been approved.
@@ -16,7 +14,7 @@ The artifact SHA256 fingerprint is calculated (based on --artifact-type flag) or
 kosli assert approval [IMAGE-NAME | FILE-PATH | DIR-PATH] [flags]
 ```
 
-### Flags
+## Flags
 | Flag | Description |
 | :--- | :--- |
 |    -t, --artifact-type string  |  [conditional] The type of the artifact to calculate its SHA256 fingerprint. One of: [docker, file, dir]. Only required if you don't specify '--sha256' or '--fingerprint'.  |
@@ -29,7 +27,7 @@ kosli assert approval [IMAGE-NAME | FILE-PATH | DIR-PATH] [flags]
 |        --registry-username string  |  [conditional] The docker registry username. Only required if you want to read docker image SHA256 digest from a remote docker registry.  |
 
 
-### Options inherited from parent commands
+## Options inherited from parent commands
 | Flag | Description |
 | :--- | :--- |
 |    -a, --api-token string  |  The Kosli API token.  |
@@ -40,7 +38,7 @@ kosli assert approval [IMAGE-NAME | FILE-PATH | DIR-PATH] [flags]
 |        --owner string  |  The Kosli user or organization.  |
 
 
-### Examples
+## Examples
 
 ```shell
 
@@ -49,15 +47,15 @@ kosli assert approval FILE.tgz \
 	--api-token yourAPIToken \
 	--artifact-type file \
 	--owner yourOrgName \
-	--flow yourPipelineName 
+	--flow yourFlowName 
 
 
 # Assert that an artifact with a provided fingerprint (sha256) has been approved
-kosli asser approval \
+kosli assert approval \
 	--api-token yourAPIToken \
 	--owner yourOrgName \
-	--flow yourPipelineName \
-	--fingerprint yourFingerprint
+	--flow yourFlowName \
+	--fingerprint yourArtifactFingerprint
 
 ```
 
