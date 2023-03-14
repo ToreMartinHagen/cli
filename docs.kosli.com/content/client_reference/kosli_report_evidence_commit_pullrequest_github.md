@@ -23,7 +23,7 @@ kosli report evidence commit pullrequest github [flags]
 |    -D, --dry-run  |  [optional] Run in dry-run mode. When enabled, no data is sent to Kosli and the CLI exits with 0 exit code regardless of any errors.  |
 |        --evidence-fingerprint string  |  [optional] The SHA256 fingerprint of the evidence file or dir.  |
 |        --evidence-url string  |  [optional] The external URL where the evidence file or dir is stored.  |
-|    -f, --flows strings  |  The comma separated list of Kosli flows.  |
+|    -f, --flows strings  |  [defaulted] The comma separated list of Kosli flows. Defaults to all flows of the org.  |
 |        --github-base-url string  |  [optional] GitHub base URL (only needed for GitHub Enterprise installations).  |
 |        --github-org string  |  Github organization. (defaulted if you are running in GitHub Actions: https://docs.kosli.com/ci-defaults ).  |
 |        --github-token string  |  Github token.  |

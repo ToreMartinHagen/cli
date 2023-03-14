@@ -22,7 +22,7 @@ kosli report evidence commit pullrequest gitlab [flags]
 |    -D, --dry-run  |  [optional] Run in dry-run mode. When enabled, no data is sent to Kosli and the CLI exits with 0 exit code regardless of any errors.  |
 |        --evidence-fingerprint string  |  [optional] The SHA256 fingerprint of the evidence file or dir.  |
 |        --evidence-url string  |  [optional] The external URL where the evidence file or dir is stored.  |
-|    -f, --flows strings  |  The comma separated list of Kosli flows.  |
+|    -f, --flows strings  |  [defaulted] The comma separated list of Kosli flows. Defaults to all flows of the org.  |
 |        --gitlab-base-url string  |  [optional] Gitlab base URL (only needed for on-prem Gitlab installations).  |
 |        --gitlab-org string  |  Gitlab organization. (defaulted if you are running in Gitlab Pipelines: https://docs.kosli.com/ci-defaults ).  |
 |        --gitlab-token string  |  Gitlab token.  |
