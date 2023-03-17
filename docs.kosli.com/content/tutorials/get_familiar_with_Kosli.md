@@ -33,7 +33,7 @@ To follow the tutorial, you will need to:
 - [Install the Kosli CLI](/kosli_overview/kosli_tools/#installing-the-kosli-cli) and [set the `KOSLI_API_TOKEN` and `KOSLI_OWNER` environment variables](/kosli_overview/kosli_tools/#getting-your-kosli-api-token).
 - You can check your Kosli set up by running: 
     ```shell {.command}
-    kosli pipeline ls
+    kosli list flows
     ```
     which should return a list of pipelines or the message "No pipelines were found".
 
@@ -165,13 +165,13 @@ export KOSLI_OWNER=cyber-dojo
 you can use
 
 ```shell {.command}
-kosli pipeline ls 
+kosli list flows 
 ```
 
 instead of
 
 ```shell {.command}
-kosli pipeline ls --api-token abcdefg --owner cyber-dojo 
+kosli list flows --api-token abcdefg --owner cyber-dojo 
 ```
 
 You can represent **ANY** flag as an environment variable. To do that you need to capitalize the words in the flag, replacing dashes with underscores, and add the `KOSLI_` prefix. For example, `--api-token` becomes `KOSLI_API_TOKEN`.
@@ -185,14 +185,13 @@ an application binary, a docker image, a directory, or a file.
 Start by creating a new Kosli pipeline:
 
 ```shell {.command}
-kosli pipeline declare \
-    --pipeline quickstart-nginx \
+kosli create flow quickstart-nginx \
     --description "Pipeline for quickstart nginx image"
 ```
 
 You can confirm that the Kosli pipeline was created by running:
 ```shell {.command}
-kosli pipeline ls
+kosli list flows
 ```
 which should produce the following output:
 ```plaintext {.light-console}
@@ -214,16 +213,15 @@ the software artifacts you are running in your runtime environments.
 Create a Kosli environment:
 
 ```shell {.command}
-kosli environment declare \
-    --name quickstart \
-    --environment-type docker \
+kosli create environment quickstart \
+    --type docker \
     --description "quickstart environment for tutorial"
 ```
 
 You can verify that the Kosli environment was created:
 
 ```shell {.command}
-kosli environment ls
+kosli list environments
 ```
 
 ```plaintext {.light-console}
@@ -265,8 +263,8 @@ This tutorial uses a dummy value for the `--build-url` flag, in a real installat
 this would be a defaulted link to a build service (e.g. Github Actions).
 
 ```shell {.command}
-kosli pipeline artifact report creation nginx:1.21 \
-    --pipeline quickstart-nginx \
+kosli report artifact nginx:1.21 \
+    --flow quickstart-nginx \
     --artifact-type docker \
     --build-url https://example.com \
     --commit-url https://github.com/kosli-dev/quickstart-docker-example/commit/9f14efa0c91807da9a8b1d1d6332c5b3aa24a310 \
