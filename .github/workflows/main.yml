@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - '**'
+    branches-ignore:    
+      - 'upload-layer-multiregion'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
