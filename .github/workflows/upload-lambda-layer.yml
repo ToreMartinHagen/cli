@@ -55,7 +55,7 @@ jobs:
             --zip-file fileb://$ZIP_FILE_NAME \
             --layer-name $LAYER_NAME \
             --compatible-architectures x86_64 \
-            --description `{"kolsi_cli_version": "${{ inputs.tag }}"}` \
+            --description '{"kolsi_cli_version": "${{ inputs.tag }}"}' \
             | jq .Version)
         LAYER_VERSION_ARN=$(aws lambda add-layer-version-permission \
             --layer-name $LAYER_NAME \

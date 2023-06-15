@@ -2,8 +2,8 @@ name: Main
 
 on:
   push:
-    branches:
-      - '**'
+    # branches:
+    #   - '**'
     branches-ignore:    
       - 'upload-layer-multiregion'
 
