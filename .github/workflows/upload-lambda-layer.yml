@@ -45,23 +45,40 @@ jobs:
       id: upload-lambda-layer
       env:
         TAG: ${{ inputs.tag }}
-        LAYER_NAME: kosli-bin
+        LAYER_NAME: kosli-cli-test
         ZIP_FILE_NAME: kosli_lambda_layer.zip
       run: |
         make build
         mv kosli bin/
         zip -r $ZIP_FILE_NAME bin/kosli
-        LAYER_VERSION_NUMBER=$(aws lambda publish-layer-version \
-            --zip-file fileb://$ZIP_FILE_NAME \
-            --layer-name $LAYER_NAME \
-            --compatible-architectures x86_64 \
-            --description '{"kolsi_cli_version": "${{ inputs.tag }}"}' \
-            | jq .Version)
-        LAYER_VERSION_ARN=$(aws lambda add-layer-version-permission \
-            --layer-name $LAYER_NAME \
-            --statement-id public \
-            --version-number $LAYER_VERSION_NUMBER \
-            --principal '*' \
-            --action lambda:GetLayerVersion \
-            --output json | jq -r '.Statement | fromjson | .Resource')
-        echo "layer_version_arn=$(echo $LAYER_VERSION_ARN)" >> $GITHUB_OUTPUT
+        AWS_REGIONS=(
+            "us-west-1"
+            "us-west-2"
+            "us-east-1"
+            "us-east-2"
+            "ca-central-1" 
+            "eu-central-1"
+            "eu-north-1"
+            "eu-west-1"
+            "eu-west-2"
+            "eu-west-3"
+        )
+        for region in "${AWS_REGIONS[@]}"; do
+            echo "Publishing layer to $region..."
+
+            LAYER_VERSION_NUMBER=$(aws lambda publish-layer-version \
+                --zip-file fileb://$ZIP_FILE_NAME \
+                --layer-name $LAYER_NAME \
+                --compatible-architectures x86_64 \
+                --description '{"kolsi_cli_version": "${{ inputs.tag }}"}' \
+                | jq .Version)
+            aws lambda add-layer-version-permission \
+                --layer-name $LAYER_NAME \
+                --statement-id public \
+                --version-number $LAYER_VERSION_NUMBER \
+                --principal '*' \
+                --action lambda:GetLayerVersion \
+                --output json
+            echo "Published lambda layer version $LAYER_VERSION_NUMBER, $region complete"
+            echo ""
+        done
