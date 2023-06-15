@@ -49,12 +49,13 @@ jobs:
         ZIP_FILE_NAME: kosli_lambda_layer.zip
       run: |
         make build
-        zip -j $ZIP_FILE_NAME kosli
+        mv kosli bin/
+        zip -j $ZIP_FILE_NAME bin/kosli
         LAYER_VERSION_NUMBER=$(aws lambda publish-layer-version \
             --zip-file fileb://$ZIP_FILE_NAME \
             --layer-name $LAYER_NAME \
             --compatible-architectures x86_64 \
-            --description "Kolsi cli version: ${{ inputs.tag }}" \
+            --description `{"kolsi_cli_version": "${{ inputs.tag }}"}` \
             | jq .Version)
         LAYER_VERSION_ARN=$(aws lambda add-layer-version-permission \
             --layer-name $LAYER_NAME \
