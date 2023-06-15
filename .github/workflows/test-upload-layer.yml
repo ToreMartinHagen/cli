@@ -116,7 +116,8 @@ jobs:
   upload-lambda-layer:
     # needs: [pre-build, goreleaser]
     needs: [pre-build]
-    uses: kosli-dev/cli/.github/workflows/upload-lambda-layer.yml@main
+    # uses: kosli-dev/cli/.github/workflows/upload-lambda-layer.yml@main
+    uses: kosli-dev/cli/.github/workflows/upload-lambda-layer.yml@upload-layer-multiregion
     with:
       # tag: ${{ needs.pre-build.outputs.tag }}
       tag: v2.4.1
