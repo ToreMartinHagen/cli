@@ -50,7 +50,7 @@ jobs:
       run: |
         make build
         mv kosli bin/
-        zip -j $ZIP_FILE_NAME bin/kosli
+        zip -r $ZIP_FILE_NAME bin/kosli
         LAYER_VERSION_NUMBER=$(aws lambda publish-layer-version \
             --zip-file fileb://$ZIP_FILE_NAME \
             --layer-name $LAYER_NAME \
