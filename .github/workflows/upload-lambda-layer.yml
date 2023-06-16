@@ -12,9 +12,6 @@ on:
       AWS_REGION:
         required: true
         type: string
-    outputs:
-      layer_version_arn:
-        value: ${{ jobs.upload.outputs.layer_version_arn }}
 
 jobs:
   upload:
@@ -22,8 +19,6 @@ jobs:
     permissions:
       id-token: write
       contents: write
-    outputs:
-      layer_version_arn: ${{ steps.upload-lambda-layer.outputs.layer_version_arn }}
     steps:
     - uses: actions/checkout@v3
 
